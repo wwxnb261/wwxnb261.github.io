@@ -19,15 +19,15 @@
   <meta name="author" content="Shiyi Wang">
   <meta name="keywords" content="wwx,record">
   
-    <meta name="description" content="为了记录自己所学习的内容，创建blog">
+    <meta name="description" content="今日蓝桥杯题目夏日夜晚，小蓝和小桥在蓝桥公园散步。在蜿蜒的小路上，他们发现了一堆单词。 小蓝和小桥对这些单词饶有兴致，于是开始收集它们：小蓝收集了n 个单词，小桥收集了m 个单词。收集完单词后，他们决定玩一个游戏。 游戏规则如下：每一回合，玩家需要从自己收集到的单词中说出一个单词。所说的单词必须满足以下条件：该单词的字典序大小要比上一个单词大，并且该单词要么与上一个单词以相同的字母开头，要么以字母">
 <meta property="og:type" content="article">
 <meta property="og:title" content="每天一题蓝桥杯：单词博弈">
 <meta property="og:url" content="https://wwxnb261.github.io/2024/10/15/%E6%AF%8F%E5%A4%A9%E4%B8%80%E9%A2%98%E8%93%9D%E6%A1%A5%E6%9D%AF%EF%BC%9A%E5%8D%95%E8%AF%8D%E6%B8%B8%E6%88%8F%E5%8D%9A%E5%BC%88/index.html">
 <meta property="og:site_name" content="Shiyi Wang 博客">
-<meta property="og:description" content="为了记录自己所学习的内容，创建blog">
+<meta property="og:description" content="今日蓝桥杯题目夏日夜晚，小蓝和小桥在蓝桥公园散步。在蜿蜒的小路上，他们发现了一堆单词。 小蓝和小桥对这些单词饶有兴致，于是开始收集它们：小蓝收集了n 个单词，小桥收集了m 个单词。收集完单词后，他们决定玩一个游戏。 游戏规则如下：每一回合，玩家需要从自己收集到的单词中说出一个单词。所说的单词必须满足以下条件：该单词的字典序大小要比上一个单词大，并且该单词要么与上一个单词以相同的字母开头，要么以字母">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-10-15T13:12:03.000Z">
-<meta property="article:modified_time" content="2024-10-15T13:17:35.667Z">
+<meta property="article:modified_time" content="2024-10-15T13:50:02.263Z">
 <meta property="article:author" content="Shiyi Wang">
 <meta property="article:tag" content="wwx,record">
 <meta name="twitter:card" content="summary_large_image">
@@ -223,7 +223,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          0 字
+          809 字
         
       </span>
     
@@ -234,7 +234,7 @@
         
         
         
-          1 分钟
+          7 分钟
         
       </span>
     
@@ -276,7 +276,26 @@
             
               <div class="markdown-body">
                 
-                
+                <h1 id="今日蓝桥杯题目"><a href="#今日蓝桥杯题目" class="headerlink" title="今日蓝桥杯题目"></a>今日蓝桥杯题目</h1><p>夏日夜晚，小蓝和小桥在蓝桥公园散步。在蜿蜒的小路上，他们发现了一堆单词。</p>
+<p>小蓝和小桥对这些单词饶有兴致，于是开始收集它们：小蓝收集了n 个单词，小桥收集了m 个单词。收集完单词后，他们决定玩一个游戏。</p>
+<p>游戏规则如下：每一回合，玩家需要从自己收集到的单词中说出一个单词。所说的单词必须满足以下条件：该单词的字典序大小要比上一个单词大，并且该单词要么与上一个单词以相同的字母开头，要么以字母表中紧随其后的字母开头。</p>
+<p>例如，如果上一个单词是 apple，那么接下来的单词可以是：</p>
+<p>以相同字母 a 开头的单词，如：apply。以字母表中紧随 a 之后的字母 b 开头的单词，如 banana。<br>如果某个玩家无法满足上述条件，则该玩家输掉游戏。</p>
+<p>小蓝和小桥轮流进行，由小蓝率先开始。</p>
+<p>已知小蓝第一次会说出自己单词堆中按字典序排列最小的单词。请问，如果小蓝和小桥都按照最优策略进行游戏，谁会获胜？</p>
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> os<br><span class="hljs-keyword">import</span> sys<br><br>n , m = <span class="hljs-built_in">map</span>(<span class="hljs-built_in">int</span>,<span class="hljs-built_in">input</span>().split())<br>a =[<span class="hljs-built_in">input</span>() <span class="hljs-keyword">for</span> _ <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(n)]<br>b = [<span class="hljs-built_in">input</span>() <span class="hljs-keyword">for</span> _ <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(m)]<br>a.sort(reverse=<span class="hljs-literal">True</span>)  <span class="hljs-comment">#这是正序，倒序就是reverse：true</span><br>b.sort(reverse= <span class="hljs-literal">True</span>) <br><br>flag = <span class="hljs-literal">True</span><br>pre = a.pop()<br><br><span class="hljs-keyword">while</span>(flag <span class="hljs-keyword">and</span> a) <span class="hljs-keyword">or</span> (<span class="hljs-keyword">not</span> flag <span class="hljs-keyword">and</span> b):<br>    <span class="hljs-keyword">if</span> flag:  <span class="hljs-comment">#flag为true的时候，这时候小蓝已经说过一个了， 所以轮到小桥</span><br>        word = a.pop()<br>        <span class="hljs-keyword">if</span> (word[<span class="hljs-number">0</span>] == pre[<span class="hljs-number">0</span>] <span class="hljs-keyword">or</span> word[<span class="hljs-number">0</span>] == <span class="hljs-built_in">chr</span>(<span class="hljs-built_in">ord</span>(pre[<span class="hljs-number">0</span>])+<span class="hljs-number">1</span> ) ) <span class="hljs-keyword">and</span> word &gt; pre :<br>            flag = <span class="hljs-literal">False</span><br>            pre = word<br>    <span class="hljs-keyword">else</span>:<br>        word = b.pop()<br>        <span class="hljs-keyword">if</span> (word[<span class="hljs-number">0</span>] == pre[<span class="hljs-number">0</span>] <span class="hljs-keyword">or</span> word[<span class="hljs-number">0</span>] == <span class="hljs-built_in">chr</span>(<span class="hljs-built_in">ord</span>(pre[<span class="hljs-number">0</span>])+<span class="hljs-number">1</span>) ) <span class="hljs-keyword">and</span> word &gt; pre :<br>            flag = <span class="hljs-literal">True</span><br>            pre = word<br><br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;L&#x27;</span>) <span class="hljs-keyword">if</span> flag <span class="hljs-keyword">else</span> <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;Q&#x27;</span>)<br><br></code></pre></td></tr></table></figure>
+<p>接下来是hexo的内置代码块：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> os<br><span class="hljs-keyword">import</span> sys<br><br>n , m = <span class="hljs-built_in">map</span>(<span class="hljs-built_in">int</span>,<span class="hljs-built_in">input</span>().split())<br>a =[<span class="hljs-built_in">input</span>() <span class="hljs-keyword">for</span> _ <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(n)]<br>b = [<span class="hljs-built_in">input</span>() <span class="hljs-keyword">for</span> _ <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(m)]<br>a.sort(reverse=<span class="hljs-literal">True</span>)  <span class="hljs-comment">#这是正序，倒序就是reverse：true</span><br>b.sort(reverse= <span class="hljs-literal">True</span>) <br><br>flag = <span class="hljs-literal">True</span><br>pre = a.pop()<br><br><span class="hljs-keyword">while</span>(flag <span class="hljs-keyword">and</span> a) <span class="hljs-keyword">or</span> (<span class="hljs-keyword">not</span> flag <span class="hljs-keyword">and</span> b):<br>    <span class="hljs-keyword">if</span> flag:  <span class="hljs-comment">#flag为true的时候，这时候小蓝已经说过一个了， 所以轮到小桥</span><br>        word = a.pop()<br>        <span class="hljs-keyword">if</span> (word[<span class="hljs-number">0</span>] == pre[<span class="hljs-number">0</span>] <span class="hljs-keyword">or</span> word[<span class="hljs-number">0</span>] == <span class="hljs-built_in">chr</span>(<span class="hljs-built_in">ord</span>(pre[<span class="hljs-number">0</span>])+<span class="hljs-number">1</span> ) ) <span class="hljs-keyword">and</span> word &gt; pre :<br>            flag = <span class="hljs-literal">False</span><br>            pre = word<br>    <span class="hljs-keyword">else</span>:<br>        word = b.pop()<br>        <span class="hljs-keyword">if</span> (word[<span class="hljs-number">0</span>] == pre[<span class="hljs-number">0</span>] <span class="hljs-keyword">or</span> word[<span class="hljs-number">0</span>] == <span class="hljs-built_in">chr</span>(<span class="hljs-built_in">ord</span>(pre[<span class="hljs-number">0</span>])+<span class="hljs-number">1</span>) ) <span class="hljs-keyword">and</span> word &gt; pre :<br>            flag = <span class="hljs-literal">True</span><br>            pre = word<br><br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;L&#x27;</span>) <span class="hljs-keyword">if</span> flag <span class="hljs-keyword">else</span> <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;Q&#x27;</span>)<br></code></pre></td></tr></table></figure>
+
+<h1 id="学习到了什么？"><a href="#学习到了什么？" class="headerlink" title="学习到了什么？"></a>学习到了什么？</h1><ul>
+<li><p>字典序<br>什么是字典序，就是按照字典顺序进行比较排序的结果，比如说两个单词app，apple。从第一个字母开始进行比较，如果一样就继续对比下一个字母，直到不一样。比如到了app以后，apple还有le，而app则没有了，app的字典序就比apple要小。排序就是’app&lt;apple’。</p>
+</li>
+<li><p>字典序排序<br>如果有很多个单词进行字典序比较，是不是会比较头疼？但是实际上python和c++中已经内置了字典序排序，可以直接使用<code>sort()</code>或者是<code>reverse()</code>函数直接对多个对象进行字典序排序。<code>sort()</code>是从小到大进行排序，反之从大到小。</p>
+</li>
+<li><p>列表推导式<br>代码里用到列表推导式：<code>a = [input() for _ in range(n)]</code>，或者其他的形式<code>a = list(map(int , input().split()))</code>，这样的式子简洁高效，要记住。</p>
+</li>
+</ul>
+
                 
               </div>
             

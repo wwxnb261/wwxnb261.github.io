@@ -27,9 +27,10 @@
 <meta property="og:description" content="今日蓝桥杯题目小蓝和朋友们在玩一个报数游戏。由于今年是2024 年，他们决定要从小到大轮流报出是20 或 24倍数的正整数。前10 个被报出的数是：20,24,40,48,60,72,80,96,100,120。请问第202420242024 个被报出的数是多少? 问题背景目标：找出第 ( n ) 个是 20 或 24 的倍数的正整数，按从小到大的顺序排列，且不重复。 示例：  前10个被报出的数">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-10-16T14:01:16.000Z">
-<meta property="article:modified_time" content="2024-10-16T15:14:01.321Z">
+<meta property="article:modified_time" content="2024-10-17T07:57:55.352Z">
 <meta property="article:author" content="Shiyi Wang">
-<meta property="article:tag" content="蓝桥杯学习 二分">
+<meta property="article:tag" content="蓝桥杯学习">
+<meta property="article:tag" content="二分">
 <meta name="twitter:card" content="summary_large_image">
   
   
@@ -282,7 +283,7 @@
 <ul>
 <li>前10个被报出的数是：20, 24, 40, 48, 60, 72, 80, 96, 100, 120。</li>
 </ul>
-<h2 id="为什么使用二分查找？"><a href="#为什么使用二分查找？" class="headerlink" title="为什么使用二分查找？"></a>为什么使用二分查找？</h2><p>在处理这样的问题时，直接枚举所有满足条件的数直到找到第 ( n ) 个数是不现实的，尤其当 ( n ) 很大（如 ( n &#x3D; 202420242024 )）时。因此，我们需要一种更高效的方法来定位目标数的位置。<strong>二分查找</strong> 是一种适合此类问题的高效算法。</p>
+<h1 id="为什么使用二分查找？"><a href="#为什么使用二分查找？" class="headerlink" title="为什么使用二分查找？"></a>为什么使用二分查找？</h1><p>在处理这样的问题时，直接枚举所有满足条件的数直到找到第 ( n ) 个数是不现实的，尤其当 ( n ) 很大（如 ( n &#x3D; 202420242024 )）时。因此，我们需要一种更高效的方法来定位目标数的位置。<strong>二分查找</strong> 是一种适合此类问题的高效算法。</p>
 <h2 id="二分查找的基本原理"><a href="#二分查找的基本原理" class="headerlink" title="二分查找的基本原理"></a>二分查找的基本原理</h2><p><strong>二分查找</strong> 是一种在有序数组中查找特定元素的算法，其基本思想是通过不断将搜索范围缩小一半来快速定位目标元素。虽然在这个问题中，我们不是在一个固定的数组中查找元素，而是在一个按特定规则生成的数列中查找第 ( n ) 个元素，但二分查找的思想仍然适用。</p>
 <h2 id="应用于本问题的二分查找步骤"><a href="#应用于本问题的二分查找步骤" class="headerlink" title="应用于本问题的二分查找步骤"></a>应用于本问题的二分查找步骤</h2><ol>
 <li><p><strong>定义搜索范围</strong>：</p>
@@ -419,7 +420,7 @@
 </ul>
 </li>
 </ol>
-<h2 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例"></a>代码示例</h2><p>以下是一个完整的 Python 实现，结合了二分查找和容斥原理，用于精确找到第 ( n ) 个是 <strong>a</strong> 或 <strong>b</strong> 的倍数的数。</p>
+<h1 id="解决代码示例"><a href="#解决代码示例" class="headerlink" title="解决代码示例"></a>解决代码示例</h1><p>以下是一个完整的 Python 实现，结合了二分查找和容斥原理，用于精确找到第 ( n ) 个是 <strong>a</strong> 或 <strong>b</strong> 的倍数的数。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">lcm</span>(<span class="hljs-params">a, b</span>):<br>    <span class="hljs-string">&quot;&quot;&quot;计算两个数的最小公倍数&quot;&quot;&quot;</span><br>    <span class="hljs-keyword">from</span> math <span class="hljs-keyword">import</span> gcd<br>    <span class="hljs-keyword">return</span> a * b // gcd(a, b)<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">count_multiples</span>(<span class="hljs-params">x, a, b</span>):<br>    <span class="hljs-string">&quot;&quot;&quot;计算不超过 x 的 a 或 b 的倍数的数量&quot;&quot;&quot;</span><br>    <span class="hljs-keyword">return</span> x // a + x // b - x // lcm(a, b)<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">find_nth_number</span>(<span class="hljs-params">n, a, b</span>):<br>    <span class="hljs-string">&quot;&quot;&quot;使用二分查找找到第 n 个是 a 或 b 的倍数的数&quot;&quot;&quot;</span><br>    left = <span class="hljs-number">1</span><br>    right = n * <span class="hljs-built_in">max</span>(a, b)  <span class="hljs-comment"># 初始右界设为 n * max(a, b)</span><br>    <span class="hljs-keyword">while</span> left &lt; right:<br>        mid = (left + right) // <span class="hljs-number">2</span><br>        current_count = count_multiples(mid, a, b)<br>        <span class="hljs-keyword">if</span> current_count &lt; n:<br>            left = mid + <span class="hljs-number">1</span><br>        <span class="hljs-keyword">else</span>:<br>            right = mid<br>    <span class="hljs-keyword">return</span> left<br><br><span class="hljs-comment"># 示例 1: 寻找第 202420242024 个是 20 或 24 的倍数的数</span><br>n = <span class="hljs-number">202420242024</span><br>a = <span class="hljs-number">20</span><br>b = <span class="hljs-number">24</span><br>result = find_nth_number(n, a, b)<br><span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;第 <span class="hljs-subst">&#123;n&#125;</span> 个被报出的数是: <span class="hljs-subst">&#123;result&#125;</span>&quot;</span>)  <span class="hljs-comment"># 输出: 2429042904288</span><br><br><span class="hljs-comment"># 示例 2: 寻找第 1000 个是 10 或 15 的倍数的数</span><br>n = <span class="hljs-number">1000</span><br>a = <span class="hljs-number">10</span><br>b = <span class="hljs-number">15</span><br>result = find_nth_number(n, a, b)<br><span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;第 <span class="hljs-subst">&#123;n&#125;</span> 个被报出的数是: <span class="hljs-subst">&#123;result&#125;</span>&quot;</span>)  <span class="hljs-comment"># 输出: 7500</span><br></code></pre></td></tr></table></figure>
                 
               </div>
@@ -453,7 +454,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E8%93%9D%E6%A1%A5%E6%9D%AF%E5%AD%A6%E4%B9%A0-%E4%BA%8C%E5%88%86/" class="print-no-link">#蓝桥杯学习 二分</a>
+        <a href="/tags/%E8%93%9D%E6%A1%A5%E6%9D%AF%E5%AD%A6%E4%B9%A0/" class="print-no-link">#蓝桥杯学习</a>
+      
+        <a href="/tags/%E4%BA%8C%E5%88%86/" class="print-no-link">#二分</a>
       
     </div>
   

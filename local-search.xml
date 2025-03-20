@@ -4,19 +4,17 @@
   
   
   <entry>
-    <title>使用 Pyodide 运行 Python 代码</title>
-    <link href="/2024/11/07/%E4%BB%A3%E7%A0%81%E5%B1%95%E7%A4%BA%E5%8D%9A%E5%AE%A2/"/>
-    <url>/2024/11/07/%E4%BB%A3%E7%A0%81%E5%B1%95%E7%A4%BA%E5%8D%9A%E5%AE%A2/</url>
+    <title>考研记录3月1日</title>
+    <link href="/2025/03/21/%E8%80%83%E7%A0%94%E8%AE%B0%E5%BD%953%E6%9C%881%E6%97%A5/"/>
+    <url>/2025/03/21/%E8%80%83%E7%A0%94%E8%AE%B0%E5%BD%953%E6%9C%881%E6%97%A5/</url>
     
-    <content type="html"><![CDATA[<h2 id="Pyodide-示例：运行-Python-代码"><a href="#Pyodide-示例：运行-Python-代码" class="headerlink" title="Pyodide 示例：运行 Python 代码"></a>Pyodide 示例：运行 Python 代码</h2><p>通过点击按钮，你可以在浏览器中运行 Python 代码，并显示结果。</p><p><button id="runBtn">运行 Python 代码</button></p><pre id="output"></pre><script src="https://cdn.jsdelivr.net/npm/pyodide@0.23.4/full/pyodide.js"></script><script>    async function runPythonCode() {        // 加载 Pyodide 环境        await loadPyodide();        // Python 代码        const pythonCode = `            import matplotlib.pyplot as pltimport networkx as nx# 创建树形结构G = nx.Graph()G.add_edges_from([(1, 2), (1, 3), (2, 4), (2, 5), (3, 6)])# 绘制树nx.draw(G, with_labels=True, node_size=700, node_color="skyblue")plt.show()        `;        // 执行 Python 代码并返回结果        const output = pyodide.runPython(pythonCode);                // 将输出结果显示在网页中        document.getElementById('output').textContent = output;    }    // 绑定按钮点击事件    document.getElementById('runBtn').addEventListener('click', runPythonCode);</script>]]></content>
+    <content type="html"><![CDATA[<p>由于今日起晚了，所以重新规划1和2号的学习安排</p><hr><h3 id="3月1日（剩余时间：16-30-24-00）"><a href="#3月1日（剩余时间：16-30-24-00）" class="headerlink" title="3月1日（剩余时间：16:30-24:00）"></a><strong>3月1日（剩余时间：16:30-24:00）</strong></h3><p><strong>总目标</strong>：完成数学极限核心概念+数据结构线性表基础</p><p><strong>总时长</strong>：7.5小时（含休息）</p><h3 id="16-30-19-00：数学极限基础（2-5h）"><a href="#16-30-19-00：数学极限基础（2-5h）" class="headerlink" title="16:30-19:00：数学极限基础（2.5h）"></a><strong>16:30-19:00：数学极限基础（2.5h）</strong></h3><ul><li><strong>任务</strong>：<ol><li><strong>速看张宇&#x2F;武忠祥极限基础课</strong>（1h，1.5倍速，重点听“泰勒展开”和“洛必达法则”）</li><li><strong>刷《复习全书》极限例题</strong>（3道经典题，如“sinx&#x2F;x→1的证明”、“∞-∞型极限计算”）</li><li><strong>整理极限公式表</strong>（手写：等价无穷小替换、泰勒公式到x³项）</li></ol></li><li><strong>重点</strong>：<br>确保理解极限计算逻辑，暂不追求刷题量，先掌握核心方法。</li></ul><h3 id="19-30-21-30：数据结构线性表（2h）"><a href="#19-30-21-30：数据结构线性表（2h）" class="headerlink" title="19:30-21:30：数据结构线性表（2h）"></a><strong>19:30-21:30：数据结构线性表（2h）</strong></h3><ul><li><strong>任务</strong>：<ol><li><strong>学习顺序表与链表的区别</strong>（王道教材2.1-2.2节，30分钟）</li><li><strong>手写单链表反转代码</strong>（LeetCode 206，反复写3遍直到无bug，1h）</li><li><strong>做王道选择题</strong>（仅做“链表插入删除”相关题，5道，30分钟）</li></ol></li><li><strong>重点</strong>：<br>必须能默写链表反转代码，理解指针操作逻辑。</li></ul><h3 id="21-30-24-00：数学极限巩固-错题（2-5h）"><a href="#21-30-24-00：数学极限巩固-错题（2-5h）" class="headerlink" title="21:30-24:00：数学极限巩固+错题（2.5h）"></a><strong>21:30-24:00：数学极限巩固+错题（2.5h）</strong></h3><ul><li><strong>任务</strong>：<ol><li><strong>刷《660题》极限部分</strong>（精选10题，题号1-10，1h）</li><li><strong>分析错题</strong>（记录错题原因，如“泰勒展开项数不足”，30分钟）</li><li><strong>默写公式+明早复习清单</strong>（30分钟）</li></ol></li></ul><hr><h3 id="3月2日（全天）"><a href="#3月2日（全天）" class="headerlink" title="3月2日（全天）"></a><strong>3月2日（全天）</strong></h3><p><strong>总目标</strong>：完成数学导数基础+数据结构栈与队列</p><p><strong>总时长</strong>：12小时（含休息）</p><h3 id="8-30-11-30：数学导数与微分（3h）"><a href="#8-30-11-30：数学导数与微分（3h）" class="headerlink" title="8:30-11:30：数学导数与微分（3h）"></a><strong>8:30-11:30：数学导数与微分（3h）</strong></h3><ul><li><strong>任务</strong>：<ol><li><strong>武忠祥导数应用视频</strong>（1.5h，重点看“导数定义”和“极值判定”）</li><li><strong>手写导数公式表</strong>（包括参数方程求导、隐函数求导，30分钟）</li><li><strong>刷《660题》导数部分</strong>（题号31-40，5题，1h）</li></ol></li></ul><h3 id="14-00-17-00：数据结构栈与队列（3h）"><a href="#14-00-17-00：数据结构栈与队列（3h）" class="headerlink" title="14:00-17:00：数据结构栈与队列（3h）"></a><strong>14:00-17:00：数据结构栈与队列（3h）</strong></h3><ul><li><strong>任务</strong>：<ol><li><strong>栈的应用</strong>（括号匹配原理，手写代码：LeetCode 20，1h）</li><li><strong>循环队列实现</strong>（重点：判空条件<code>front == rear</code>，判满条件<code>(rear+1)%size == front</code>，1h）</li><li><strong>用栈实现队列</strong>（LeetCode 232，1h）</li></ol></li></ul><h3 id="19-00-21-00：数学导数强化（2h）"><a href="#19-00-21-00：数学导数强化（2h）" class="headerlink" title="19:00-21:00：数学导数强化（2h）"></a><strong>19:00-21:00：数学导数强化（2h）</strong></h3><ul><li><strong>任务</strong>：<ol><li><strong>总结“证明题”构造辅助函数的方法</strong>（如用罗尔定理证明根的存在性，1h）</li><li><strong>重做错题+整理导数应用框架</strong>（如极值、凹凸性、渐近线，1h）</li></ol></li></ul><h3 id="21-30-23-30：数据结构真题-复盘（2h）"><a href="#21-30-23-30：数据结构真题-复盘（2h）" class="headerlink" title="21:30-23:30：数据结构真题+复盘（2h）"></a><strong>21:30-23:30：数据结构真题+复盘（2h）</strong></h3><ul><li><strong>任务</strong>：<ol><li><strong>做408真题（2016年数据结构选择题）</strong>（10题，30分钟）</li><li><strong>手写循环队列代码</strong>（确保能处理边界条件，1h）</li><li><strong>复盘今日内容</strong>（记录栈与队列易错点，如指针越界，30分钟）</li></ol></li></ul><hr><h3 id="调整后重点变化"><a href="#调整后重点变化" class="headerlink" title="调整后重点变化"></a><strong>调整后重点变化</strong></h3><ol><li><strong>删减内容</strong>：<ul><li>原计划Day2的积分学习推迟到Day3，优先保住导数基础。</li><li>数据结构减少理论阅读时间，以代码实操为主。</li></ul></li><li><strong>保核心</strong>：<ul><li>数学：极限计算、导数定义与应用</li><li>数据结构：链表反转、栈的应用</li></ul></li><li><strong>灵活补救</strong>：<ul><li>若3月2日晚未完成导数全部任务，3月3日早晨优先补“极值判定”部分。</li></ul></li></ol><hr><h3 id="执行提醒"><a href="#执行提醒" class="headerlink" title="执行提醒"></a><strong>执行提醒</strong></h3><ul><li><strong>极限&#x2F;导数公式表</strong>：3月2日早晨花20分钟默写，加强短期记忆。</li><li><strong>代码手写</strong>：必须落实！哪怕写不出也先抄答案再默写，注重过程。</li><li><strong>睡眠保证</strong>：3月1日晚尽量24:00前睡，3月2日早晨8:00起，避免连续熬夜。</li></ul>]]></content>
     
     
     
     <tags>
       
-      <tag>Python</tag>
-      
-      <tag>Pyodide</tag>
+      <tag>默认标签</tag>
       
     </tags>
     
@@ -25,25 +23,63 @@
   
   
   <entry>
-    <title>mall-lerning之Lombok</title>
-    <link href="/2024/10/17/mall-lerning%E4%B9%8BLombok/"/>
-    <url>/2024/10/17/mall-lerning%E4%B9%8BLombok/</url>
+    <title>函数的连续，可导，可微辨析</title>
+    <link href="/2025/03/20/%E5%87%BD%E6%95%B0%E7%9A%84%E8%BF%9E%E7%BB%AD%EF%BC%8C%E5%8F%AF%E5%AF%BC%EF%BC%8C%E5%8F%AF%E5%BE%AE%E8%BE%A8%E6%9E%90/"/>
+    <url>/2025/03/20/%E5%87%BD%E6%95%B0%E7%9A%84%E8%BF%9E%E7%BB%AD%EF%BC%8C%E5%8F%AF%E5%AF%BC%EF%BC%8C%E5%8F%AF%E5%BE%AE%E8%BE%A8%E6%9E%90/</url>
     
-    <content type="html"><![CDATA[<h1 id="这是插入的一个图片"><a href="#这是插入的一个图片" class="headerlink" title="这是插入的一个图片"></a>这是插入的一个图片</h1><p><img src="/images/test.png" alt="test测试图片"></p>]]></content>
+    <content type="html"><![CDATA[<p>当一个函数的题目给出条件为：函数在区间内有定义的话，并不意味着该函数是连续的。</p><p>当提到函数在区间内有定义，这只表示该区间内的每个点都有对应的函数值，但这并不保证函数是连续的。以下是几个关键点：</p><h2 id="函数有定义与连续性的区别"><a href="#函数有定义与连续性的区别" class="headerlink" title="函数有定义与连续性的区别"></a>函数有定义与连续性的区别</h2><ul><li><strong>函数有定义:</strong> 对于区间内的每一点 x，函数 f(x) 都有一个确定的值</li><li><strong>函数连续:</strong> 除了在每点有定义外，还要求 lim(x→a) f(x) &#x3D; f(a)</li></ul><h2 id="反例说明"><a href="#反例说明" class="headerlink" title="反例说明"></a>反例说明</h2><p>考虑函数：</p>$$f(x) = \begin{cases}   1, & x \geq 0 \\   -1, & x < 0 \end{cases}$$<p>该函数在整个实数轴上有定义，但在 x &#x3D; 0 处不连续，因为左右极限不相等。</p><h2 id="考研中的应用"><a href="#考研中的应用" class="headerlink" title="考研中的应用"></a>考研中的应用</h2><p>在解题时，当仅给出函数在区间内有定义的条件时，需要额外检验函数的连续性，特别是在：</p><ul><li>讨论函数的可导性时（连续是可导的必要条件）</li><li>应用中值定理、罗尔定理等需要连续性的定理时</li><li>计算定积分时（被积函数需要连续）</li></ul><h2 id="连续、可导、可微的关系"><a href="#连续、可导、可微的关系" class="headerlink" title="连续、可导、可微的关系"></a>连续、可导、可微的关系</h2><p>理解这三者之间的关系是数学分析中的重要内容：</p><ul><li><strong>可导 → 连续:</strong> 如果函数在某点可导，则函数在该点必定连续</li><li><strong>连续 ↛ 可导:</strong> 函数连续不一定可导，如 f(x) &#x3D; |x| 在 x &#x3D; 0 处连续但不可导</li><li><strong>一元函数中:</strong> 可导与可微等价</li><li><strong>多元函数中:</strong> 偏导数存在不保证函数可微</li></ul><p>函数有定义只是讨论函数性质的起点，进一步分析连续性、可导性和可微性对于理解函数行为至关重要。</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>默认标签</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>函数连续中的间断点类型总结</title>
+    <link href="/2025/03/04/%E5%87%BD%E6%95%B0%E8%BF%9E%E7%BB%AD%E4%B8%AD%E7%9A%84%E9%97%B4%E6%96%AD%E7%82%B9%E7%B1%BB%E5%9E%8B%E6%80%BB%E7%BB%93/"/>
+    <url>/2025/03/04/%E5%87%BD%E6%95%B0%E8%BF%9E%E7%BB%AD%E4%B8%AD%E7%9A%84%E9%97%B4%E6%96%AD%E7%82%B9%E7%B1%BB%E5%9E%8B%E6%80%BB%E7%BB%93/</url>
+    
+    <content type="html"><![CDATA[<p>间断点的类型主要根据函数在该点的极限行为进行分类，以下是详细的分类及说明：</p><hr><h3 id="1-第一类间断点（左右极限均存在）"><a href="#1-第一类间断点（左右极限均存在）" class="headerlink" title="1. 第一类间断点（左右极限均存在）"></a><strong>1. 第一类间断点（左右极限均存在）</strong></h3><h3 id="a-可去间断点（Removable-Discontinuity）"><a href="#a-可去间断点（Removable-Discontinuity）" class="headerlink" title="(a) 可去间断点（Removable Discontinuity）"></a><strong>(a) 可去间断点（Removable Discontinuity）</strong></h3><ul><li><strong>特点</strong>：<ul><li>函数在该点的左极限和右极限存在且相等，但函数值不等于该极限，或函数在该点无定义。</li><li>通过重新定义或修正函数值可使函数在该点连续。</li></ul></li><li><strong>示例</strong>：<br>$f(x) &#x3D; \frac{\sin x}{x} \quad (x \neq 0)$<br>在 $\ ( x&#x3D;0 )$ 处无定义，但 $\ (\lim_{x \to 0} f(x) &#x3D; 1)$，补充定义 $\ ( f(0) &#x3D; 1 )$ 后连续。</li></ul><h3 id="b-跳跃间断点（Jump-Discontinuity）"><a href="#b-跳跃间断点（Jump-Discontinuity）" class="headerlink" title="(b) 跳跃间断点（Jump Discontinuity）"></a><strong>(b) 跳跃间断点（Jump Discontinuity）</strong></h3><ul><li><strong>特点</strong>：<ul><li>左极限和右极限均存在，但两者不相等。</li><li>函数图像在该点出现“跳跃”。</li></ul></li><li><strong>示例</strong>：<br>$\ [<br>f(x) &#x3D;<br>\begin{cases}<br>x + 1 &amp; x \geq 0, \<br>x - 1 &amp; x &lt; 0<br>\end{cases}<br>]$<br>在 $\ ( x&#x3D;0 )$ 处，左极限为 $\ (-1)$，右极限为 $\ (1)$，形成跳跃。</li></ul><hr><h3 id="2-第二类间断点（至少一侧极限不存在）"><a href="#2-第二类间断点（至少一侧极限不存在）" class="headerlink" title="2. 第二类间断点（至少一侧极限不存在）"></a><strong>2. 第二类间断点（至少一侧极限不存在）</strong></h3><h3 id="以下是第二类间断点的两个主要类型："><a href="#以下是第二类间断点的两个主要类型：" class="headerlink" title="以下是第二类间断点的两个主要类型："></a>以下是第二类间断点的两个主要类型：</h3><h3 id="a-无穷间断点（Infinite-Discontinuity）"><a href="#a-无穷间断点（Infinite-Discontinuity）" class="headerlink" title="(a) 无穷间断点（Infinite Discontinuity）"></a><strong>(a) 无穷间断点（Infinite Discontinuity）</strong></h3><p><strong>特点</strong>：</p><p>当 <code>x</code> 趋近于该点时，函数值趋向正无穷或负无穷。</p><p>通常伴随垂直渐近线。</p><p><strong>示例</strong>：当 <code>x → 0</code> 时，函数 <code>$f(x) = \frac&#123;1&#125;&#123;x&#125;$</code> 的值趋向 <code>±∞</code>。</p><h3 id="b-振荡间断点（Oscillatory-Discontinuity）"><a href="#b-振荡间断点（Oscillatory-Discontinuity）" class="headerlink" title="(b) 振荡间断点（Oscillatory Discontinuity）"></a><strong>(b) 振荡间断点（Oscillatory Discontinuity）</strong></h3><p><strong>特点</strong>：</p><p>函数在该点附近无限振荡，导致极限不存在。</p><p>常见于涉及三角函数或周期函数的复杂表达式中。</p><p><strong>示例</strong>：考虑函数 <code>$f(x) = sin(\frac&#123;1&#125;&#123;x&#125;)$</code> 当 <code>x → 0</code> 时，函数值在 <code>[-1,1]</code> 之间无限振荡，因此极限不存在。</p><hr><h3 id="3-其他特殊类型（补充说明）"><a href="#3-其他特殊类型（补充说明）" class="headerlink" title="3. 其他特殊类型（补充说明）"></a><strong>3. 其他特殊类型（补充说明）</strong></h3><h3 id="混合型间断点"><a href="#混合型间断点" class="headerlink" title="混合型间断点"></a><strong>混合型间断点</strong></h3><ul><li><strong>特点</strong>：<ul><li>结合多种不连续行为，例如一侧趋向无穷，另一侧振荡。</li></ul></li><li><strong>示例</strong>：<br>$\<br>f(x) &#x3D;<br>\begin{cases}<br>\frac{1}{x} &amp; x &gt; 0, \<br>\sin\left(\frac{1}{x}\right) &amp; x &lt; 0<br>\end{cases}$<br>在 $\ ( x&#x3D;0 )$ 处，右侧趋向 $\ ( +\infty )，$左侧振荡。</li></ul><h3 id="本质不连续点（Essential-Discontinuity）"><a href="#本质不连续点（Essential-Discontinuity）" class="headerlink" title="本质不连续点（Essential Discontinuity）"></a><strong>本质不连续点（Essential Discontinuity）</strong></h3><ul><li><strong>别名</strong>：部分文献将第二类间断点统称为本质不连续点。</li></ul><hr><h3 id="总结表格"><a href="#总结表格" class="headerlink" title="总结表格"></a><strong>总结表格</strong></h3><table><thead><tr><th><strong>类型</strong></th><th><strong>特点</strong></th><th><strong>示例</strong></th></tr></thead><tbody><tr><td><strong>可去间断点</strong></td><td>极限存在但函数值不符未定义</td><td>$\ \frac{\sin x}{x}$</td></tr><tr><td><strong>跳跃间断点</strong></td><td>左右极限存在但不相等</td><td>分段函数跳跃点</td></tr><tr><td><strong>无穷间断点</strong></td><td>函数趋向无穷大或无穷小</td><td>$\ \frac{1}{x}$</td></tr><tr><td><strong>振荡间断点</strong></td><td>函数无限振荡，极限不存在</td><td>$\ \sin\left(\frac{1}{x}\right)$</td></tr></tbody></table><hr><h3 id="关键区别"><a href="#关键区别" class="headerlink" title="关键区别"></a><strong>关键区别</strong></h3><ul><li><strong>第一类 vs 第二类</strong>：<br>第一类间断点的左右极限均存在（可比较大小），第二类至少一侧不存在或趋向无穷。</li><li><strong>可修复性</strong>：<br>仅可去间断点可通过修正函数值恢复连续性。</li></ul><p>通过以上分类，可系统分析函数在不同点的不连续行为。</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>默认标签</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>3月份半个月学习计划</title>
+    <link href="/2025/03/01/3%E6%9C%88%E4%BB%BD%E5%8D%8A%E4%B8%AA%E6%9C%88%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92/"/>
+    <url>/2025/03/01/3%E6%9C%88%E4%BB%BD%E5%8D%8A%E4%B8%AA%E6%9C%88%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92/</url>
+    
+    <content type="html"><![CDATA[<p>以下是重新优化后的<strong>15天考研数学一（高数核心）与数据结构系统学习计划</strong>，<strong>移除概率论</strong>，全面覆盖高数重点章节（包括多元微积分、曲线曲面积分、无穷级数等），并保持数据结构每日3-4小时系统学习。计划按<strong>“基础-强化-综合”三阶段</strong>推进，确保扎实掌握。</p><hr><h3 id="调整后核心策略"><a href="#调整后核心策略" class="headerlink" title="调整后核心策略"></a><strong>调整后核心策略</strong></h3><ol><li><strong>优先级</strong>：数学一高数（70%）+ 数据结构（30%），每天学习10-12小时。</li><li><strong>高数重点</strong>：极限→一元微积分→多元微积分→重积分→曲线曲面积分→级数→微分方程。</li><li><strong>数据结构</strong>：线性表→树→图→排序&#x2F;查找→真题，每日代码实操。</li><li><strong>学习逻辑</strong>：视频+教材+题型分类+错题本，拒绝遗漏核心考点。</li></ol><hr><h3 id="每日作息强化版"><a href="#每日作息强化版" class="headerlink" title="每日作息强化版"></a><strong>每日作息强化版</strong></h3><table><thead><tr><th>时间段</th><th>内容</th></tr></thead><tbody><tr><td>7:00-8:00</td><td>起床+背诵公式（如格林公式、DFS代码模板）</td></tr><tr><td>8:30-12:00</td><td>数学攻坚（视频+例题）</td></tr><tr><td>14:00-17:00</td><td>数据结构系统学习（教材+代码）</td></tr><tr><td>19:00-21:00</td><td>数学&#x2F;数据结构交叉刷题</td></tr><tr><td>21:30-22:30</td><td>错题整理+Anki记忆卡</td></tr></tbody></table><hr><h3 id="第一阶段：基础框架搭建（Day-1-5）"><a href="#第一阶段：基础框架搭建（Day-1-5）" class="headerlink" title="第一阶段：基础框架搭建（Day 1-5）"></a><strong>第一阶段：基础框架搭建（Day 1-5）</strong></h3><h3 id="Day-1-2：高数极限与连续-数据结构线性表"><a href="#Day-1-2：高数极限与连续-数据结构线性表" class="headerlink" title="Day 1-2：高数极限与连续 + 数据结构线性表"></a><strong>Day 1-2：高数极限与连续 + 数据结构线性表</strong></h3><ul><li><strong>数学任务</strong>（每天7小时）：<ul><li>上午4h：<ul><li>张宇&#x2F;武忠祥极限视频（1.5倍速，重点：泰勒展开、夹逼定理）</li><li>《复习全书》例题（极限存在性证明、∞&#x2F;∞型计算）</li></ul></li><li>下午2h：<ul><li>刷《660题》极限部分（题1-30）+ 错题整理</li></ul></li><li>晚上1h：<ul><li>默写等价无穷小替换表、泰勒公式到x³项</li></ul></li></ul></li><li><strong>数据结构</strong>（每天3小时）：<ul><li>下午穿插2h：<ul><li>顺序表与链表操作（插入&#x2F;删除时间复杂度）</li><li>手写代码：单链表反转（LeetCode 206）、合并有序链表（LeetCode 21）</li></ul></li><li>晚上1h：<ul><li>王道选择题（链表特性与应用场景）</li></ul></li></ul></li></ul><h3 id="Day-3-4：高数一元微分学-数据结构栈与队列"><a href="#Day-3-4：高数一元微分学-数据结构栈与队列" class="headerlink" title="Day 3-4：高数一元微分学 + 数据结构栈与队列"></a><strong>Day 3-4：高数一元微分学 + 数据结构栈与队列</strong></h3><ul><li><h2 id="数学任务（每天7小时）：-上午4h："><a href="#数学任务（每天7小时）：-上午4h：" class="headerlink" title="数学任务（每天7小时）：  - 上午4h："></a><strong>数学任务</strong>（每天7小时）：<br>  - 上午4h：</h2><pre><code class="hljs">  - 武忠祥导数应用视频（极值、凹凸性、渐近线）  - 《复习全书》例题（中值定理证明题）</code></pre><ul><li>下午2h：<ul><li>刷《660题》导数部分（题31-60）+ 总结辅助函数构造法</li></ul></li><li>晚上1h：<ul><li>整理导数公式表（参数方程、隐函数求导）</li></ul></li></ul></li><li><strong>数据结构</strong>（每天3小时）：<ul><li>下午穿插2h：<ul><li>栈实现队列（LeetCode 232）、循环队列判满&#x2F;判空</li><li>手写代码：括号匹配（LeetCode 20）</li></ul></li><li>晚上1h：<ul><li>王道选择题（栈与队列的典型应用）</li></ul></li></ul></li></ul><h3 id="Day-5：高数一元积分学-数据结构树基础"><a href="#Day-5：高数一元积分学-数据结构树基础" class="headerlink" title="Day 5：高数一元积分学 + 数据结构树基础"></a><strong>Day 5：高数一元积分学 + 数据结构树基础</strong></h3><ul><li><strong>数学任务</strong>（7小时）：<ul><li>上午4h：<ul><li>张宇积分技巧视频（分部积分、三角代换）</li><li>《复习全书》例题（定积分几何应用、反常积分）</li></ul></li><li>下午2h：<ul><li>刷《660题》积分部分（题81-110）</li></ul></li><li>晚上1h：<ul><li>整理积分公式表（如∫√(a²-x²)dx）</li></ul></li></ul></li><li><strong>数据结构</strong>（3小时）：<ul><li>下午穿插2h：<ul><li>二叉树遍历（先序&#x2F;中序递归与非递归）</li><li>手写代码：中序非递归遍历（栈实现）</li></ul></li><li>晚上1h：<ul><li>王道选择题（二叉树节点数计算）</li></ul></li></ul></li></ul><hr><h3 id="第二阶段：高数核心强化（Day-6-10）"><a href="#第二阶段：高数核心强化（Day-6-10）" class="headerlink" title="第二阶段：高数核心强化（Day 6-10）"></a><strong>第二阶段：高数核心强化（Day 6-10）</strong></h3><h3 id="Day-6-7：高数多元微分学-数据结构树应用"><a href="#Day-6-7：高数多元微分学-数据结构树应用" class="headerlink" title="Day 6-7：高数多元微分学 + 数据结构树应用"></a><strong>Day 6-7：高数多元微分学 + 数据结构树应用</strong></h3><ul><li><strong>数学任务</strong>（每天7小时）：<ul><li>上午4h：<ul><li>武忠祥多元微分视频（偏导数、全微分、方向导数）</li><li>《复习全书》例题（隐函数求导、条件极值）</li></ul></li><li>下午2h：<ul><li>刷《660题》多元微分部分（题200-230）</li></ul></li><li>晚上1h：<ul><li>总结梯度、方向导数与极值的关系</li></ul></li></ul></li><li><strong>数据结构</strong>（每天3小时）：<ul><li>下午穿插2h：<ul><li>平衡二叉树（AVL树旋转）、二叉搜索树验证（LeetCode 98）</li></ul></li><li>晚上1h：<ul><li>王道选择题（AVL树插入调整步骤）</li></ul></li></ul></li></ul><h3 id="Day-8-9：高数重积分-数据结构图基础"><a href="#Day-8-9：高数重积分-数据结构图基础" class="headerlink" title="Day 8-9：高数重积分 + 数据结构图基础"></a><strong>Day 8-9：高数重积分 + 数据结构图基础</strong></h3><ul><li><strong>数学任务</strong>（每天7小时）：<ul><li>上午4h：<ul><li>张宇重积分视频（二重&#x2F;三重积分计算、极坐标&#x2F;柱坐标变换）</li><li>《复习全书》例题（交换积分次序、奇偶性简化）</li></ul></li><li>下午2h：<ul><li>刷《660题》重积分部分（题240-270）</li></ul></li><li>晚上1h：<ul><li>整理对称性简化技巧（如轮换对称性）</li></ul></li></ul></li><li><strong>数据结构</strong>（每天3小时）：<ul><li>下午穿插2h：<ul><li>图的存储（邻接矩阵&#x2F;邻接表）、DFS&#x2F;BFS代码实现</li><li>手写代码：课程表拓扑排序（LeetCode 207）</li></ul></li><li>晚上1h：<ul><li>王道选择题（DFS与BFS应用场景）</li></ul></li></ul></li></ul><h3 id="Day-10：高数曲线曲面积分-数据结构排序算法"><a href="#Day-10：高数曲线曲面积分-数据结构排序算法" class="headerlink" title="Day 10：高数曲线曲面积分 + 数据结构排序算法"></a><strong>Day 10：高数曲线曲面积分 + 数据结构排序算法</strong></h3><ul><li><strong>数学任务</strong>（7小时）：<ul><li>上午4h：<ul><li>武忠祥曲线积分视频（第一&#x2F;二型曲线积分、格林公式）</li><li>《复习全书》例题（参数化计算、斯托克斯公式）</li></ul></li><li>下午2h：<ul><li>刷《660题》曲线曲面积分部分（题280-310）</li></ul></li><li>晚上1h：<ul><li>总结高斯公式与散度、旋度的联系</li></ul></li></ul></li><li><strong>数据结构</strong>（3小时）：<ul><li>下午穿插2h：<ul><li>快速排序&#x2F;堆排序非递归实现、稳定性分析</li><li>手写代码：快速排序分区函数（Hoare法）</li></ul></li><li>晚上1h：<ul><li>王道选择题（排序算法时间复杂度对比）</li></ul></li></ul></li></ul><hr><h3 id="第三阶段：综合冲刺（Day-11-15）"><a href="#第三阶段：综合冲刺（Day-11-15）" class="headerlink" title="第三阶段：综合冲刺（Day 11-15）"></a><strong>第三阶段：综合冲刺（Day 11-15）</strong></h3><h3 id="Day-11-12：高数无穷级数-数据结构查找算法"><a href="#Day-11-12：高数无穷级数-数据结构查找算法" class="headerlink" title="Day 11-12：高数无穷级数 + 数据结构查找算法"></a><strong>Day 11-12：高数无穷级数 + 数据结构查找算法</strong></h3><ul><li><strong>数学任务</strong>（每天7小时）：<ul><li>上午4h：<ul><li>张宇级数视频（正项级数、幂级数求和、傅里叶级数）</li><li>《复习全书》例题（收敛性判别、展开式求系数）</li></ul></li><li>下午2h：<ul><li>刷《660题》级数部分（题320-350）</li></ul></li><li>晚上1h：<ul><li>整理常见展开式（如1&#x2F;(1-x)&#x3D;∑xⁿ, |x|&lt;1）</li></ul></li></ul></li><li><strong>数据结构</strong>（每天3小时）：<ul><li>下午穿插2h：<ul><li>哈希表冲突处理（拉链法、开放定址法）</li><li>手写代码：LRU缓存（LeetCode 146）</li></ul></li><li>晚上1h：<ul><li>王道选择题（B树与B+树差异）</li></ul></li></ul></li></ul><h3 id="Day-13-14：高数真题模拟-数据结构真题"><a href="#Day-13-14：高数真题模拟-数据结构真题" class="headerlink" title="Day 13-14：高数真题模拟 + 数据结构真题"></a><strong>Day 13-14：高数真题模拟 + 数据结构真题</strong></h3><ul><li><strong>数学任务</strong>（每天7小时）：<ul><li>限时3h完成2020年真题</li><li>4h逐题分析错因（重点：曲线积分与级数大题）</li></ul></li><li><strong>数据结构</strong>（每天3小时）：<ul><li>下午穿插2h：<ul><li>408真题（2015-2020数据结构大题）</li><li>重点：二叉树非递归遍历、图最短路径</li></ul></li><li>晚上1h：<ul><li>复盘代码边界条件（如指针判空、循环终止）</li></ul></li></ul></li></ul><h3 id="Day-15：总复习与补漏"><a href="#Day-15：总复习与补漏" class="headerlink" title="Day 15：总复习与补漏"></a><strong>Day 15：总复习与补漏</strong></h3><ul><li><strong>数学</strong>（7小时）：<ul><li>上午4h：默写核心公式（从极限到曲面积分）</li><li>下午3h：重做高数错题（如格林公式应用）</li></ul></li><li><strong>数据结构</strong>（3小时）：<ul><li>系统复盘线性表→图→排序</li><li>手写代码：二叉树层序遍历（LeetCode 102）</li></ul></li></ul><hr><h3 id="每日作息强化版-1"><a href="#每日作息强化版-1" class="headerlink" title="每日作息强化版"></a><strong>每日作息强化版</strong></h3><table><thead><tr><th>时间段</th><th>内容</th></tr></thead><tbody><tr><td>7:00-8:00</td><td>起床+背诵公式（如格林公式、DFS代码模板）</td></tr><tr><td>8:30-12:00</td><td>数学攻坚（视频+例题）</td></tr><tr><td>14:00-17:00</td><td>数据结构系统学习（教材+代码）</td></tr><tr><td>19:00-21:00</td><td>数学&#x2F;数据结构交叉刷题</td></tr><tr><td>21:30-22:30</td><td>错题整理+Anki记忆卡</td></tr></tbody></table><hr><h3 id="关键执行原则"><a href="#关键执行原则" class="headerlink" title="关键执行原则"></a><strong>关键执行原则</strong></h3><ol><li><strong>高数优先级</strong>：若时间紧张，优先完成<strong>曲线曲面积分</strong>和<strong>级数</strong>，这两部分是数一特有且难度较高的考点。</li><li><strong>数据结构代码</strong>：每日至少手写1题，重点训练<strong>非递归遍历</strong>和<strong>算法应用</strong>（如拓扑排序）。</li><li><strong>错题本</strong>：按章节分类记录错题，每晚睡前回顾10分钟。</li><li><strong>健康管理</strong>：每学习1小时休息5分钟，每天保证6小时睡眠。</li></ol><p><strong>按此计划，15天内可系统攻克高数全部核心内容，并保持数据结构代码手感！</strong> 如需进一步细化某部分（如曲线积分参数化方法），请随时告知！</p>]]></content>
     
     
     <categories>
       
-      <category>Java项目</category>
+      <category>考研</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>Lombok</tag>
+      <tag>考研</tag>
       
-      <tag>Java</tag>
+      <tag>数学</tag>
       
     </tags>
     
@@ -71,31 +107,6 @@
       <tag>蓝桥杯学习</tag>
       
       <tag>二分</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>mall-learning学习之Mybatis</title>
-    <link href="/2024/10/15/mall-learning%E4%B9%8BMybatis/"/>
-    <url>/2024/10/15/mall-learning%E4%B9%8BMybatis/</url>
-    
-    <content type="html"><![CDATA[<h1 id=""><a href="#" class="headerlink" title=""></a></h1>]]></content>
-    
-    
-    <categories>
-      
-      <category>Java项目</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>mall-learning</tag>
       
     </tags>
     

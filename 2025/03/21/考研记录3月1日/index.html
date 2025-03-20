@@ -19,23 +19,22 @@
   <meta name="author" content="Shiyi Wang">
   <meta name="keywords" content="wwx,record">
   
-    <meta name="description" content="Pyodide 示例：运行 Python 代码通过点击按钮，你可以在浏览器中运行 Python 代码，并显示结果。 运行 Python 代码          async function runPythonCode() {         &#x2F;&#x2F; 加载 Pyodide 环境         await loadPyodide();          &#x2F;&#x2F; Python 代码         con">
+    <meta name="description" content="由于今日起晚了，所以重新规划1和2号的学习安排  3月1日（剩余时间：16:30-24:00）总目标：完成数学极限核心概念+数据结构线性表基础 总时长：7.5小时（含休息） 16:30-19:00：数学极限基础（2.5h） 任务： 速看张宇&#x2F;武忠祥极限基础课（1h，1.5倍速，重点听“泰勒展开”和“洛必达法则”） 刷《复习全书》极限例题（3道经典题，如“sinx&#x2F;x→1的证明”">
 <meta property="og:type" content="article">
-<meta property="og:title" content="使用 Pyodide 运行 Python 代码">
-<meta property="og:url" content="https://wwxnb261.github.io/2024/11/07/%E4%BB%A3%E7%A0%81%E5%B1%95%E7%A4%BA%E5%8D%9A%E5%AE%A2/index.html">
+<meta property="og:title" content="考研记录3月1日">
+<meta property="og:url" content="https://wwxnb261.github.io/2025/03/21/%E8%80%83%E7%A0%94%E8%AE%B0%E5%BD%953%E6%9C%881%E6%97%A5/index.html">
 <meta property="og:site_name" content="Shiyi Wang 博客">
-<meta property="og:description" content="Pyodide 示例：运行 Python 代码通过点击按钮，你可以在浏览器中运行 Python 代码，并显示结果。 运行 Python 代码          async function runPythonCode() {         &#x2F;&#x2F; 加载 Pyodide 环境         await loadPyodide();          &#x2F;&#x2F; Python 代码         con">
+<meta property="og:description" content="由于今日起晚了，所以重新规划1和2号的学习安排  3月1日（剩余时间：16:30-24:00）总目标：完成数学极限核心概念+数据结构线性表基础 总时长：7.5小时（含休息） 16:30-19:00：数学极限基础（2.5h） 任务： 速看张宇&#x2F;武忠祥极限基础课（1h，1.5倍速，重点听“泰勒展开”和“洛必达法则”） 刷《复习全书》极限例题（3道经典题，如“sinx&#x2F;x→1的证明”">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-11-07T04:00:00.000Z">
-<meta property="article:modified_time" content="2024-11-07T09:22:44.692Z">
+<meta property="article:published_time" content="2025-03-21T07:45:41.000Z">
+<meta property="article:modified_time" content="2025-03-20T07:46:07.200Z">
 <meta property="article:author" content="Shiyi Wang">
-<meta property="article:tag" content="Python">
-<meta property="article:tag" content="Pyodide">
+<meta property="article:tag" content="默认标签">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>使用 Pyodide 运行 Python 代码 - Shiyi Wang 博客</title>
+  <title>考研记录3月1日 - Shiyi Wang 博客</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -213,7 +212,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="使用 Pyodide 运行 Python 代码"></span>
+            <span id="subtitle" data-typed-text="考研记录3月1日"></span>
           
         </div>
 
@@ -224,8 +223,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-11-07 12:00" pubdate>
-          2024年11月7日 中午
+        <time datetime="2025-03-21 15:45" pubdate>
+          2025年3月21日 下午
         </time>
       </span>
     
@@ -236,7 +235,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          125 字
+          845 字
         
       </span>
     
@@ -247,7 +246,7 @@
         
         
         
-          2 分钟
+          8 分钟
         
       </span>
     
@@ -284,47 +283,110 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">使用 Pyodide 运行 Python 代码</h1>
+            <h1 id="seo-header">考研记录3月1日</h1>
+            
+            
+              <p id="updated-time" class="note note-info" style="">
+                
+                  
+                    本文最后更新于 2025年3月20日 下午
+                  
+                
+              </p>
+            
+            
+            
             
             
               <div class="markdown-body">
                 
-                <h2 id="Pyodide-示例：运行-Python-代码"><a href="#Pyodide-示例：运行-Python-代码" class="headerlink" title="Pyodide 示例：运行 Python 代码"></a>Pyodide 示例：运行 Python 代码</h2><p>通过点击按钮，你可以在浏览器中运行 Python 代码，并显示结果。</p>
-<p><button id="runBtn">运行 Python 代码</button></p>
-<pre id="output"></pre>
-
-<script src="https://cdn.jsdelivr.net/npm/pyodide@0.23.4/full/pyodide.js"></script>
-
-<script>
-    async function runPythonCode() {
-        // 加载 Pyodide 环境
-        await loadPyodide();
-
-        // Python 代码
-        const pythonCode = `
-            import matplotlib.pyplot as plt
-import networkx as nx
-
-# 创建树形结构
-G = nx.Graph()
-G.add_edges_from([(1, 2), (1, 3), (2, 4), (2, 5), (3, 6)])
-
-# 绘制树
-nx.draw(G, with_labels=True, node_size=700, node_color="skyblue")
-plt.show()
-
-        `;
-
-        // 执行 Python 代码并返回结果
-        const output = pyodide.runPython(pythonCode);
-        
-        // 将输出结果显示在网页中
-        document.getElementById('output').textContent = output;
-    }
-
-    // 绑定按钮点击事件
-    document.getElementById('runBtn').addEventListener('click', runPythonCode);
-</script>
+                <p>由于今日起晚了，所以重新规划1和2号的学习安排</p>
+<hr>
+<h3 id="3月1日（剩余时间：16-30-24-00）"><a href="#3月1日（剩余时间：16-30-24-00）" class="headerlink" title="3月1日（剩余时间：16:30-24:00）"></a><strong>3月1日（剩余时间：16:30-24:00）</strong></h3><p><strong>总目标</strong>：完成数学极限核心概念+数据结构线性表基础</p>
+<p><strong>总时长</strong>：7.5小时（含休息）</p>
+<h3 id="16-30-19-00：数学极限基础（2-5h）"><a href="#16-30-19-00：数学极限基础（2-5h）" class="headerlink" title="16:30-19:00：数学极限基础（2.5h）"></a><strong>16:30-19:00：数学极限基础（2.5h）</strong></h3><ul>
+<li><strong>任务</strong>：<ol>
+<li><strong>速看张宇&#x2F;武忠祥极限基础课</strong>（1h，1.5倍速，重点听“泰勒展开”和“洛必达法则”）</li>
+<li><strong>刷《复习全书》极限例题</strong>（3道经典题，如“sinx&#x2F;x→1的证明”、“∞-∞型极限计算”）</li>
+<li><strong>整理极限公式表</strong>（手写：等价无穷小替换、泰勒公式到x³项）</li>
+</ol>
+</li>
+<li><strong>重点</strong>：<br>确保理解极限计算逻辑，暂不追求刷题量，先掌握核心方法。</li>
+</ul>
+<h3 id="19-30-21-30：数据结构线性表（2h）"><a href="#19-30-21-30：数据结构线性表（2h）" class="headerlink" title="19:30-21:30：数据结构线性表（2h）"></a><strong>19:30-21:30：数据结构线性表（2h）</strong></h3><ul>
+<li><strong>任务</strong>：<ol>
+<li><strong>学习顺序表与链表的区别</strong>（王道教材2.1-2.2节，30分钟）</li>
+<li><strong>手写单链表反转代码</strong>（LeetCode 206，反复写3遍直到无bug，1h）</li>
+<li><strong>做王道选择题</strong>（仅做“链表插入删除”相关题，5道，30分钟）</li>
+</ol>
+</li>
+<li><strong>重点</strong>：<br>必须能默写链表反转代码，理解指针操作逻辑。</li>
+</ul>
+<h3 id="21-30-24-00：数学极限巩固-错题（2-5h）"><a href="#21-30-24-00：数学极限巩固-错题（2-5h）" class="headerlink" title="21:30-24:00：数学极限巩固+错题（2.5h）"></a><strong>21:30-24:00：数学极限巩固+错题（2.5h）</strong></h3><ul>
+<li><strong>任务</strong>：<ol>
+<li><strong>刷《660题》极限部分</strong>（精选10题，题号1-10，1h）</li>
+<li><strong>分析错题</strong>（记录错题原因，如“泰勒展开项数不足”，30分钟）</li>
+<li><strong>默写公式+明早复习清单</strong>（30分钟）</li>
+</ol>
+</li>
+</ul>
+<hr>
+<h3 id="3月2日（全天）"><a href="#3月2日（全天）" class="headerlink" title="3月2日（全天）"></a><strong>3月2日（全天）</strong></h3><p><strong>总目标</strong>：完成数学导数基础+数据结构栈与队列</p>
+<p><strong>总时长</strong>：12小时（含休息）</p>
+<h3 id="8-30-11-30：数学导数与微分（3h）"><a href="#8-30-11-30：数学导数与微分（3h）" class="headerlink" title="8:30-11:30：数学导数与微分（3h）"></a><strong>8:30-11:30：数学导数与微分（3h）</strong></h3><ul>
+<li><strong>任务</strong>：<ol>
+<li><strong>武忠祥导数应用视频</strong>（1.5h，重点看“导数定义”和“极值判定”）</li>
+<li><strong>手写导数公式表</strong>（包括参数方程求导、隐函数求导，30分钟）</li>
+<li><strong>刷《660题》导数部分</strong>（题号31-40，5题，1h）</li>
+</ol>
+</li>
+</ul>
+<h3 id="14-00-17-00：数据结构栈与队列（3h）"><a href="#14-00-17-00：数据结构栈与队列（3h）" class="headerlink" title="14:00-17:00：数据结构栈与队列（3h）"></a><strong>14:00-17:00：数据结构栈与队列（3h）</strong></h3><ul>
+<li><strong>任务</strong>：<ol>
+<li><strong>栈的应用</strong>（括号匹配原理，手写代码：LeetCode 20，1h）</li>
+<li><strong>循环队列实现</strong>（重点：判空条件<code>front == rear</code>，判满条件<code>(rear+1)%size == front</code>，1h）</li>
+<li><strong>用栈实现队列</strong>（LeetCode 232，1h）</li>
+</ol>
+</li>
+</ul>
+<h3 id="19-00-21-00：数学导数强化（2h）"><a href="#19-00-21-00：数学导数强化（2h）" class="headerlink" title="19:00-21:00：数学导数强化（2h）"></a><strong>19:00-21:00：数学导数强化（2h）</strong></h3><ul>
+<li><strong>任务</strong>：<ol>
+<li><strong>总结“证明题”构造辅助函数的方法</strong>（如用罗尔定理证明根的存在性，1h）</li>
+<li><strong>重做错题+整理导数应用框架</strong>（如极值、凹凸性、渐近线，1h）</li>
+</ol>
+</li>
+</ul>
+<h3 id="21-30-23-30：数据结构真题-复盘（2h）"><a href="#21-30-23-30：数据结构真题-复盘（2h）" class="headerlink" title="21:30-23:30：数据结构真题+复盘（2h）"></a><strong>21:30-23:30：数据结构真题+复盘（2h）</strong></h3><ul>
+<li><strong>任务</strong>：<ol>
+<li><strong>做408真题（2016年数据结构选择题）</strong>（10题，30分钟）</li>
+<li><strong>手写循环队列代码</strong>（确保能处理边界条件，1h）</li>
+<li><strong>复盘今日内容</strong>（记录栈与队列易错点，如指针越界，30分钟）</li>
+</ol>
+</li>
+</ul>
+<hr>
+<h3 id="调整后重点变化"><a href="#调整后重点变化" class="headerlink" title="调整后重点变化"></a><strong>调整后重点变化</strong></h3><ol>
+<li><strong>删减内容</strong>：<ul>
+<li>原计划Day2的积分学习推迟到Day3，优先保住导数基础。</li>
+<li>数据结构减少理论阅读时间，以代码实操为主。</li>
+</ul>
+</li>
+<li><strong>保核心</strong>：<ul>
+<li>数学：极限计算、导数定义与应用</li>
+<li>数据结构：链表反转、栈的应用</li>
+</ul>
+</li>
+<li><strong>灵活补救</strong>：<ul>
+<li>若3月2日晚未完成导数全部任务，3月3日早晨优先补“极值判定”部分。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="执行提醒"><a href="#执行提醒" class="headerlink" title="执行提醒"></a><strong>执行提醒</strong></h3><ul>
+<li><strong>极限&#x2F;导数公式表</strong>：3月2日早晨花20分钟默写，加强短期记忆。</li>
+<li><strong>代码手写</strong>：必须落实！哪怕写不出也先抄答案再默写，注重过程。</li>
+<li><strong>睡眠保证</strong>：3月1日晚尽量24:00前睡，3月2日早晨8:00起，避免连续熬夜。</li>
+</ul>
 
                 
               </div>
@@ -337,9 +399,7 @@ plt.show()
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Python/" class="print-no-link">#Python</a>
-      
-        <a href="/tags/Pyodide/" class="print-no-link">#Pyodide</a>
+        <a href="/tags/%E9%BB%98%E8%AE%A4%E6%A0%87%E7%AD%BE/" class="print-no-link">#默认标签</a>
       
     </div>
   
@@ -351,8 +411,8 @@ plt.show()
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>使用 Pyodide 运行 Python 代码</div>
-      <div>https://wwxnb261.github.io/2024/11/07/代码展示博客/</div>
+      <div>考研记录3月1日</div>
+      <div>https://wwxnb261.github.io/2025/03/21/考研记录3月1日/</div>
     </div>
     <div class="license-meta">
       
@@ -364,9 +424,14 @@ plt.show()
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年11月7日</div>
+          <div>2025年3月21日</div>
         </div>
       
+      
+        <div class="license-meta-item license-meta-date">
+          <div>更新于</div>
+          <div>2025年3月20日</div>
+        </div>
       
       
         <div class="license-meta-item">
@@ -400,8 +465,8 @@ plt.show()
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/10/17/mall-lerning%E4%B9%8BLombok/" title="mall-lerning之Lombok">
-                        <span class="hidden-mobile">mall-lerning之Lombok</span>
+                      <a href="/2025/03/20/%E5%87%BD%E6%95%B0%E7%9A%84%E8%BF%9E%E7%BB%AD%EF%BC%8C%E5%8F%AF%E5%AF%BC%EF%BC%8C%E5%8F%AF%E5%BE%AE%E8%BE%A8%E6%9E%90/" title="函数的连续，可导，可微辨析">
+                        <span class="hidden-mobile">函数的连续，可导，可微辨析</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

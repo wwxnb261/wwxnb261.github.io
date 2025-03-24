@@ -19,22 +19,22 @@
   <meta name="author" content="Shiyi Wang">
   <meta name="keywords" content="wwx,record">
   
-    <meta name="description" content="要解决给定正整数 (N)，判断是否存在正整数对 ((x, y)) 满足 (x^3 - y^3 &#x3D; N)，并输出任意解的问题，可以通过以下步骤实现：  方法分析  因式分解：将 (x^3 - y^3) 分解为 ((x - y)(x^2 + xy + y^2))，即 (N &#x3D; a \cdot b)，其中 (a &#x3D; x - y)，(b &#x3D; x^2 + xy + y^2)。 枚举因数对：遍历所有可能的 (">
+    <meta name="description" content="为了记录自己所学习的内容，创建blog">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Shiyi Wang 博客">
-<meta property="og:url" content="https://wwxnb261.github.io/2025/03/20/test/index.html">
+<meta property="og:title" content="test">
+<meta property="og:url" content="https://wwxnb261.github.io/2025/03/24/test/index.html">
 <meta property="og:site_name" content="Shiyi Wang 博客">
-<meta property="og:description" content="要解决给定正整数 (N)，判断是否存在正整数对 ((x, y)) 满足 (x^3 - y^3 &#x3D; N)，并输出任意解的问题，可以通过以下步骤实现：  方法分析  因式分解：将 (x^3 - y^3) 分解为 ((x - y)(x^2 + xy + y^2))，即 (N &#x3D; a \cdot b)，其中 (a &#x3D; x - y)，(b &#x3D; x^2 + xy + y^2)。 枚举因数对：遍历所有可能的 (">
+<meta property="og:description" content="为了记录自己所学习的内容，创建blog">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-03-20T12:43:14.174Z">
-<meta property="article:modified_time" content="2025-03-20T12:43:53.218Z">
+<meta property="article:published_time" content="2025-03-24T13:10:09.000Z">
+<meta property="article:modified_time" content="2025-03-24T13:10:09.367Z">
 <meta property="article:author" content="Shiyi Wang">
 <meta property="article:tag" content="wwx,record">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>Shiyi Wang 博客</title>
+  <title>test - Shiyi Wang 博客</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -212,7 +212,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text=""></span>
+            <span id="subtitle" data-typed-text="test"></span>
           
         </div>
 
@@ -223,8 +223,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-03-20 20:43" pubdate>
-          2025年3月20日 晚上
+        <time datetime="2025-03-24 21:10" pubdate>
+          2025年3月24日 晚上
         </time>
       </span>
     
@@ -235,7 +235,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          563 字
+          0 字
         
       </span>
     
@@ -246,7 +246,7 @@
         
         
         
-          5 分钟
+          1 分钟
         
       </span>
     
@@ -283,13 +283,13 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header"></h1>
+            <h1 id="seo-header">test</h1>
             
             
               <p id="updated-time" class="note note-info" style="">
                 
                   
-                    本文最后更新于 2025年3月20日 晚上
+                    本文最后更新于 2025年3月24日 晚上
                   
                 
               </p>
@@ -300,62 +300,7 @@
             
               <div class="markdown-body">
                 
-                <p>要解决给定正整数 (N)，判断是否存在正整数对 ((x, y)) 满足 (x^3 - y^3 = N)，并输出任意解的问题，可以通过以下步骤实现：</p>
-<hr>
-<h3 id="方法分析"><strong>方法分析</strong></h3>
-<ol>
-<li><strong>因式分解</strong>：将 (x^3 - y^3) 分解为 ((x - y)(x^2 + xy + y^2))，即 (N = a \cdot b)，其中 (a = x - y)，(b = x^2 + xy + y^2)。</li>
-<li><strong>枚举因数对</strong>：遍历所有可能的 (a)（即 (d = x - y)），检查是否存在对应的 (b = N / a) 满足方程。</li>
-<li><strong>二次方程求解</strong>：将 (x = y + d) 代入 (b = x^2 + xy + y^2)，得到关于 (y) 的二次方程，检查是否存在正整数解。</li>
-</ol>
-<hr>
-<h3 id="算法步骤"><strong>算法步骤</strong></h3>
-<ol>
-<li><strong>计算 (d) 的范围</strong>：<br>
-(d) 的取值范围为 (1 \leq d \leq \sqrt[3]{4N})（通过二分法确定）。</li>
-<li><strong>遍历每个 (d)</strong>：<br>
-对于每个 (d)，计算：<br>
-[<br>
-m = 3d \cdot (4N - d^3)<br>
-]<br>
-检查 (m) 是否为完全平方数。若是，则计算 (k = \sqrt{m})。</li>
-<li><strong>求解 (y)</strong>：<br>
-通过方程 (y = \frac{-3d^2 + k}{6d}) 计算 (y)，检查 (y) 是否为正整数。</li>
-<li><strong>验证解</strong>：<br>
-若存在正整数 (y)，则 (x = y + d)，验证 (x^3 - y^3 = N)。</li>
-</ol>
-<hr>
-<h3 id="代码实现"><strong>代码实现</strong></h3>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> math<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">find_xy</span>(<span class="hljs-params">N</span>):<br>    <span class="hljs-keyword">if</span> N == <span class="hljs-number">0</span>:<br>        <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>, -<span class="hljs-number">1</span><br><br>    <span class="hljs-comment"># 二分法计算 d_max: 最大的 d 满足 d^3 &lt;= 4N</span><br>    left, right = <span class="hljs-number">1</span>, <span class="hljs-number">1</span><br>    <span class="hljs-keyword">while</span> right ** <span class="hljs-number">3</span> &lt;= <span class="hljs-number">4</span> * N:<br>        right *= <span class="hljs-number">2</span><br>    d_max = <span class="hljs-number">0</span><br>    <span class="hljs-keyword">while</span> left &lt;= right:<br>        mid = (left + right) // <span class="hljs-number">2</span><br>        mid_cubed = mid ** <span class="hljs-number">3</span><br>        <span class="hljs-keyword">if</span> mid_cubed &lt;= <span class="hljs-number">4</span> * N:<br>            d_max = mid<br>            left = mid + <span class="hljs-number">1</span><br>        <span class="hljs-keyword">else</span>:<br>            right = mid - <span class="hljs-number">1</span><br><br>    <span class="hljs-comment"># 枚举 d</span><br>    <span class="hljs-keyword">for</span> d <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">1</span>, d_max + <span class="hljs-number">1</span>):<br>        remainder = <span class="hljs-number">4</span> * N - d ** <span class="hljs-number">3</span><br>        <span class="hljs-keyword">if</span> remainder &lt; <span class="hljs-number">0</span>:<br>            <span class="hljs-keyword">continue</span><br>        m = <span class="hljs-number">3</span> * d * remainder<br>        s = math.isqrt(m)<br>        <span class="hljs-keyword">if</span> s * s != m:<br>            <span class="hljs-keyword">continue</span><br>        num = -<span class="hljs-number">3</span> * d * d + s<br>        denominator = <span class="hljs-number">6</span> * d<br>        <span class="hljs-keyword">if</span> denominator == <span class="hljs-number">0</span> <span class="hljs-keyword">or</span> num % denominator != <span class="hljs-number">0</span>:<br>            <span class="hljs-keyword">continue</span><br>        y = num // denominator<br>        <span class="hljs-keyword">if</span> y &lt;= <span class="hljs-number">0</span>:<br>            <span class="hljs-keyword">continue</span><br>        x = y + d<br>        <span class="hljs-keyword">if</span> x ** <span class="hljs-number">3</span> - y ** <span class="hljs-number">3</span> == N:<br>            <span class="hljs-keyword">return</span> x, y<br>    <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>, -<span class="hljs-number">1</span><br><br><span class="hljs-comment"># 读取输入并输出结果</span><br>N = <span class="hljs-built_in">int</span>(<span class="hljs-built_in">input</span>())<br>x, y = find_xy(N)<br><span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;<span class="hljs-subst">&#123;x&#125;</span> <span class="hljs-subst">&#123;y&#125;</span>&quot;</span> <span class="hljs-keyword">if</span> x != -<span class="hljs-number">1</span> <span class="hljs-keyword">else</span> -<span class="hljs-number">1</span>)<br></code></pre></td></tr></table></figure>
-<hr>
-<h3 id="复杂度分析"><strong>复杂度分析</strong></h3>
-<ul>
-<li><strong>时间复杂度</strong>：(O(\sqrt[3]{N}))，通过二分法优化后，枚举次数大幅减少。</li>
-<li><strong>空间复杂度</strong>：(O(1))，仅需常数空间存储变量。</li>
-</ul>
-<hr>
-<h3 id="示例验证"><strong>示例验证</strong></h3>
-<ol>
-<li>
-<p><strong>输入</strong>：7<br>
-<strong>输出</strong>：2 1<br>
-<strong>解释</strong>：(2^3 - 1^3 = 8 - 1 = 7)。</p>
-</li>
-<li>
-<p><strong>输入</strong>：19<br>
-<strong>输出</strong>：3 2<br>
-<strong>解释</strong>：(3^3 - 2^3 = 27 - 8 = 19)。</p>
-</li>
-<li>
-<p><strong>输入</strong>：1<br>
-<strong>输出</strong>：-1<br>
-<strong>解释</strong>：无正整数解。</p>
-</li>
-</ol>
-<hr>
-<h3 id="总结"><strong>总结</strong></h3>
-<p>通过枚举 (d) 并结合数学推导，能够高效地找到满足条件的正整数对 ((x, y))。该方法充分利用了因式分解和二次方程的特性，确保了在合理时间内处理大范围输入。</p>
-
+                
                 
               </div>
             
@@ -372,8 +317,8 @@ m = 3d \cdot (4N - d^3)<br>
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div></div>
-      <div>https://wwxnb261.github.io/2025/03/20/test/</div>
+      <div>test</div>
+      <div>https://wwxnb261.github.io/2025/03/24/test/</div>
     </div>
     <div class="license-meta">
       
@@ -385,13 +330,13 @@ m = 3d \cdot (4N - d^3)<br>
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2025年3月20日</div>
+          <div>2025年3月24日</div>
         </div>
       
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2025年3月20日</div>
+          <div>2025年3月24日</div>
         </div>
       
       
@@ -422,18 +367,12 @@ m = 3d \cdot (4N - d^3)<br>
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/03/21/%E8%80%83%E7%A0%94%E8%AE%B0%E5%BD%953%E6%9C%881%E6%97%A5/" title="考研记录3月1日">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">考研记录3月1日</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/03/20/%E6%9E%81%E5%9D%90%E6%A0%87%E4%B8%8B%E7%9A%84%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86%E7%9A%84%E8%8C%83%E5%9B%B4%E7%A1%AE%E5%AE%9A/" title="极坐标下的二重积分的范围确定">
-                        <span class="hidden-mobile">极坐标下的二重积分的范围确定</span>
+                      <a href="/2025/03/24/%E8%93%9D%E6%A1%A5%E6%9D%AF%E6%8A%A2%E5%88%86%E7%AE%97%E6%B3%95%E5%88%B7%E9%A2%98/" title="蓝桥杯抢分算法刷题">
+                        <span class="hidden-mobile">蓝桥杯抢分算法刷题</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

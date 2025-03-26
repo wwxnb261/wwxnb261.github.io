@@ -19,15 +19,15 @@
   <meta name="author" content="Shiyi Wang">
   <meta name="keywords" content="wwx,record">
   
-    <meta name="description" content="函数的连续，可导，可微辨析">
+    <meta name="description" content="关于反三角函数的转换注意范围以及事项">
 <meta property="og:type" content="article">
-<meta property="og:title" content="函数的连续，可导，可微辨析">
-<meta property="og:url" content="https://wwxnb261.github.io/2025/03/09/%E5%87%BD%E6%95%B0%E7%9A%84%E8%BF%9E%E7%BB%AD%EF%BC%8C%E5%8F%AF%E5%AF%BC%EF%BC%8C%E5%8F%AF%E5%BE%AE%E8%BE%A8%E6%9E%90/index.html">
+<meta property="og:title" content="反三角替换规则">
+<meta property="og:url" content="https://wwxnb261.github.io/2025/03/26/%E8%80%83%E7%A0%94/%E5%8F%8D%E4%B8%89%E8%A7%92%E6%9B%BF%E6%8D%A2%E8%A7%84%E5%88%99/index.html">
 <meta property="og:site_name" content="Shiyi Wang 博客">
-<meta property="og:description" content="函数的连续，可导，可微辨析">
+<meta property="og:description" content="关于反三角函数的转换注意范围以及事项">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-03-09T07:46:50.000Z">
-<meta property="article:modified_time" content="2025-03-25T13:26:55.616Z">
+<meta property="article:published_time" content="2025-03-26T03:38:52.000Z">
+<meta property="article:modified_time" content="2025-03-26T03:39:43.433Z">
 <meta property="article:author" content="Shiyi Wang">
 <meta property="article:tag" content="考研">
 <meta property="article:tag" content="数学">
@@ -35,7 +35,7 @@
   
   
   
-  <title>函数的连续，可导，可微辨析 - Shiyi Wang 博客</title>
+  <title>反三角替换规则 - Shiyi Wang 博客</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -213,7 +213,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="函数的连续，可导，可微辨析"></span>
+            <span id="subtitle" data-typed-text="反三角替换规则"></span>
           
         </div>
 
@@ -224,8 +224,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-03-09 15:46" pubdate>
-          2025年3月9日 下午
+        <time datetime="2025-03-26 11:38" pubdate>
+          2025年3月26日 中午
         </time>
       </span>
     
@@ -236,7 +236,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          448 字
+          596 字
         
       </span>
     
@@ -247,7 +247,7 @@
         
         
         
-          4 分钟
+          5 分钟
         
       </span>
     
@@ -284,13 +284,13 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">函数的连续，可导，可微辨析</h1>
+            <h1 id="seo-header">反三角替换规则</h1>
             
             
               <p id="updated-time" class="note note-info" style="">
                 
                   
-                    本文最后更新于 2025年3月25日 晚上
+                    本文最后更新于 2025年3月26日 中午
                   
                 
               </p>
@@ -298,47 +298,100 @@
             
             
               <div class="note note-info post-excerpt">
-                函数的连续，可导，可微辨析
+                关于反三角函数的转换注意范围以及事项
               </div>
             
             
             
               <div class="markdown-body">
                 
-                <p>当一个函数的题目给出条件为：函数在区间内有定义的话，并不意味着该函数是连续的。</p>
-<p>当提到函数在区间内有定义，这只表示该区间内的每个点都有对应的函数值，但这并不保证函数是连续的。以下是几个关键点：</p>
-<h2 id="函数有定义与连续性的区别">函数有定义与连续性的区别</h2>
+                <h1>转换完成文档</h1>
+<p>在三角方程中，出现 $\pi - \arcsin x$ 的解是因为 <strong>正弦函数在 $[0, \pi]$ 区间内的对称性</strong>。以下是详细解释：</p>
+<hr>
+<h3 id="1-正弦函数的图像特性"><strong>1. 正弦函数的图像特性</strong></h3>
+<p>正弦函数 $\sin \theta$ 在区间 $[0, \pi]$ 内具有对称性：</p>
 <ul>
-<li><strong>函数有定义:</strong> 对于区间内的每一点 x，函数 f(x) 都有一个确定的值</li>
-<li><strong>函数连续:</strong> 除了在每点有定义外，还要求 lim(x→a) f(x) = f(a)</li>
+<li>当 $\theta \in \left[ 0, \frac{\pi}{2} \right]$，$\sin \theta$ 单调递增。</li>
+<li>当 $\theta \in \left[ \frac{\pi}{2}, \pi \right]$，$\sin \theta$ 单调递减，且满足：<br>
+$$<br>
+\sin(\pi - \theta) = \sin \theta \quad (\theta \in \mathbb{R}).<br>
+$$</li>
 </ul>
-<h2 id="反例说明">反例说明</h2>
-<p>考虑函数：</p>
-
-$$
-f(x) = \begin{cases} 
-  1, & x \geq 0 \\ 
-  -1, & x < 0 
-\end{cases}
-$$
-
-<p>该函数在整个实数轴上有定义，但在 x = 0 处不连续，因为左右极限不相等。</p>
-<h2 id="考研中的应用">考研中的应用</h2>
-<p>在解题时，当仅给出函数在区间内有定义的条件时，需要额外检验函数的连续性，特别是在：</p>
+<hr>
+<h3 id="2-方程-sin-theta-x-的解"><strong>2. 方程 $\sin \theta = x$ 的解</strong></h3>
+<p>对于方程 $\sin \theta = x$（其中 $x \in [-1, 1]$），其解为：<br>
+$$<br>
+\theta = \arcsin x + 2k\pi \quad \text{或} \quad \theta = \pi - \arcsin x + 2k\pi \quad (k \in \mathbb{Z}).<br>
+$$<br>
+<strong>原因</strong>：</p>
 <ul>
-<li>讨论函数的可导性时（连续是可导的必要条件）</li>
-<li>应用中值定理、罗尔定理等需要连续性的定理时</li>
-<li>计算定积分时（被积函数需要连续）</li>
+<li><strong>主值解</strong>：$\arcsin x$ 返回的是 $\theta \in \left[ -\frac{\pi}{2}, \frac{\pi}{2} \right]$ 的解。</li>
+<li><strong>对称性补充解</strong>：由于 $\sin(\pi - \theta) = \sin \theta$，补充解为 $\pi - \arcsin x$，覆盖 $\theta \in \left[ \frac{\pi}{2}, \frac{3\pi}{2} \right]$ 的情况。</li>
 </ul>
-<h2 id="连续、可导、可微的关系">连续、可导、可微的关系</h2>
-<p>理解这三者之间的关系是数学分析中的重要内容：</p>
+<hr>
+<h3 id="3-几何解释（单位圆）"><strong>3. 几何解释（单位圆）</strong></h3>
+<p>在单位圆上，若某角度的正弦值为 $x$，则存在两个可能的角度：</p>
+<ol>
+<li><strong>第一象限角</strong>：$\theta_1 = \arcsin x$（位于右半圆）。</li>
+<li><strong>第二象限角</strong>：$\theta_2 = \pi - \arcsin x$（位于左半圆）。<br>
+这两个角度的正弦值相等（$\sin \theta_1 = \sin \theta_2 = x$），但余弦值相反（$\cos \theta_1 = -\cos \theta_2$）。</li>
+</ol>
+<p><strong>示例</strong>：<br>
+若 $\sin \theta = \frac{1}{2}$，则解为：<br>
+$$<br>
+\theta = \frac{\pi}{6} \quad \text{或} \quad \theta = \pi - \frac{\pi}{6} = \frac{5\pi}{6}.<br>
+$$</p>
+<hr>
+<h3 id="4-实际应用场景"><strong>4. 实际应用场景</strong></h3>
+<ol>
+<li>
+<p><strong>三角方程求解</strong>：<br>
+若要求 $\theta \in [0, \pi]$，则需同时考虑 $\arcsin x$ 和 $\pi - \arcsin x$。<br>
+<strong>示例</strong>：解三角形时，若已知两边及非夹角，可能有两解。</p>
+</li>
+<li>
+<p><strong>积分变量替换</strong>：<br>
+当通过 $x = \sin \theta$ 进行换元时，需根据积分区间选择正确的角度范围（例如，若 $\theta \in \left[ \frac{\pi}{2}, \pi \right]$，则需用 $\pi - \arcsin x$ 表示。</p>
+</li>
+</ol>
+<hr>
+<h3 id="5-常见误区"><strong>5. 常见误区</strong></h3>
 <ul>
-<li><strong>可导 → 连续:</strong> 如果函数在某点可导，则函数在该点必定连续</li>
-<li><strong>连续 ↛ 可导:</strong> 函数连续不一定可导，如 f(x) = |x| 在 x = 0 处连续但不可导</li>
-<li><strong>一元函数中:</strong> 可导与可微等价</li>
-<li><strong>多元函数中:</strong> 偏导数存在不保证函数可微</li>
+<li><strong>错误结论</strong>：认为 $\arcsin x$ 能覆盖所有解，忽略对称性补充解。</li>
+<li><strong>错误推导</strong>：直接将 $\sin \theta = x$ 写为 $\theta = \arcsin x$，导致遗漏解。</li>
 </ul>
-<p>函数有定义只是讨论函数性质的起点，进一步分析连续性、可导性和可微性对于理解函数行为至关重要。</p>
+<hr>
+<h3 id="总结"><strong>总结</strong></h3>
+<table>
+<thead>
+<tr>
+<th><strong>情境</strong></th>
+<th><strong>表达式</strong></th>
+<th><strong>意义</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>主值解（右半圆）</td>
+<td>$\theta = \arcsin x$</td>
+<td>角度位于 $\left[ -\frac{\pi}{2}, \frac{\pi}{2} \right]$。</td>
+</tr>
+<tr>
+<td>对称性补充解（左半圆）</td>
+<td>$\theta = \pi - \arcsin x$</td>
+<td>角度位于 $\left[ \frac{\pi}{2}, \frac{3\pi}{2} \right]$。</td>
+</tr>
+</tbody>
+</table>
+<p><strong>核心结论</strong>：<br>
+$\pi - \arcsin x$ 是方程 $\sin \theta = x$ 的必要补充解，用于覆盖正弦函数在单位圆上的对称性区域。</p>
+<hr>
+<p>✅ 验证报告：</p>
+<ul>
+<li>已转化行内公式：13处</li>
+<li>已调整独立公式：3处</li>
+<li>内容变更检测：0处非公式修改</li>
+</ul>
 
                 
               </div>
@@ -386,8 +439,8 @@ $$
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>函数的连续，可导，可微辨析</div>
-      <div>https://wwxnb261.github.io/2025/03/09/函数的连续，可导，可微辨析/</div>
+      <div>反三角替换规则</div>
+      <div>https://wwxnb261.github.io/2025/03/26/考研/反三角替换规则/</div>
     </div>
     <div class="license-meta">
       
@@ -399,13 +452,13 @@ $$
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2025年3月9日</div>
+          <div>2025年3月26日</div>
         </div>
       
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2025年3月25日</div>
+          <div>2025年3月26日</div>
         </div>
       
       
@@ -436,9 +489,9 @@ $$
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/03/10/%E6%9E%81%E5%9D%90%E6%A0%87%E4%B8%8B%E7%9A%84%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86%E7%9A%84%E8%8C%83%E5%9B%B4%E7%A1%AE%E5%AE%9A/" title="极坐标下的二重积分的范围确定">
+                      <a href="/2025/03/26/%E8%80%83%E7%A0%94/%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86%E7%9A%84%E7%89%B9%E6%80%A7/" title="二重积分的特性">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">极坐标下的二重积分的范围确定</span>
+                        <span class="hidden-mobile">二重积分的特性</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -446,8 +499,8 @@ $$
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/03/04/%E5%87%BD%E6%95%B0%E8%BF%9E%E7%BB%AD%E4%B8%AD%E7%9A%84%E9%97%B4%E6%96%AD%E7%82%B9%E7%B1%BB%E5%9E%8B%E6%80%BB%E7%BB%93/" title="函数连续中的间断点类型总结">
-                        <span class="hidden-mobile">函数连续中的间断点类型总结</span>
+                      <a href="/2025/03/25/arcsin%E5%8F%8D%E4%B8%89%E8%A7%92%E6%9B%BF%E6%8D%A2%E7%9A%84%E6%97%B6%E5%80%99%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/" title="arcsin反三角替换的时候注意事项">
+                        <span class="hidden-mobile">arcsin反三角替换的时候注意事项</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

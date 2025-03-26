@@ -19,27 +19,23 @@
   <meta name="author" content="Shiyi Wang">
   <meta name="keywords" content="wwx,record">
   
-    <meta name="description" content="蓝桥杯抢分算法刷题">
+    <meta name="description" content="函数的连续，可导，可微辨析">
 <meta property="og:type" content="article">
-<meta property="og:title" content="蓝桥杯抢分算法刷题">
-<meta property="og:url" content="https://wwxnb261.github.io/2025/03/24/%E8%93%9D%E6%A1%A5%E6%9D%AF%E6%8A%A2%E5%88%86%E7%AE%97%E6%B3%95%E5%88%B7%E9%A2%98/index.html">
+<meta property="og:title" content="函数的连续，可导，可微辨析">
+<meta property="og:url" content="https://wwxnb261.github.io/2025/03/09/%E5%87%BD%E6%95%B0%E7%9A%84%E8%BF%9E%E7%BB%AD%EF%BC%8C%E5%8F%AF%E5%AF%BC%EF%BC%8C%E5%8F%AF%E5%BE%AE%E8%BE%A8%E6%9E%90/index.html">
 <meta property="og:site_name" content="Shiyi Wang 博客">
-<meta property="og:description" content="蓝桥杯抢分算法刷题">
+<meta property="og:description" content="函数的连续，可导，可微辨析">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://wwxnb261.github.io/images/image.png">
-<meta property="og:image" content="https://wwxnb261.github.io/images/image1.png">
-<meta property="og:image" content="https://wwxnb261.github.io/images/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92.png">
-<meta property="article:published_time" content="2025-03-24T07:55:15.000Z">
-<meta property="article:modified_time" content="2025-03-25T13:24:06.023Z">
+<meta property="article:published_time" content="2025-03-09T07:46:50.000Z">
+<meta property="article:modified_time" content="2025-03-25T13:26:55.616Z">
 <meta property="article:author" content="Shiyi Wang">
-<meta property="article:tag" content="算法">
-<meta property="article:tag" content="蓝桥杯">
+<meta property="article:tag" content="考研">
+<meta property="article:tag" content="数学">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://wwxnb261.github.io/images/image.png">
   
   
   
-  <title>蓝桥杯抢分算法刷题 - Shiyi Wang 博客</title>
+  <title>函数的连续，可导，可微辨析 - Shiyi Wang 博客</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -217,7 +213,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="蓝桥杯抢分算法刷题"></span>
+            <span id="subtitle" data-typed-text="函数的连续，可导，可微辨析"></span>
           
         </div>
 
@@ -228,8 +224,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-03-24 15:55" pubdate>
-          2025年3月24日 下午
+        <time datetime="2025-03-09 15:46" pubdate>
+          2025年3月9日 下午
         </time>
       </span>
     
@@ -240,7 +236,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          708 字
+          448 字
         
       </span>
     
@@ -251,7 +247,7 @@
         
         
         
-          6 分钟
+          4 分钟
         
       </span>
     
@@ -288,7 +284,7 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">蓝桥杯抢分算法刷题</h1>
+            <h1 id="seo-header">函数的连续，可导，可微辨析</h1>
             
             
               <p id="updated-time" class="note note-info" style="">
@@ -302,110 +298,47 @@
             
             
               <div class="note note-info post-excerpt">
-                蓝桥杯抢分算法刷题
+                函数的连续，可导，可微辨析
               </div>
             
             
             
               <div class="markdown-body">
                 
-                <h2 id="蓝桥杯-7-天速成计划表（直接抄作业）">蓝桥杯 7 天速成计划表（直接抄作业）</h2>
-<h3 id="Day1-3：暴力美学训练营">Day1-3：暴力美学训练营</h3>
-<h4 id="必杀技-1：三层-for-循环爆破">必杀技 1：三层 for 循环爆破</h4>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 经典题解模式（以三数之和为例）</span><br><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(n):<br>    <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(i+<span class="hljs-number">1</span>, n):<br>        <span class="hljs-keyword">for</span> k <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(j+<span class="hljs-number">1</span>, n):<br>            <span class="hljs-keyword">if</span> arr[i]+arr[j]+arr[k] == target:<br>                <span class="hljs-keyword">return</span> [i,j,k]<br></code></pre></td></tr></table></figure>
-<p><img src="/images/image.png" srcset="/img/loading.gif" lazyload alt="算法示意图"></p>
-<h4 id="必杀技-2：打表法空间换时打法">必杀技 2：打表法空间换时打法</h4>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 预生成斐波那契数列（打表法）</span><br>fib = [<span class="hljs-number">0</span>,<span class="hljs-number">1</span>]<br><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">2</span>,<span class="hljs-number">1000</span>):<br>    fib.append(fib[i-<span class="hljs-number">1</span>] + fib[i-<span class="hljs-number">2</span>])<br></code></pre></td></tr></table></figure>
-<p><strong>每日任务</strong>：<br>
-✅ 暴力破解近 5 年真题 - 日期计算<br>
-✅ 排列组合高频题 - 骰子概率问题<br>
-✅ 简单数论题 - 质因数分解</p>
-<h3 id="Day4-7：DFS-BFS-急救包">Day4-7：DFS/BFS 急救包</h3>
-<h4 id="万能模板（迷宫问题）">万能模板（迷宫问题）</h4>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">dfs</span>(<span class="hljs-params">当前状态</span>):<br>    <span class="hljs-keyword">if</span> 终止条件:<br>        <span class="hljs-keyword">return</span><br>    visited[x][y] = <span class="hljs-literal">True</span><br>    <span class="hljs-keyword">for</span> dx, dy <span class="hljs-keyword">in</span> [(-<span class="hljs-number">1</span>,<span class="hljs-number">0</span>),(<span class="hljs-number">1</span>,<span class="hljs-number">0</span>),(<span class="hljs-number">0</span>,-<span class="hljs-number">1</span>),(<span class="hljs-number">0</span>,<span class="hljs-number">1</span>)]:<br>        dfs(x+dx, y+dy)<br></code></pre></td></tr></table></figure>
-<p><img src="/images/image1.png" srcset="/img/loading.gif" lazyload alt="模板"></p>
-<p><strong>重点题型</strong>：<br>
-▨ 全排列问题（注意剪枝）<br>
-▨ 迷宫问题<br>
-▨ 岛屿数量（行列扫描）<br>
-▨ 路径计数（记忆化搜索）</p>
-<blockquote>
-<p>保命技巧：遇到递归超时的时候立即转记忆化搜索</p>
-</blockquote>
-<h2 id="三、最后-13-天抢分攻略">三、最后 13 天抢分攻略</h2>
-<h3 id="📅-每日作息表">📅 每日作息表</h3>
-<table>
-<thead>
-<tr>
-<th>时间</th>
-<th>任务</th>
-<th>工具</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>7:00-8:30</td>
-<td>背模板 + 重写错题</td>
-<td>错题本 + A4 纸手写</td>
-</tr>
-<tr>
-<td>9:00-12:00</td>
-<td>专题突破（优先 DP 基础）</td>
-<td>蓝桥杯官方训练系统</td>
-</tr>
-<tr>
-<td>14:00-17:00</td>
-<td>全真模考（严格计时）</td>
-<td>2019-2021 年真题</td>
-</tr>
-<tr>
-<td>20:00-22:30</td>
-<td>精研答案 + 优化代码</td>
-<td>GitHub 大佬题解对比</td>
-</tr>
-</tbody>
-</table>
-<h3 id="🚑-五大必考题型急救指南">🚑 五大必考题型急救指南</h3>
-<h4 id="①-动态规划（带注释模板）">① 动态规划（带注释模板）</h4>
-<p>$$ dp[i] = \max(dp[i-1], dp[i-2]+nums[i]) $$</p>
+                <p>当一个函数的题目给出条件为：函数在区间内有定义的话，并不意味着该函数是连续的。</p>
+<p>当提到函数在区间内有定义，这只表示该区间内的每个点都有对应的函数值，但这并不保证函数是连续的。以下是几个关键点：</p>
+<h2 id="函数有定义与连续性的区别">函数有定义与连续性的区别</h2>
 <ul>
-<li>只背0-1背包和爬楼梯模板</li>
+<li><strong>函数有定义:</strong> 对于区间内的每一点 x，函数 f(x) 都有一个确定的值</li>
+<li><strong>函数连续:</strong> 除了在每点有定义外，还要求 lim(x→a) f(x) = f(a)</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 0-1背包标准代码</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">knapsack</span>(<span class="hljs-params">W, wt, val</span>):<br>    dp = [<span class="hljs-number">0</span>]*(W+<span class="hljs-number">1</span>)<br>    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-built_in">len</span>(wt)):<br>        <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(W, wt[i]-<span class="hljs-number">1</span>, -<span class="hljs-number">1</span>):<br>            dp[j] = <span class="hljs-built_in">max</span>(dp[j], dp[j-wt[i]] + val[i])<br>    <span class="hljs-keyword">return</span> dp[W]<br></code></pre></td></tr></table></figure>
-<p><img src="/images/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92.png" srcset="/img/loading.gif" lazyload alt="动态规划"></p>
-<h4 id="②-贪心算法（20-命中率）">② 贪心算法（20%命中率）</h4>
+<h2 id="反例说明">反例说明</h2>
+<p>考虑函数：</p>
+
+$$
+f(x) = \begin{cases} 
+  1, & x \geq 0 \\ 
+  -1, & x < 0 
+\end{cases}
+$$
+
+<p>该函数在整个实数轴上有定义，但在 x = 0 处不连续，因为左右极限不相等。</p>
+<h2 id="考研中的应用">考研中的应用</h2>
+<p>在解题时，当仅给出函数在区间内有定义的条件时，需要额外检验函数的连续性，特别是在：</p>
 <ul>
-<li>记住三个经典场景：区间调度、哈夫曼编码、加油站问题</li>
+<li>讨论函数的可导性时（连续是可导的必要条件）</li>
+<li>应用中值定理、罗尔定理等需要连续性的定理时</li>
+<li>计算定积分时（被积函数需要连续）</li>
 </ul>
-<h4 id="③-字符串处理（必考）">③ 字符串处理（必考）</h4>
+<h2 id="连续、可导、可微的关系">连续、可导、可微的关系</h2>
+<p>理解这三者之间的关系是数学分析中的重要内容：</p>
 <ul>
-<li>Python组直接暴力切片，C++组背书substr+正则表达式基础</li>
+<li><strong>可导 → 连续:</strong> 如果函数在某点可导，则函数在该点必定连续</li>
+<li><strong>连续 ↛ 可导:</strong> 函数连续不一定可导，如 f(x) = |x| 在 x = 0 处连续但不可导</li>
+<li><strong>一元函数中:</strong> 可导与可微等价</li>
+<li><strong>多元函数中:</strong> 偏导数存在不保证函数可微</li>
 </ul>
-<h4 id="④简单数论（30-命中率）">④简单数论（30%命中率）</h4>
-<ul>
-<li>重点掌握：最大公约数、最小公倍数、闰年判断、质数筛选法</li>
-</ul>
-<h4 id="⑤-日期计算（每年必出：背熟蔡勒公式）">⑤ 日期计算（每年必出：背熟蔡勒公式）</h4>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 星期计算公式</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">zeller</span>(<span class="hljs-params">y, m, d</span>):<br>    <span class="hljs-keyword">if</span> m &lt; <span class="hljs-number">3</span>:<br>        m += <span class="hljs-number">12</span><br>        y -= <span class="hljs-number">1</span><br>    h = (d + <span class="hljs-number">13</span>*(m+<span class="hljs-number">1</span>)//<span class="hljs-number">5</span> + y + y//<span class="hljs-number">4</span> - y//<span class="hljs-number">100</span> + y//<span class="hljs-number">400</span>) % <span class="hljs-number">7</span><br>    <span class="hljs-keyword">return</span> [<span class="hljs-string">&quot;六&quot;</span>,<span class="hljs-string">&quot;日&quot;</span>,<span class="hljs-string">&quot;一&quot;</span>,<span class="hljs-string">&quot;二&quot;</span>,<span class="hljs-string">&quot;三&quot;</span>,<span class="hljs-string">&quot;四&quot;</span>,<span class="hljs-string">&quot;五&quot;</span>][h]<br></code></pre></td></tr></table></figure>
-<h2 id="四、考场偷分黑科技">四、考场偷分黑科技</h2>
-<ol>
-<li>
-<p><strong>玄学输出</strong><br>
-遇到不会的题直接输出样例：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;3\n1 4 5&quot;</span>)  <span class="hljs-comment"># 样例答案格式</span><br></code></pre></td></tr></table></figure>
-</li>
-<li>
-<p><strong>输入加速（C++ 版）</strong></p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs cpp">ios::<span class="hljs-built_in">sync_with_stdio</span>(<span class="hljs-literal">false</span>); <br>cin.<span class="hljs-built_in">tie</span>(<span class="hljs-number">0</span>);  <span class="hljs-comment">// 加速 300%</span><br></code></pre></td></tr></table></figure>
-</li>
-<li>
-<p><strong>卡时间神操作</strong></p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs markdown">[!WARNING]<br>▨ 最后 5 分钟必须检查换行符<br>▨ 用文本对比工具验证输出格式<br></code></pre></td></tr></table></figure>
-</li>
-</ol>
-<blockquote>
-<p><strong>博弈论精髓</strong>：蓝桥杯是策略游戏而非能力测试，当你开始执行本计划时，已战胜 50% 的裸考者。立即启动暴力美学程序冲击省奖！</p>
-</blockquote>
+<p>函数有定义只是讨论函数性质的起点，进一步分析连续性、可导性和可微性对于理解函数行为至关重要。</p>
 
                 
               </div>
@@ -424,7 +357,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E8%93%9D%E6%A1%A5%E6%9D%AF/" class="category-chain-item">蓝桥杯</a>
+  <a href="/categories/%E8%80%83%E7%A0%94/" class="category-chain-item">考研</a>
   
   
 
@@ -439,9 +372,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E7%AE%97%E6%B3%95/" class="print-no-link">#算法</a>
+        <a href="/tags/%E8%80%83%E7%A0%94/" class="print-no-link">#考研</a>
       
-        <a href="/tags/%E8%93%9D%E6%A1%A5%E6%9D%AF/" class="print-no-link">#蓝桥杯</a>
+        <a href="/tags/%E6%95%B0%E5%AD%A6/" class="print-no-link">#数学</a>
       
     </div>
   
@@ -453,8 +386,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>蓝桥杯抢分算法刷题</div>
-      <div>https://wwxnb261.github.io/2025/03/24/蓝桥杯抢分算法刷题/</div>
+      <div>函数的连续，可导，可微辨析</div>
+      <div>https://wwxnb261.github.io/2025/03/09/函数的连续，可导，可微辨析/</div>
     </div>
     <div class="license-meta">
       
@@ -466,7 +399,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2025年3月24日</div>
+          <div>2025年3月9日</div>
         </div>
       
       
@@ -503,9 +436,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/03/25/%E4%BC%BD%E9%A9%AC%E5%87%BD%E6%95%B0%E7%9A%84%E7%A7%AF%E5%88%86%E5%80%BC/" title="伽马函数的积分值">
+                      <a href="/2025/03/10/%E6%9E%81%E5%9D%90%E6%A0%87%E4%B8%8B%E7%9A%84%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86%E7%9A%84%E8%8C%83%E5%9B%B4%E7%A1%AE%E5%AE%9A/" title="极坐标下的二重积分的范围确定">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">伽马函数的积分值</span>
+                        <span class="hidden-mobile">极坐标下的二重积分的范围确定</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -513,8 +446,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/03/21/%E8%80%83%E7%A0%94%E8%AE%B0%E5%BD%953%E6%9C%881%E6%97%A5/" title="考研记录3月1日">
-                        <span class="hidden-mobile">考研记录3月1日</span>
+                      <a href="/2025/03/04/%E5%87%BD%E6%95%B0%E8%BF%9E%E7%BB%AD%E4%B8%AD%E7%9A%84%E9%97%B4%E6%96%AD%E7%82%B9%E7%B1%BB%E5%9E%8B%E6%80%BB%E7%BB%93/" title="函数连续中的间断点类型总结">
+                        <span class="hidden-mobile">函数连续中的间断点类型总结</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

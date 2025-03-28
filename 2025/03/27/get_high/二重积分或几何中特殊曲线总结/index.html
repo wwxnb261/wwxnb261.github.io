@@ -1,0 +1,1173 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Shiyi Wang">
+  <meta name="keywords" content="wwx,record">
+  
+    <meta name="description" content="二重积分或几何中特殊曲线总结">
+<meta property="og:type" content="article">
+<meta property="og:title" content="二重积分或几何中特殊曲线总结">
+<meta property="og:url" content="https://wwxnb261.github.io/2025/03/27/get_high/%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86%E6%88%96%E5%87%A0%E4%BD%95%E4%B8%AD%E7%89%B9%E6%AE%8A%E6%9B%B2%E7%BA%BF%E6%80%BB%E7%BB%93/index.html">
+<meta property="og:site_name" content="Shiyi Wang 博客">
+<meta property="og:description" content="二重积分或几何中特殊曲线总结">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-03-27T06:21:20.000Z">
+<meta property="article:modified_time" content="2025-03-27T06:25:36.747Z">
+<meta property="article:author" content="Shiyi Wang">
+<meta property="article:tag" content="考研">
+<meta property="article:tag" content="数学">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>二重积分或几何中特殊曲线总结 - Shiyi Wang 博客</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"wwxnb261.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>学习之路，知行合一</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/overview/" target="_self">
+                <i class="iconfont icon-books"></i>
+                <span>总览</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="二重积分或几何中特殊曲线总结"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-03-27 14:21" pubdate>
+          2025年3月27日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          2k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          17 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">二重积分或几何中特殊曲线总结</h1>
+            
+            
+              <p id="updated-time" class="note note-info" style="">
+                
+                  
+                    本文最后更新于 2025年3月27日 下午
+                  
+                
+              </p>
+            
+            
+            
+              <div class="note note-info post-excerpt">
+                二重积分或几何中特殊曲线总结
+              </div>
+            
+            
+            
+              <div class="markdown-body">
+                
+                <p>以下是高等数学中常见的特殊曲线总结，包含名称、方程、图像特征及典型应用：</p>
+<hr>
+<h1><strong>总结</strong></h1>
+<h3 id="1-星形线（Astroid）"><strong>1. 星形线（Astroid）</strong></h3>
+<ul>
+<li><strong>方程</strong>：
+<ul>
+<li>直角坐标：$x^{2/3} + y^{2/3} = a^{2/3}$</li>
+<li>参数方程：$x = a\cos^3\theta$, $y = a\sin^3\theta$</li>
+</ul>
+</li>
+<li><strong>图像</strong>：四尖点对称，形似四角星。</li>
+<li><strong>应用</strong>：内摆线特例（小圆半径为大圆的1/4），积分对称性示例。</li>
+</ul>
+<hr>
+<h3 id="2-心脏线（Cardioid）"><strong>2. 心脏线（Cardioid）</strong></h3>
+<ul>
+<li><strong>方程</strong>：
+<ul>
+<li>极坐标：$r = a(1 + \cos\theta)$</li>
+<li>参数方程：$x = a(2\cos\theta - \cos2\theta)$, $y = a(2\sin\theta - \sin2\theta)$</li>
+</ul>
+</li>
+<li><strong>图像</strong>：心形，单尖点。</li>
+<li><strong>应用</strong>：蜗线的一种，声学与光学中的焦散曲线。</li>
+</ul>
+<hr>
+<h3 id="3-笛卡尔叶形线（Folium-of-Descartes）"><strong>3. 笛卡尔叶形线（Folium of Descartes）</strong></h3>
+<ul>
+<li><strong>方程</strong>：
+<ul>
+<li>直角坐标：$x^3 + y^3 = 3axy$</li>
+<li>参数方程：$x = \frac{3at}{1 + t^3}$, $y = \frac{3at^2}{1 + t^3}$</li>
+</ul>
+</li>
+<li><strong>图像</strong>：单叶通过原点，渐近线为$x + y + a = 0$。</li>
+<li><strong>应用</strong>：参数方程与极限分析范例。</li>
+</ul>
+<hr>
+<h3 id="4-双纽线（Lemniscate）"><strong>4. 双纽线（Lemniscate）</strong></h3>
+<ul>
+<li><strong>方程</strong>：
+<ul>
+<li>伯努利双纽线：$(x^2 + y^2)^2 = a^2(x^2 - y^2)$</li>
+<li>极坐标：$r^2 = a^2\cos2\theta$</li>
+</ul>
+</li>
+<li><strong>图像</strong>：横置的“∞”形，两焦点对称。</li>
+<li><strong>应用</strong>：复数平面上模数的几何表示。</li>
+</ul>
+<hr>
+<h3 id="5-摆线（Cycloid）"><strong>5. 摆线（Cycloid）</strong></h3>
+<ul>
+<li><strong>方程</strong>：
+<ul>
+<li>参数方程：<br>
+$$<br>
+x = a(\theta - \sin\theta), \quad y = a(1 - \cos\theta)<br>
+$$</li>
+</ul>
+</li>
+<li><strong>图像</strong>：周期性拱形，无端点。</li>
+<li><strong>应用</strong>：最速降线问题，力学中的等时曲线。</li>
+</ul>
+<hr>
+<h3 id="6-外摆线（Epicycloid）与内摆线（Hypocycloid）"><strong>6. 外摆线（Epicycloid）与内摆线（Hypocycloid）</strong></h3>
+<ul>
+<li><strong>方程</strong>（外摆线为例）：
+<ul>
+<li>参数方程：<br>
+$$<br>
+x = (R + r)\cos\theta - r\cos\left(\frac{R + r}{r}\theta\right), \quad y = (R + r)\sin\theta - r\sin\left(\frac{R + r}{r}\theta\right)<br>
+$$</li>
+</ul>
+</li>
+<li><strong>特例</strong>：
+<ul>
+<li><strong>星形线</strong>：内摆线（$R = 4r$）。</li>
+<li><strong>心脏线</strong>：外摆线（$R = r$）。</li>
+</ul>
+</li>
+<li><strong>应用</strong>：齿轮齿形设计，几何变换案例。</li>
+</ul>
+<hr>
+<h3 id="7-阿基米德螺线（Archimedean-Spiral）"><strong>7. 阿基米德螺线（Archimedean Spiral）</strong></h3>
+<ul>
+<li><strong>方程</strong>：
+<ul>
+<li>极坐标：$r = a\theta$</li>
+</ul>
+</li>
+<li><strong>图像</strong>：每圈间距相等的螺旋线。</li>
+<li><strong>应用</strong>：机械凸轮设计，极坐标积分示例。</li>
+</ul>
+<hr>
+<h3 id="8-对数螺线（Logarithmic-Spiral）"><strong>8. 对数螺线（Logarithmic Spiral）</strong></h3>
+<ul>
+<li><strong>方程</strong>：
+<ul>
+<li>极坐标：$r = ae^{b\theta}$</li>
+</ul>
+</li>
+<li><strong>图像</strong>：间距随角度指数增长的螺旋线。</li>
+<li><strong>应用</strong>：自然界中的生长模式（如鹦鹉螺壳）。</li>
+</ul>
+<hr>
+<h3 id="9-悬链线（Catenary）"><strong>9. 悬链线（Catenary）</strong></h3>
+<ul>
+<li><strong>方程</strong>：
+<ul>
+<li>直角坐标：$y = a\cosh\left(\frac{x}{a}\right)$</li>
+</ul>
+</li>
+<li><strong>图像</strong>：两端下垂的曲线，与抛物线不同。</li>
+<li><strong>应用</strong>：桥梁与拱门设计，最小势能问题。</li>
+</ul>
+<hr>
+<h3 id="10-玫瑰线（Rose-Curve）"><strong>10. 玫瑰线（Rose Curve）</strong></h3>
+<ul>
+<li><strong>方程</strong>：
+<ul>
+<li>极坐标：$r = a\cos(k\theta)$ 或 $r = a\sin(k\theta)$</li>
+</ul>
+</li>
+<li><strong>类型</strong>：
+<ul>
+<li><strong>三叶玫瑰线</strong>（$k = 3$）：三瓣对称。</li>
+<li><strong>四叶玫瑰线</strong>（$k = 2$）：四瓣对称。</li>
+</ul>
+</li>
+<li><strong>应用</strong>：极坐标绘图与对称性分析。</li>
+</ul>
+<hr>
+<h3 id="11-箕舌线（Witch-of-Agnesi）"><strong>11. 箕舌线（Witch of Agnesi）</strong></h3>
+<ul>
+<li><strong>方程</strong>：
+<ul>
+<li>直角坐标：$y = \frac{8a^3}{x^2 + 4a^2}$</li>
+</ul>
+</li>
+<li><strong>图像</strong>：钟形曲线，渐近线为$y = 0$。</li>
+<li><strong>应用</strong>：概率密度函数的历史原型。</li>
+</ul>
+<hr>
+<h3 id="12-蚌线（Conchoid）"><strong>12. 蚌线（Conchoid）</strong></h3>
+<ul>
+<li><strong>方程</strong>（以尼科米德蚌线为例）：
+<ul>
+<li>极坐标：$r = a + b\sec\theta$</li>
+</ul>
+</li>
+<li><strong>图像</strong>：依据参数不同，可能为闭合或分支曲线。</li>
+<li><strong>应用</strong>：经典几何问题（三等分角）。</li>
+</ul>
+<hr>
+<h3 id="13-双曲线（Hyperbola）与椭圆（Ellipse）"><strong>13. 双曲线（Hyperbola）与椭圆（Ellipse）</strong></h3>
+<ul>
+<li><strong>双曲线</strong>：
+<ul>
+<li>方程：$\frac{x^2}{a^2} - \frac{y^2}{b^2} = 1$</li>
+<li>应用：天体轨道（开放路径）、渐近行为分析。</li>
+</ul>
+</li>
+<li><strong>椭圆</strong>：
+<ul>
+<li>方程：$\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1$</li>
+<li>应用：行星轨道、几何变换。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="14-抛物线（Parabola）"><strong>14. 抛物线（Parabola）</strong></h3>
+<ul>
+<li><strong>方程</strong>：$y^2 = 4ax$</li>
+<li><strong>应用</strong>：抛体运动轨迹、光学反射性质。</li>
+</ul>
+<hr>
+<h3 id="15-马鞍面曲线（双曲抛物面截线）"><strong>15. 马鞍面曲线（双曲抛物面截线）</strong></h3>
+<ul>
+<li><strong>方程</strong>：$z = xy$ 或 $x^2 - y^2 = z$</li>
+<li><strong>图像</strong>：鞍形，沿不同方向开口相反。</li>
+<li><strong>应用</strong>：鞍点分析、多变量函数极值示例。</li>
+</ul>
+<hr>
+<h3 id="总结表"><strong>总结表</strong></h3>
+<table>
+<thead>
+<tr>
+<th><strong>曲线名称</strong></th>
+<th><strong>典型方程</strong></th>
+<th><strong>图像特征</strong></th>
+<th><strong>应用场景</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>星形线</td>
+<td>$x^{2/3} + y^{2/3} = a^{2/3}$</td>
+<td>四尖点对称</td>
+<td>积分对称性分析</td>
+</tr>
+<tr>
+<td>心脏线</td>
+<td>$r = a(1 + \cos\theta)$</td>
+<td>心形单尖点</td>
+<td>蜗线运动、焦散现象</td>
+</tr>
+<tr>
+<td>笛卡尔叶形线</td>
+<td>$x^3 + y^3 = 3axy$</td>
+<td>单叶过原点</td>
+<td>参数方程范例</td>
+</tr>
+<tr>
+<td>双纽线</td>
+<td>$(x^2 + y^2)^2 = a^2(x^2 - y^2)$</td>
+<td>横置“∞”形</td>
+<td>复数几何、对称积分</td>
+</tr>
+<tr>
+<td>摆线</td>
+<td>$x = a(\theta - \sin\theta)$</td>
+<td>周期性拱形</td>
+<td>最速降线、力学问题</td>
+</tr>
+<tr>
+<td>阿基米德螺线</td>
+<td>$r = a\theta$</td>
+<td>等间距螺旋</td>
+<td>极坐标积分、机械设计</td>
+</tr>
+<tr>
+<td>悬链线</td>
+<td>$y = a\cosh(x/a)$</td>
+<td>下垂曲线</td>
+<td>桥梁设计、最小势能</td>
+</tr>
+<tr>
+<td>玫瑰线</td>
+<td>$r = a\cos(k\theta)$</td>
+<td>多瓣对称</td>
+<td>极坐标绘图</td>
+</tr>
+<tr>
+<td>双曲抛物面截线</td>
+<td>$z = xy$</td>
+<td>马鞍形</td>
+<td>多变量极值、鞍点分析</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p><strong>注</strong>：以上曲线在高等数学中常用于演示参数方程、极坐标、对称性积分、几何变换等概念，实际应用中需结合具体场景选择合适模型。</p>
+<hr>
+<h1><strong>参数方程形式</strong></h1>
+<h3 id="高等数学特殊曲线总结表"><strong>高等数学特殊曲线总结表</strong></h3>
+<table>
+<thead>
+<tr>
+<th><strong>曲线名称</strong></th>
+<th><strong>典型方程</strong></th>
+<th><strong>参数方程形式</strong></th>
+<th><strong>图像特征</strong></th>
+<th><strong>应用场景</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1. 星形线</strong></td>
+<td>$x^{2/3} + y^{2/3} = a^{2/3}$</td>
+<td>$x = a\cos^3\theta$, $y = a\sin^3\theta$</td>
+<td>四尖点对称</td>
+<td>积分对称性分析</td>
+</tr>
+<tr>
+<td><strong>2. 心脏线</strong></td>
+<td>$r = a(1 + \cos\theta)$</td>
+<td>$x = a(2\cos\theta - \cos2\theta)$, $y = a(2\sin\theta - \sin2\theta)$</td>
+<td>心形单尖点</td>
+<td>蜗线运动、焦散现象</td>
+</tr>
+<tr>
+<td><strong>3. 笛卡尔叶形线</strong></td>
+<td>$x^3 + y^3 = 3axy$</td>
+<td>$x = \frac{3at}{1 + t^3}$, $y = \frac{3at^2}{1 + t^3}$</td>
+<td>单叶过原点</td>
+<td>参数方程范例</td>
+</tr>
+<tr>
+<td><strong>4. 双纽线</strong></td>
+<td>$(x^2 + y^2)^2 = a^2(x^2 - y^2)$</td>
+<td>$x = a\cos\theta\sqrt{\cos2\theta}$, $y = a\sin\theta\sqrt{\cos2\theta}$</td>
+<td>横置“∞”形</td>
+<td>复数几何、对称积分</td>
+</tr>
+<tr>
+<td><strong>5. 摆线</strong></td>
+<td>—</td>
+<td>$x = a(\theta - \sin\theta)$, $y = a(1 - \cos\theta)$</td>
+<td>周期性拱形</td>
+<td>最速降线、力学问题</td>
+</tr>
+<tr>
+<td><strong>6. 外摆线</strong></td>
+<td>—</td>
+<td>$x = (R + r)\cos\theta - r\cos\left(\frac{R + r}{r}\theta\right)$ <br> $y = (R + r)\sin\theta - r\sin\left(\frac{R + r}{r}\theta\right)$</td>
+<td>外滚轮轨迹</td>
+<td>齿轮设计、几何变换</td>
+</tr>
+<tr>
+<td><strong>7. 内摆线</strong></td>
+<td>—</td>
+<td>$x = (R - r)\cos\theta + r\cos\left(\frac{R - r}{r}\theta\right)$ <br> $y = (R - r)\sin\theta - r\sin\left(\frac{R - r}{r}\theta\right)$</td>
+<td>内滚轮轨迹</td>
+<td>星形线特例（$R = 4r$）</td>
+</tr>
+<tr>
+<td><strong>8. 阿基米德螺线</strong></td>
+<td>$r = a\theta$</td>
+<td>$x = a\theta\cos\theta$, $y = a\theta\sin\theta$</td>
+<td>等间距螺旋</td>
+<td>极坐标积分、机械设计</td>
+</tr>
+<tr>
+<td><strong>9. 对数螺线</strong></td>
+<td>$r = ae^{b\theta}$</td>
+<td>$x = ae^{b\theta}\cos\theta$, $y = ae^{b\theta}\sin\theta$</td>
+<td>指数增长螺旋</td>
+<td>自然生长模型</td>
+</tr>
+<tr>
+<td><strong>10. 悬链线</strong></td>
+<td>$y = a\cosh\left(\frac{x}{a}\right)$</td>
+<td>$x = t$, $y = a\cosh\left(\frac{t}{a}\right)$</td>
+<td>下垂曲线</td>
+<td>桥梁设计、最小势能</td>
+</tr>
+<tr>
+<td><strong>11. 玫瑰线</strong></td>
+<td>$r = a\cos(k\theta)$</td>
+<td>$x = a\cos(k\theta)\cos\theta$, $y = a\cos(k\theta)\sin\theta$</td>
+<td>多瓣对称</td>
+<td>极坐标绘图</td>
+</tr>
+<tr>
+<td><strong>12. 箕舌线</strong></td>
+<td>$y = \frac{8a^3}{x^2 + 4a^2}$</td>
+<td>$x = 2a\tan\theta$, $y = 2a\cos^2\theta$</td>
+<td>钟形曲线</td>
+<td>概率密度原型</td>
+</tr>
+<tr>
+<td><strong>13. 蚌线</strong></td>
+<td>$r = a + b\sec\theta$</td>
+<td>$x = a + b\sec\theta$, $y = (a + b\sec\theta)\tan\theta$</td>
+<td>分支或闭合曲线</td>
+<td>经典几何问题</td>
+</tr>
+<tr>
+<td><strong>14. 双曲线</strong></td>
+<td>$\frac{x^2}{a^2} - \frac{y^2}{b^2} = 1$</td>
+<td>$x = a\sec\theta$, $y = b\tan\theta$ <br> 或 $x = a\cosh t$, $y = b\sinh t$</td>
+<td>双开口分支</td>
+<td>天体轨道、渐近分析</td>
+</tr>
+<tr>
+<td><strong>15. 椭圆</strong></td>
+<td>$\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1$</td>
+<td>$x = a\cos\theta$, $y = b\sin\theta$</td>
+<td>闭合对称椭圆</td>
+<td>行星轨道、几何变换</td>
+</tr>
+<tr>
+<td><strong>16. 抛物线</strong></td>
+<td>$y^2 = 4ax$</td>
+<td>$x = at^2$, $y = 2at$</td>
+<td>单开口对称曲线</td>
+<td>抛体运动、光学反射</td>
+</tr>
+<tr>
+<td><strong>17. 双曲抛物面截线</strong></td>
+<td>$z = xy$</td>
+<td>$x = t$, $y = s$, $z = ts$（三维参数） <br> 二维截线：$x = t$, $y = k/t$</td>
+<td>马鞍形</td>
+<td>多变量极值、鞍点分析</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="关键说明"><strong>关键说明</strong></h3>
+<ol>
+<li><strong>参数方程变量</strong>：表中统一使用 $\theta$ 或 $t$ 作为参数，具体意义根据曲线类型调整。</li>
+<li><strong>三维曲线处理</strong>：双曲抛物面截线（马鞍面）需三维参数方程，但常用二维截线简化分析。</li>
+<li><strong>极坐标转换</strong>：部分曲线的参数方程通过极坐标方程直接转换而来（如 $r = a\theta$ → $x = a\theta\cos\theta$, $y = a\theta\sin\theta$）。</li>
+<li><strong>特例关联</strong>：星形线是内摆线特例（$R = 4r$），心脏线是外摆线特例（$R = r$）。</li>
+</ol>
+<hr>
+<h3 id="应用示例"><strong>应用示例</strong></h3>
+<ul>
+<li><strong>星形线积分</strong>：利用参数方程计算弧长：<br>
+$$<br>
+\int_0^{2\pi} \sqrt{(dx/d\theta)^2 + (dy/d\theta)^2} , d\theta<br>
+$$</li>
+<li><strong>摆线最速降线</strong>：通过参数方程分析质点在重力作用下的运动时间。</li>
+<li><strong>双纽线对称性</strong>：利用极坐标参数方程验证积分对称性：<br>
+$$<br>
+\iint r^2 \cos2\theta , drd\theta<br>
+$$</li>
+</ul>
+<hr>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E8%80%83%E7%A0%94/" class="category-chain-item">考研</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E8%80%83%E7%A0%94/" class="print-no-link">#考研</a>
+      
+        <a href="/tags/%E6%95%B0%E5%AD%A6/" class="print-no-link">#数学</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>二重积分或几何中特殊曲线总结</div>
+      <div>https://wwxnb261.github.io/2025/03/27/get_high/二重积分或几何中特殊曲线总结/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Shiyi Wang</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025年3月27日</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>更新于</div>
+          <div>2025年3月27日</div>
+        </div>
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2025/03/27/get_high/%E5%B9%B3%E6%96%B9%E5%92%8C%E6%B1%82%E5%92%8C%E5%85%AC%E5%BC%8F/" title="平方和求和公式">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">平方和求和公式</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2025/03/26/get_high/408%E5%A4%8D%E4%B9%A0%E8%AE%A1%E5%88%92%E8%A7%84%E5%88%92/" title="408复习计划规划">
+                        <span class="hidden-mobile">408复习计划规划</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/valine/1.5.1/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"pN9tDeARhcoGKf7lsPz5rU6x-gzGzoHsz","appKey":"tXTxV8poDycA25U8Jy8UX9lY","path":"window.location.pathname","placeholder":null,"avatar":"retro","meta":["nick","mail","link"],"requiredFields":[],"pageSize":10,"lang":"zh-CN","highlight":false,"recordIP":false,"serverURLs":"https://pn9tdear.lc-cn-n1-shared.com","emojiCDN":null,"emojiMaps":null,"enableQQ":false},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          var imgSelector = '#valine .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

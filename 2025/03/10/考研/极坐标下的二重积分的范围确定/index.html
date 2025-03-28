@@ -19,15 +19,15 @@
   <meta name="author" content="Shiyi Wang">
   <meta name="keywords" content="wwx,record">
   
-    <meta name="description" content="函数连续中的间断点类型总结">
+    <meta name="description" content="1. 极坐标的基本概念 极坐标系中用 $r$ 或 ( $ρ$ )表示点到原点的距离， (  $\theta$  )  表示与极轴$（通常是x轴正方向）$的夹角。  面积元素：直角坐标的 $dx,dy$ 转换为极坐标时需乘以雅可比行列式，变为 $r,dr,dθ$。 符号习惯：$r$ 和 $ρ$ 在教材中可能交替使用，本质是同一变量，代表径向距离。   2. 积分范围的确定原则 (1) 简单区域（如圆">
 <meta property="og:type" content="article">
-<meta property="og:title" content="函数连续中的间断点类型总结">
-<meta property="og:url" content="https://wwxnb261.github.io/2025/03/04/%E5%87%BD%E6%95%B0%E8%BF%9E%E7%BB%AD%E4%B8%AD%E7%9A%84%E9%97%B4%E6%96%AD%E7%82%B9%E7%B1%BB%E5%9E%8B%E6%80%BB%E7%BB%93/index.html">
+<meta property="og:title" content="极坐标下的二重积分的范围确定">
+<meta property="og:url" content="https://wwxnb261.github.io/2025/03/10/%E8%80%83%E7%A0%94/%E6%9E%81%E5%9D%90%E6%A0%87%E4%B8%8B%E7%9A%84%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86%E7%9A%84%E8%8C%83%E5%9B%B4%E7%A1%AE%E5%AE%9A/index.html">
 <meta property="og:site_name" content="Shiyi Wang 博客">
-<meta property="og:description" content="函数连续中的间断点类型总结">
+<meta property="og:description" content="1. 极坐标的基本概念 极坐标系中用 $r$ 或 ( $ρ$ )表示点到原点的距离， (  $\theta$  )  表示与极轴$（通常是x轴正方向）$的夹角。  面积元素：直角坐标的 $dx,dy$ 转换为极坐标时需乘以雅可比行列式，变为 $r,dr,dθ$。 符号习惯：$r$ 和 $ρ$ 在教材中可能交替使用，本质是同一变量，代表径向距离。   2. 积分范围的确定原则 (1) 简单区域（如圆">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-03-04T07:46:21.000Z">
-<meta property="article:modified_time" content="2025-03-25T13:26:08.911Z">
+<meta property="article:published_time" content="2025-03-10T08:50:48.000Z">
+<meta property="article:modified_time" content="2025-03-25T13:27:04.926Z">
 <meta property="article:author" content="Shiyi Wang">
 <meta property="article:tag" content="考研">
 <meta property="article:tag" content="数学">
@@ -35,7 +35,7 @@
   
   
   
-  <title>函数连续中的间断点类型总结 - Shiyi Wang 博客</title>
+  <title>极坐标下的二重积分的范围确定 - Shiyi Wang 博客</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -213,7 +213,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="函数连续中的间断点类型总结"></span>
+            <span id="subtitle" data-typed-text="极坐标下的二重积分的范围确定"></span>
           
         </div>
 
@@ -224,8 +224,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-03-04 15:46" pubdate>
-          2025年3月4日 下午
+        <time datetime="2025-03-10 16:50" pubdate>
+          2025年3月10日 下午
         </time>
       </span>
     
@@ -236,7 +236,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          694 字
+          772 字
         
       </span>
     
@@ -247,7 +247,7 @@
         
         
         
-          6 分钟
+          7 分钟
         
       </span>
     
@@ -284,7 +284,7 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">函数连续中的间断点类型总结</h1>
+            <h1 id="seo-header">极坐标下的二重积分的范围确定</h1>
             
             
               <p id="updated-time" class="note note-info" style="">
@@ -297,123 +297,109 @@
             
             
             
-              <div class="note note-info post-excerpt">
-                函数连续中的间断点类型总结
-              </div>
-            
             
             
               <div class="markdown-body">
                 
-                <h2 id="间断点的类型主要根据函数在该点的极限行为进行分类，以下是详细的分类及说明：">间断点的类型主要根据函数在该点的极限行为进行分类，以下是详细的分类及说明：</h2>
-<h3 id="1-第一类间断点（左右极限均存在）"><strong>1. 第一类间断点（左右极限均存在）</strong></h3>
-<h3 id="a-可去间断点（Removable-Discontinuity）"><strong>(a) 可去间断点（Removable Discontinuity）</strong></h3>
+                <h3 id="1-极坐标的基本概念">1. 极坐标的基本概念</h3>
+<p>极坐标系中用 $r$ 或 ( $ρ$ )表示点到原点的距离， <strong>(</strong>  $\theta$  <strong>)</strong>  表示与极轴$（通常是x轴正方向）$的夹角。</p>
 <ul>
-<li><strong>特点</strong>：
+<li><strong>面积元素</strong>：直角坐标的 $dx,dy$ 转换为极坐标时需乘以雅可比行列式，变为 $r,dr,dθ$。</li>
+<li><strong>符号习惯</strong>：$r$ 和 $ρ$ 在教材中可能交替使用，本质是同一变量，代表径向距离。</li>
+</ul>
+<hr>
+<h3 id="2-积分范围的确定原则"><strong>2. 积分范围的确定原则</strong></h3>
+<h4 id="1-简单区域（如圆形）">(1) 简单区域（如圆形）</h4>
 <ul>
-<li>函数在该点的左极限和右极限存在且相等，但函数值不等于该极限，或函数在该点无定义。</li>
-<li>通过重新定义或修正函数值可使函数在该点连续。</li>
+<li>
+<p><strong>例</strong>：积分区域为半径 $a$ 的圆 $x^2 + y^2 \leq a^2$。</p>
+<ul>
+<li><strong>(</strong>  r  <strong>)</strong>  的范围：$0 \leq r \leq a$。</li>
+<li>$\theta$ 的范围：$0 \leq \theta \leq 2\pi$。<br>
+积分表达式为：</li>
 </ul>
 </li>
-<li><strong>示例</strong>：<br>
-$f(x) = \frac{\sin x}{x} \quad (x \neq 0)$<br>
-在 $\ ( x=0 )$ 处无定义，但 $\ (\lim_{x \to 0} f(x) = 1)$，补充定义 $\ ( f(0) = 1 )$ 后连续。</li>
 </ul>
-<h3 id="b-跳跃间断点（Jump-Discontinuity）"><strong>(b) 跳跃间断点（Jump Discontinuity）</strong></h3>
+<p>$$<br>
+\int_{0}^{2\pi} \int_{0}^{a} f(r\cos\theta, r\sin\theta) \cdot r , dr , d\theta<br>
+$$</p>
+<h4 id="2-复杂区域（如扇形或环形）">(2) 复杂区域（如扇形或环形）</h4>
 <ul>
-<li><strong>特点</strong>：
+<li>
+<p><strong>例</strong>：积分区域为环形 $1 \leq r \leq 2$ 且 $\pi/4 \leq \theta \leq \pi/2$。</p>
 <ul>
-<li>左极限和右极限均存在，但两者不相等。</li>
-<li>函数图像在该点出现“跳跃”。</li>
+<li><strong>(</strong>  r  <strong>)</strong>  的范围：由内半径和外半径确定，即 $1 \leq r \leq 2$。</li>
+<li>$\theta$ 的范围：由角度区间确定，即 $\pi/4 \leq \theta \leq \pi/2$。<br>
+积分表达式为：</li>
 </ul>
 </li>
-<li><strong>示例</strong>：<br>
-$\ [<br>
-f(x) =<br>
-\begin{cases}<br>
-x + 1 &amp; x \geq 0, \<br>
-x - 1 &amp; x &lt; 0<br>
-\end{cases}<br>
-]$<br>
-在 $\ ( x=0 )$ 处，左极限为 $\ (-1)$，右极限为 $\ (1)$，形成跳跃。</li>
 </ul>
-<hr>
-<h3 id="2-第二类间断点（至少一侧极限不存在）"><strong>2. 第二类间断点（至少一侧极限不存在）</strong></h3>
-<h3 id="以下是第二类间断点的两个主要类型：">以下是第二类间断点的两个主要类型：</h3>
-<h3 id="a-无穷间断点（Infinite-Discontinuity）"><strong>(a) 无穷间断点（Infinite Discontinuity）</strong></h3>
-<p><strong>特点</strong>：</p>
-<p>当 <code>x</code> 趋近于该点时，函数值趋向正无穷或负无穷。</p>
-<p>通常伴随垂直渐近线。</p>
-<p><strong>示例</strong>：当 <code>x → 0</code> 时，函数 <code>$f(x) = \frac&#123;1&#125;&#123;x&#125;$</code> 的值趋向 <code>±∞</code>。</p>
-<h3 id="b-振荡间断点（Oscillatory-Discontinuity）"><strong>(b) 振荡间断点（Oscillatory Discontinuity）</strong></h3>
-<p><strong>特点</strong>：</p>
-<p>函数在该点附近无限振荡，导致极限不存在。</p>
-<p>常见于涉及三角函数或周期函数的复杂表达式中。</p>
-<p><strong>示例</strong>：考虑函数 <code>$f(x) = sin(\frac&#123;1&#125;&#123;x&#125;)$</code> 当 <code>x → 0</code> 时，函数值在 <code>[-1,1]</code> 之间无限振荡，因此极限不存在。</p>
-<hr>
-<h3 id="3-其他特殊类型（补充说明）"><strong>3. 其他特殊类型（补充说明）</strong></h3>
-<h3 id="混合型间断点"><strong>混合型间断点</strong></h3>
+<p>$$<br>
+\int_{\pi/4}^{\pi/2} \int_{1}^{2} f(r\cos\theta, r\sin\theta) \cdot r , dr , d\theta<br>
+$$</p>
+<h4 id="3-依赖角度的径向范围">(3) 依赖角度的径向范围</h4>
 <ul>
-<li><strong>特点</strong>：
+<li>
+<p><strong>例</strong>：积分区域为心脏线 $r = 1 + \cos\theta$。</p>
 <ul>
-<li>结合多种不连续行为，例如一侧趋向无穷，另一侧振荡。</li>
+<li><strong>(</strong>  r  <strong>)</strong>  的范围：对每个固定的 $\theta$，$r$ 从 $0$ 到 $1 + \cos\theta$。</li>
+<li>$\theta$ 的范围：覆盖整个心脏线，即 $0 \leq \theta \leq 2\pi$。<br>
+积分表达式为：</li>
 </ul>
 </li>
-<li><strong>示例</strong>：<br>
-$\ <br>
-f(x) =<br>
-\begin{cases}<br>
-\frac{1}{x} &amp; x &gt; 0, \<br>
-\sin\left(\frac{1}{x}\right) &amp; x &lt; 0<br>
-\end{cases}$<br>
-在 $\ ( x=0 )$ 处，右侧趋向 $\ ( +\infty )，$左侧振荡。</li>
 </ul>
-<h3 id="本质不连续点（Essential-Discontinuity）"><strong>本质不连续点（Essential Discontinuity）</strong></h3>
+<p>$$<br>
+\int_{0}^{2\pi} \int_{0}^{1+\cos\theta} f(r\cos\theta, r\sin\theta) \cdot r , dr , d\theta<br>
+$$</p>
+<hr>
+<h3 id="3-关键注意事项"><strong>3. 关键注意事项</strong></h3>
+<h4 id="1-雅可比行列式不可忽略">(1) 雅可比行列式不可忽略</h4>
+<p>极坐标面积元素必须包含  <strong>(</strong>  r  <strong>)</strong> ，否则积分结果错误。例如：</p>
+<p>$$<br>
+\iint_D f(x,y) , dx,dy \quad \Rightarrow \quad \iint_{D’} f(r\cos\theta, r\sin\theta) \cdot \textcolor{red}{r} , dr,d\theta<br>
+$$</p>
+<h4 id="2-变量范围的几何依赖性">(2) 变量范围的几何依赖性</h4>
 <ul>
-<li><strong>别名</strong>：部分文献将第二类间断点统称为本质不连续点。</li>
+<li><strong>(</strong>  r  <strong>)</strong> 的范围由积分区域的边界方程（如 $r = g(\theta)$）确定。</li>
+<li><strong>(</strong>  $\theta$  <strong>)</strong> 的范围由区域的覆盖角度决定，可能需要分段处理。</li>
+</ul>
+<h4 id="3-符号统一性">(3) 符号统一性</h4>
+<p>若教材使用 $ρ$ 代替 $r$，只需保持符号一致，例如：</p>
+<p>$$<br>
+\int_{\theta_1}^{\theta_2} \int_{\rho_1(\theta)}^{\rho_2(\theta)} f(\rho,\theta) \cdot \rho , d\rho , d\theta<br>
+$$</p>
+<hr>
+<h3 id="4-常见误区"><strong>4. 常见误区</strong></h3>
+<ul>
+<li><strong>误区1</strong>：认为 $r$ 可以随意设为常数范围（如 $0 \leq r \leq 1$），而忽略实际区域形状。<br>
+<strong>纠正</strong>：必须根据区域几何确定 $r$ 的上下限（可能依赖 $θ$）。</li>
+<li><strong>误区2</strong>：忽略 $r$ 导致面积元素错误（如写成 $dr,dθ$ 而非 $r,dr,dθ$）。<br>
+<strong>纠正</strong>：始终记得雅可比行列式带来的 $r$ 因子。</li>
 </ul>
 <hr>
-<h3 id="总结表格"><strong>总结表格</strong></h3>
-<table>
-<thead>
-<tr>
-<th><strong>类型</strong></th>
-<th><strong>特点</strong></th>
-<th><strong>示例</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>可去间断点</strong></td>
-<td>极限存在但函数值不符未定义</td>
-<td>$\ \frac{\sin x}{x}$</td>
-</tr>
-<tr>
-<td><strong>跳跃间断点</strong></td>
-<td>左右极限存在但不相等</td>
-<td>分段函数跳跃点</td>
-</tr>
-<tr>
-<td><strong>无穷间断点</strong></td>
-<td>函数趋向无穷大或无穷小</td>
-<td>$\ \frac{1}{x}$</td>
-</tr>
-<tr>
-<td><strong>振荡间断点</strong></td>
-<td>函数无限振荡，极限不存在</td>
-<td>$\ \sin\left(\frac{1}{x}\right)$</td>
-</tr>
-</tbody>
-</table>
-<hr>
-<h3 id="关键区别"><strong>关键区别</strong></h3>
+<h3 id="5-总结"><strong>5. 总结</strong></h3>
 <ul>
-<li><strong>第一类 vs 第二类</strong>：<br>
-第一类间断点的左右极限均存在（可比较大小），第二类至少一侧不存在或趋向无穷。</li>
-<li><strong>可修复性</strong>：<br>
-仅可去间断点可通过修正函数值恢复连续性。</li>
+<li>
+<p><strong>(</strong>  r  <strong>)</strong>  或  <strong>(</strong>  $\rho$  <strong>)</strong> 的范围不是随意设定，而是由积分区域的几何形状（如圆形、扇形、曲线边界等）决定。</p>
+</li>
+<li>
+<p>正确步骤：</p>
+<ol>
+<li>画出积分区域图，分析边界方程；</li>
+<li>确定 $r$ 的最小和最大值（可能随 $\theta$ 变化）；</li>
+<li>确定 $\theta$ 的覆盖范围；</li>
+<li>写出完整的积分表达式，包含 $r,dr,dθ$。</li>
+</ol>
+</li>
 </ul>
-<p>通过以上分类，可系统分析函数在不同点的不连续行为。</p>
+<p>通过结合几何直观和边界方程，可以准确设定极坐标下的积分范围。</p>
+<hr>
+<p>✅ 验证报告：</p>
+<ul>
+<li>已转化行内公式：24处</li>
+<li>已调整独立公式：4处</li>
+<li>内容变更检测：0处非公式修改</li>
+</ul>
 
                 
               </div>
@@ -461,8 +447,8 @@ f(x) =<br>
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>函数连续中的间断点类型总结</div>
-      <div>https://wwxnb261.github.io/2025/03/04/函数连续中的间断点类型总结/</div>
+      <div>极坐标下的二重积分的范围确定</div>
+      <div>https://wwxnb261.github.io/2025/03/10/考研/极坐标下的二重积分的范围确定/</div>
     </div>
     <div class="license-meta">
       
@@ -474,7 +460,7 @@ f(x) =<br>
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2025年3月4日</div>
+          <div>2025年3月10日</div>
         </div>
       
       
@@ -511,9 +497,9 @@ f(x) =<br>
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/03/09/%E8%80%83%E7%A0%94/%E5%87%BD%E6%95%B0%E7%9A%84%E8%BF%9E%E7%BB%AD%EF%BC%8C%E5%8F%AF%E5%AF%BC%EF%BC%8C%E5%8F%AF%E5%BE%AE%E8%BE%A8%E6%9E%90/" title="函数的连续，可导，可微辨析">
+                      <a href="/2025/03/21/%E8%80%83%E7%A0%94/%E8%80%83%E7%A0%94%E8%AE%B0%E5%BD%953%E6%9C%881%E6%97%A5/" title="考研记录3月1日">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">函数的连续，可导，可微辨析</span>
+                        <span class="hidden-mobile">考研记录3月1日</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -521,8 +507,8 @@ f(x) =<br>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/03/01/%E8%80%83%E7%A0%94/3%E6%9C%88%E4%BB%BD%E5%8D%8A%E4%B8%AA%E6%9C%88%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92/" title="3月份半个月学习计划">
-                        <span class="hidden-mobile">3月份半个月学习计划</span>
+                      <a href="/2025/03/09/%E8%80%83%E7%A0%94/%E5%87%BD%E6%95%B0%E7%9A%84%E8%BF%9E%E7%BB%AD%EF%BC%8C%E5%8F%AF%E5%AF%BC%EF%BC%8C%E5%8F%AF%E5%BE%AE%E8%BE%A8%E6%9E%90/" title="函数的连续，可导，可微辨析">
+                        <span class="hidden-mobile">函数的连续，可导，可微辨析</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

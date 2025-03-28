@@ -19,27 +19,23 @@
   <meta name="author" content="Shiyi Wang">
   <meta name="keywords" content="wwx,record">
   
-    <meta name="description" content="蓝桥杯抢分算法刷题">
+    <meta name="description" content="408复习计划规划">
 <meta property="og:type" content="article">
-<meta property="og:title" content="蓝桥杯抢分算法刷题">
-<meta property="og:url" content="https://wwxnb261.github.io/2025/03/24/%E8%93%9D%E6%A1%A5%E6%9D%AF%E6%8A%A2%E5%88%86%E7%AE%97%E6%B3%95%E5%88%B7%E9%A2%98/index.html">
+<meta property="og:title" content="408复习计划规划">
+<meta property="og:url" content="https://wwxnb261.github.io/2025/03/26/%E8%80%83%E7%A0%94/408%E5%A4%8D%E4%B9%A0%E8%AE%A1%E5%88%92%E8%A7%84%E5%88%92/index.html">
 <meta property="og:site_name" content="Shiyi Wang 博客">
-<meta property="og:description" content="蓝桥杯抢分算法刷题">
+<meta property="og:description" content="408复习计划规划">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://wwxnb261.github.io/images/image.png">
-<meta property="og:image" content="https://wwxnb261.github.io/images/image1.png">
-<meta property="og:image" content="https://wwxnb261.github.io/images/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92.png">
-<meta property="article:published_time" content="2025-03-24T07:55:15.000Z">
-<meta property="article:modified_time" content="2025-03-25T13:24:06.023Z">
+<meta property="article:published_time" content="2025-03-26T07:38:04.000Z">
+<meta property="article:modified_time" content="2025-03-26T07:38:16.550Z">
 <meta property="article:author" content="Shiyi Wang">
-<meta property="article:tag" content="算法">
-<meta property="article:tag" content="蓝桥杯">
+<meta property="article:tag" content="408复习">
+<meta property="article:tag" content="专业课">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://wwxnb261.github.io/images/image.png">
   
   
   
-  <title>蓝桥杯抢分算法刷题 - Shiyi Wang 博客</title>
+  <title>408复习计划规划 - Shiyi Wang 博客</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -217,7 +213,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="蓝桥杯抢分算法刷题"></span>
+            <span id="subtitle" data-typed-text="408复习计划规划"></span>
           
         </div>
 
@@ -228,8 +224,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-03-24 15:55" pubdate>
-          2025年3月24日 下午
+        <time datetime="2025-03-26 15:38" pubdate>
+          2025年3月26日 下午
         </time>
       </span>
     
@@ -240,7 +236,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          708 字
+          1.1k 字
         
       </span>
     
@@ -251,7 +247,7 @@
         
         
         
-          6 分钟
+          10 分钟
         
       </span>
     
@@ -288,13 +284,13 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">蓝桥杯抢分算法刷题</h1>
+            <h1 id="seo-header">408复习计划规划</h1>
             
             
               <p id="updated-time" class="note note-info" style="">
                 
                   
-                    本文最后更新于 2025年3月25日 晚上
+                    本文最后更新于 2025年3月26日 下午
                   
                 
               </p>
@@ -302,110 +298,149 @@
             
             
               <div class="note note-info post-excerpt">
-                蓝桥杯抢分算法刷题
+                408复习计划规划
               </div>
             
             
             
               <div class="markdown-body">
                 
-                <h2 id="蓝桥杯-7-天速成计划表（直接抄作业）">蓝桥杯 7 天速成计划表（直接抄作业）</h2>
-<h3 id="Day1-3：暴力美学训练营">Day1-3：暴力美学训练营</h3>
-<h4 id="必杀技-1：三层-for-循环爆破">必杀技 1：三层 for 循环爆破</h4>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 经典题解模式（以三数之和为例）</span><br><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(n):<br>    <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(i+<span class="hljs-number">1</span>, n):<br>        <span class="hljs-keyword">for</span> k <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(j+<span class="hljs-number">1</span>, n):<br>            <span class="hljs-keyword">if</span> arr[i]+arr[j]+arr[k] == target:<br>                <span class="hljs-keyword">return</span> [i,j,k]<br></code></pre></td></tr></table></figure>
-<p><img src="/images/image.png" srcset="/img/loading.gif" lazyload alt="算法示意图"></p>
-<h4 id="必杀技-2：打表法空间换时打法">必杀技 2：打表法空间换时打法</h4>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 预生成斐波那契数列（打表法）</span><br>fib = [<span class="hljs-number">0</span>,<span class="hljs-number">1</span>]<br><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">2</span>,<span class="hljs-number">1000</span>):<br>    fib.append(fib[i-<span class="hljs-number">1</span>] + fib[i-<span class="hljs-number">2</span>])<br></code></pre></td></tr></table></figure>
-<p><strong>每日任务</strong>：<br>
-✅ 暴力破解近 5 年真题 - 日期计算<br>
-✅ 排列组合高频题 - 骰子概率问题<br>
-✅ 简单数论题 - 质因数分解</p>
-<h3 id="Day4-7：DFS-BFS-急救包">Day4-7：DFS/BFS 急救包</h3>
-<h4 id="万能模板（迷宫问题）">万能模板（迷宫问题）</h4>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">dfs</span>(<span class="hljs-params">当前状态</span>):<br>    <span class="hljs-keyword">if</span> 终止条件:<br>        <span class="hljs-keyword">return</span><br>    visited[x][y] = <span class="hljs-literal">True</span><br>    <span class="hljs-keyword">for</span> dx, dy <span class="hljs-keyword">in</span> [(-<span class="hljs-number">1</span>,<span class="hljs-number">0</span>),(<span class="hljs-number">1</span>,<span class="hljs-number">0</span>),(<span class="hljs-number">0</span>,-<span class="hljs-number">1</span>),(<span class="hljs-number">0</span>,<span class="hljs-number">1</span>)]:<br>        dfs(x+dx, y+dy)<br></code></pre></td></tr></table></figure>
-<p><img src="/images/image1.png" srcset="/img/loading.gif" lazyload alt="模板"></p>
-<p><strong>重点题型</strong>：<br>
-▨ 全排列问题（注意剪枝）<br>
-▨ 迷宫问题<br>
-▨ 岛屿数量（行列扫描）<br>
-▨ 路径计数（记忆化搜索）</p>
-<blockquote>
-<p>保命技巧：遇到递归超时的时候立即转记忆化搜索</p>
-</blockquote>
-<h2 id="三、最后-13-天抢分攻略">三、最后 13 天抢分攻略</h2>
-<h3 id="📅-每日作息表">📅 每日作息表</h3>
+                <p>以下是基于王道论坛及多位考生经验总结的408计算机专业课考研复习经验整理，涵盖复习策略、时间规划、重点科目及常见误区等内容，供参考：</p>
+<hr>
+<h3 id="一、参考书与资料推荐"><strong>一、参考书与资料推荐</strong></h3>
+<ol>
+<li>
+<p><strong>核心辅导书</strong></p>
+<ul>
+<li><strong>王道系列</strong>：四本单科书（数据结构、计组、操作系统、计网）+ 真题解析 + 模拟题（推荐8套卷）。</li>
+<li><strong>天勤</strong>：数据结构部分讲解较细致，适合基础薄弱或跨考生。</li>
+<li><strong>教材补充</strong>：如唐朔飞《计算机组成原理》、谢希仁《计算机网络》等，用于辅助理解难点。</li>
+<li><strong>其他资料</strong>：肖秀荣政治系列、李永乐数学全书等公共课资料。</li>
+</ul>
+</li>
+<li>
+<p><strong>视频资源</strong></p>
+<ul>
+<li>王道冲刺视频（用于知识点串讲）。</li>
+<li>天勤数据结构视频（针对算法难点）。</li>
+<li>B站灰灰考研的真题解析。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="二、复习顺序与策略"><strong>二、复习顺序与策略</strong></h3>
+<ol>
+<li>
+<p><strong>科目顺序建议</strong></p>
+<ul>
+<li><strong>推荐顺序</strong>：数据结构 → 计算机组成原理 → 操作系统 → 计算机网络。<br>
+<em>理由</em>：数据结构是基础，计组与OS关联性强，计网相对独立可后期突击。</li>
+<li><strong>另类顺序</strong>：操作系统（易入门）→ 计组（最难）→ 数据结构 → 计网（按状态调整，适合时间紧张者）。</li>
+</ul>
+</li>
+<li>
+<p><strong>复习阶段划分</strong></p>
+<ul>
+<li><strong>基础阶段（3-6月）</strong>：通读教材+王道单科，完成选择题，标记错题。</li>
+<li><strong>强化阶段（7-9月）</strong>：二刷单科书，攻克大题（如PV操作、Cache设计、TCP协议等），结合真题专项练习。</li>
+<li><strong>冲刺阶段（10-12月）</strong>：限时模拟真题（至少2遍），查漏补缺，回归课本细节。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="三、各科核心重点与学习方法"><strong>三、各科核心重点与学习方法</strong></h3>
+<ol>
+<li>
+<p><strong>数据结构</strong></p>
+<ul>
+<li><strong>重点</strong>：线性表、二叉树遍历、图算法（最短路径、关键路径）、排序与查找（快排、堆排、B树）。</li>
+<li><strong>技巧</strong>：算法题注重思想而非代码细节，用伪代码或简化解法即可。</li>
+</ul>
+</li>
+<li>
+<p><strong>计算机组成原理</strong></p>
+<ul>
+<li><strong>重点</strong>：存储器层次、指令系统、CPU数据通路、中断与总线。</li>
+<li><strong>技巧</strong>：结合冯诺依曼结构理解整体流程，多画图辅助记忆（如Cache映射）。</li>
+</ul>
+</li>
+<li>
+<p><strong>操作系统</strong></p>
+<ul>
+<li><strong>重点</strong>：进程调度、PV操作、死锁、虚拟内存（请求调页）、文件管理。</li>
+<li><strong>规律</strong>：PV操作隔年考，需掌握经典模型（如生产者-消费者）。</li>
+</ul>
+</li>
+<li>
+<p><strong>计算机网络</strong></p>
+<ul>
+<li><strong>重点</strong>：传输层（TCP/UDP）、网络层（IP协议、路由算法）、数据链路层（CSMA/CD、MAC协议）。</li>
+<li><strong>技巧</strong>：自底向上分层学习，结合“送信”场景理解协议交互。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="四、真题与模拟题使用要点"><strong>四、真题与模拟题使用要点</strong></h3>
+<ol>
+<li>
+<p><strong>真题</strong></p>
+<ul>
+<li><strong>重要性</strong>：至少刷2遍，近10年真题需限时模拟（14:00-17:00），分析错题关联知识点。</li>
+<li><strong>趋势</strong>：近年考题趋向跨科目综合（如OS与计组结合），需建立知识网络。</li>
+</ul>
+</li>
+<li>
+<p><strong>模拟题</strong></p>
+<ul>
+<li>王道模拟题难度贴近真题，天勤题目偏但可拓宽思路。</li>
+<li>留1-2套考前模拟，保持手感。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="五、常见误区与避坑指南"><strong>五、常见误区与避坑指南</strong></h3>
+<ol>
+<li><strong>忽视课本</strong>：仅依赖辅导书易遗漏细节（如TCP协议图例中的英文术语），建议结合教材查缺。</li>
+<li><strong>盲目刷题</strong>：大题需专项突破，优先掌握高频题型（如算法思想、计组综合设计）。</li>
+<li><strong>时间分配不均</strong>：408需日均3小时以上，避免后期挤压其他科目（如政治）。</li>
+<li><strong>死记硬背</strong>：注重理解设计思想（如抽象、分层、缓冲），而非机械记忆。</li>
+</ol>
+<hr>
+<h3 id="六、时间规划参考（以7月为起点）"><strong>六、时间规划参考（以7月为起点）</strong></h3>
 <table>
 <thead>
 <tr>
+<th>阶段</th>
 <th>时间</th>
 <th>任务</th>
-<th>工具</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>7:00-8:30</td>
-<td>背模板 + 重写错题</td>
-<td>错题本 + A4 纸手写</td>
+<td><strong>基础</strong></td>
+<td>7-8月</td>
+<td>完成四科教材+王道单科一轮，选择题标记错题。</td>
 </tr>
 <tr>
-<td>9:00-12:00</td>
-<td>专题突破（优先 DP 基础）</td>
-<td>蓝桥杯官方训练系统</td>
+<td><strong>强化</strong></td>
+<td>9-10月</td>
+<td>二刷单科书，专项攻克大题，开始真题分模块练习。</td>
 </tr>
 <tr>
-<td>14:00-17:00</td>
-<td>全真模考（严格计时）</td>
-<td>2019-2021 年真题</td>
-</tr>
-<tr>
-<td>20:00-22:30</td>
-<td>精研答案 + 优化代码</td>
-<td>GitHub 大佬题解对比</td>
+<td><strong>冲刺</strong></td>
+<td>11-12月</td>
+<td>限时模拟真题+模拟题，回归课本查漏补缺。</td>
 </tr>
 </tbody>
 </table>
-<h3 id="🚑-五大必考题型急救指南">🚑 五大必考题型急救指南</h3>
-<h4 id="①-动态规划（带注释模板）">① 动态规划（带注释模板）</h4>
-<p>$$ dp[i] = \max(dp[i-1], dp[i-2]+nums[i]) $$</p>
+<hr>
+<h3 id="七、心态与资源"><strong>七、心态与资源</strong></h3>
 <ul>
-<li>只背0-1背包和爬楼梯模板</li>
+<li><strong>心态</strong>：408内容多但规律性强，坚持按计划推进即可，避免焦虑。</li>
+<li><strong>资源整合</strong>：关注王道论坛、B站UP主（如“灰灰考研”）及公众号（如“计算机与软件考研”）获取最新资料。</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 0-1背包标准代码</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">knapsack</span>(<span class="hljs-params">W, wt, val</span>):<br>    dp = [<span class="hljs-number">0</span>]*(W+<span class="hljs-number">1</span>)<br>    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-built_in">len</span>(wt)):<br>        <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(W, wt[i]-<span class="hljs-number">1</span>, -<span class="hljs-number">1</span>):<br>            dp[j] = <span class="hljs-built_in">max</span>(dp[j], dp[j-wt[i]] + val[i])<br>    <span class="hljs-keyword">return</span> dp[W]<br></code></pre></td></tr></table></figure>
-<p><img src="/images/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92.png" srcset="/img/loading.gif" lazyload alt="动态规划"></p>
-<h4 id="②-贪心算法（20-命中率）">② 贪心算法（20%命中率）</h4>
-<ul>
-<li>记住三个经典场景：区间调度、哈夫曼编码、加油站问题</li>
-</ul>
-<h4 id="③-字符串处理（必考）">③ 字符串处理（必考）</h4>
-<ul>
-<li>Python组直接暴力切片，C++组背书substr+正则表达式基础</li>
-</ul>
-<h4 id="④简单数论（30-命中率）">④简单数论（30%命中率）</h4>
-<ul>
-<li>重点掌握：最大公约数、最小公倍数、闰年判断、质数筛选法</li>
-</ul>
-<h4 id="⑤-日期计算（每年必出：背熟蔡勒公式）">⑤ 日期计算（每年必出：背熟蔡勒公式）</h4>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 星期计算公式</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">zeller</span>(<span class="hljs-params">y, m, d</span>):<br>    <span class="hljs-keyword">if</span> m &lt; <span class="hljs-number">3</span>:<br>        m += <span class="hljs-number">12</span><br>        y -= <span class="hljs-number">1</span><br>    h = (d + <span class="hljs-number">13</span>*(m+<span class="hljs-number">1</span>)//<span class="hljs-number">5</span> + y + y//<span class="hljs-number">4</span> - y//<span class="hljs-number">100</span> + y//<span class="hljs-number">400</span>) % <span class="hljs-number">7</span><br>    <span class="hljs-keyword">return</span> [<span class="hljs-string">&quot;六&quot;</span>,<span class="hljs-string">&quot;日&quot;</span>,<span class="hljs-string">&quot;一&quot;</span>,<span class="hljs-string">&quot;二&quot;</span>,<span class="hljs-string">&quot;三&quot;</span>,<span class="hljs-string">&quot;四&quot;</span>,<span class="hljs-string">&quot;五&quot;</span>][h]<br></code></pre></td></tr></table></figure>
-<h2 id="四、考场偷分黑科技">四、考场偷分黑科技</h2>
-<ol>
-<li>
-<p><strong>玄学输出</strong><br>
-遇到不会的题直接输出样例：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;3\n1 4 5&quot;</span>)  <span class="hljs-comment"># 样例答案格式</span><br></code></pre></td></tr></table></figure>
-</li>
-<li>
-<p><strong>输入加速（C++ 版）</strong></p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs cpp">ios::<span class="hljs-built_in">sync_with_stdio</span>(<span class="hljs-literal">false</span>); <br>cin.<span class="hljs-built_in">tie</span>(<span class="hljs-number">0</span>);  <span class="hljs-comment">// 加速 300%</span><br></code></pre></td></tr></table></figure>
-</li>
-<li>
-<p><strong>卡时间神操作</strong></p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs markdown">[!WARNING]<br>▨ 最后 5 分钟必须检查换行符<br>▨ 用文本对比工具验证输出格式<br></code></pre></td></tr></table></figure>
-</li>
-</ol>
-<blockquote>
-<p><strong>博弈论精髓</strong>：蓝桥杯是策略游戏而非能力测试，当你开始执行本计划时，已战胜 50% 的裸考者。立即启动暴力美学程序冲击省奖！</p>
-</blockquote>
+<hr>
+<p>以上经验整合自多位高分考生分享，需结合自身基础调整。更多细节可参考原文链接：<a target="_blank" rel="noopener" href="http://www.cskaoyan.com/">王道论坛</a>。</p>
 
                 
               </div>
@@ -424,7 +459,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E8%93%9D%E6%A1%A5%E6%9D%AF/" class="category-chain-item">蓝桥杯</a>
+  <a href="/categories/%E8%80%83%E7%A0%94/" class="category-chain-item">考研</a>
   
   
 
@@ -439,9 +474,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E7%AE%97%E6%B3%95/" class="print-no-link">#算法</a>
+        <a href="/tags/408%E5%A4%8D%E4%B9%A0/" class="print-no-link">#408复习</a>
       
-        <a href="/tags/%E8%93%9D%E6%A1%A5%E6%9D%AF/" class="print-no-link">#蓝桥杯</a>
+        <a href="/tags/%E4%B8%93%E4%B8%9A%E8%AF%BE/" class="print-no-link">#专业课</a>
       
     </div>
   
@@ -453,8 +488,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>蓝桥杯抢分算法刷题</div>
-      <div>https://wwxnb261.github.io/2025/03/24/蓝桥杯抢分算法刷题/</div>
+      <div>408复习计划规划</div>
+      <div>https://wwxnb261.github.io/2025/03/26/考研/408复习计划规划/</div>
     </div>
     <div class="license-meta">
       
@@ -466,13 +501,13 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2025年3月24日</div>
+          <div>2025年3月26日</div>
         </div>
       
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2025年3月25日</div>
+          <div>2025年3月26日</div>
         </div>
       
       
@@ -503,9 +538,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/03/25/%E4%BC%BD%E9%A9%AC%E5%87%BD%E6%95%B0%E7%9A%84%E7%A7%AF%E5%88%86%E5%80%BC/" title="伽马函数的积分值">
+                      <a href="/2025/03/27/%E8%80%83%E7%A0%94/%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86%E6%88%96%E5%87%A0%E4%BD%95%E4%B8%AD%E7%89%B9%E6%AE%8A%E6%9B%B2%E7%BA%BF%E6%80%BB%E7%BB%93/" title="二重积分或几何中特殊曲线总结">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">伽马函数的积分值</span>
+                        <span class="hidden-mobile">二重积分或几何中特殊曲线总结</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -513,8 +548,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/03/21/%E8%80%83%E7%A0%94%E8%AE%B0%E5%BD%953%E6%9C%881%E6%97%A5/" title="考研记录3月1日">
-                        <span class="hidden-mobile">考研记录3月1日</span>
+                      <a href="/2025/03/26/%E8%80%83%E7%A0%94/%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86D%E5%AF%B9%E7%A7%B0%E6%80%A7%E6%80%BB%E7%BB%93/" title="二重积分D对称性总结">
+                        <span class="hidden-mobile">二重积分D对称性总结</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

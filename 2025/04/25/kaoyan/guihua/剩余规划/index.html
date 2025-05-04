@@ -1,0 +1,886 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Shiyi Wang">
+  <meta name="keywords" content="wwx,record">
+  
+    <meta name="description" content="剩余规划">
+<meta property="og:type" content="article">
+<meta property="og:title" content="剩余规划">
+<meta property="og:url" content="https://wwxnb261.github.io/2025/04/25/kaoyan/guihua/%E5%89%A9%E4%BD%99%E8%A7%84%E5%88%92/index.html">
+<meta property="og:site_name" content="Shiyi Wang 博客">
+<meta property="og:description" content="剩余规划">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-04-25T07:10:10.000Z">
+<meta property="article:modified_time" content="2025-04-25T07:12:07.973Z">
+<meta property="article:author" content="Shiyi Wang">
+<meta property="article:tag" content="考研">
+<meta property="article:tag" content="数学">
+<meta property="article:tag" content="408专业课">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>剩余规划 - Shiyi Wang 博客</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"wwxnb261.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>学习之路，知行合一</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/overview/" target="_self">
+                <i class="iconfont icon-books"></i>
+                <span>总览</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="剩余规划"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-04-25 15:10" pubdate>
+          2025年4月25日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1.8k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          15 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">剩余规划</h1>
+            
+            
+              <p id="updated-time" class="note note-info" style="">
+                
+                  
+                    本文最后更新于 2025年4月25日 下午
+                  
+                
+              </p>
+            
+            
+            
+              <div class="note note-info post-excerpt">
+                剩余规划
+              </div>
+            
+            
+            
+              <div class="markdown-body">
+                
+                <p>距离6月底大约还有9周半的时间（约66天）。这是一个强度比较大的计划，需要你付出极大的努力和专注。</p>
+<p>以下是为你量身定做的学习计划建议，分为<strong>数学</strong>和<strong>408专业课</strong>两大块，并按周分解：</p>
+<p><strong>核心原则：</strong></p>
+<ol>
+<li><strong>并行推进：</strong> 数学和408必须同时进行，不能学完一门再学另一门。</li>
+<li><strong>时间分配（估算）：</strong> 建议每天有效学习时间不少于8小时（根据个人情况调整）。大致可以将时间对半分给数学和408，或者根据当天具体任务调整，例如上午数学，下午专业课，晚上查漏补缺或做题。</li>
+<li><strong>练习结合：</strong> 理论学习和习题练习紧密结合，学完一章/节立刻做对应的基础题巩固。</li>
+<li><strong>效率优先：</strong> 第一轮复习重在理解基础概念、掌握基本方法，对于难题、偏题可以暂时标记，不必过分纠结。</li>
+<li><strong>及时调整：</strong> 每周末根据本周完成情况，微调下周计划。</li>
+</ol>
+<p><strong>详细计划（按周划分）：</strong></p>
+<p><strong>第一阶段：补齐短板，全面启动 (第1-3周：约4月25日 - 5月15日)</strong></p>
+<ul>
+<li><strong>本阶段目标：</strong> 完成高数剩余内容及全部基础习题，完成线代第一轮学习和基础习题，继续推进计组，完成数据结构习题。</li>
+<li><strong>数学 (每天约4小时)：</strong>
+<ul>
+<li><strong>第1周：</strong>
+<ul>
+<li>完成高数剩余理论：级数、三重积分及应用等。（约2-3天）</li>
+<li>完成高数基础习题册：从第6章继续，力争本周完成所有高数基础习题。（每天坚持做）</li>
+</ul>
+</li>
+<li><strong>第2-3周：</strong>
+<ul>
+<li><strong>主攻线性代数：</strong> 快速过完线代的基础理论（教材/辅导讲义），同步完成对应的基础习题（如李永乐660题或类似基础题集）。线代章节不多，但概念抽象，要注重理解。争取2周内结束线代第一轮。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>408专业课 (每天约4小时)：</strong>
+<ul>
+<li><strong>第1周：</strong>
+<ul>
+<li>完成数据结构王道书后习题。（利用计组学习间隙或专门时间，尽快扫尾）</li>
+<li><strong>主攻计算机组成原理：</strong> 从第二章继续，按章节学习，学完一章做一章的王道选择题。目标：本周学完2-3章。</li>
+</ul>
+</li>
+<li><strong>第2-3周：</strong>
+<ul>
+<li><strong>持续推进计算机组成原理：</strong> 保持每天学习进度，同步做题。目标：第3周末，计组理论学习过半或接近完成，习题跟上进度。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>第二阶段：攻坚克难，稳步推进 (第4-7周：约5月16日 - 6月12日)</strong></p>
+<ul>
+<li><strong>本阶段目标：</strong> 完成概率论第一轮学习和基础习题，完成计组学习和习题，启动并完成操作系统第一轮学习和基础习题。</li>
+<li><strong>数学 (每天约4小时)：</strong>
+<ul>
+<li><strong>第4-5周 (或第6周初)：</strong>
+<ul>
+<li><strong>主攻概率论与数理统计：</strong> 同线代，快速过基础理论，同步做基础习题。概率论随机变量及其分布、数字特征是重点。争取2.5-3周内结束。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>408专业课 (每天约4小时)：</strong>
+<ul>
+<li><strong>第4周：</strong>
+<ul>
+<li>完成计算机组成原理所有章节的理论学习，并完成王道书后对应的选择题。</li>
+</ul>
+</li>
+<li><strong>第5-7周：</strong>
+<ul>
+<li><strong>主攻操作系统：</strong> 这是408的重点和难点之一。按章节学习（进程管理、内存管理、文件管理、I/O管理是核心），理解概念，掌握算法。同步完成王道书后选择题。争取3周内完成第一轮。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>第三阶段：全面覆盖，收官冲刺 (第8-9.5周：约6月13日 - 6月30日)</strong></p>
+<ul>
+<li><strong>本阶段目标：</strong> 完成计算机网络第一轮学习和基础习题，回顾检查数学和408各科，确保所有科目第一轮已过完。</li>
+<li><strong>数学 (每天约4小时)：</strong>
+<ul>
+<li><strong>主要任务：</strong>
+<ul>
+<li>如果概率论未完成，本阶段初优先完成。</li>
+<li>检查高数、线代、概率论的基础习题是否都已做完。</li>
+<li>对第一轮复习中标记的重点、难点、易错点进行初步回顾。可以快速翻阅笔记或错题。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>408专业课 (每天约4小时)：</strong>
+<ul>
+<li><strong>第8-9.5周：</strong>
+<ul>
+<li><strong>主攻计算机网络：</strong> 计网内容相对独立，但也庞杂。重点掌握TCP/IP协议栈各层基本原理和协议（物理层、数据链路层、网络层、传输层、应用层）。同步完成王道书后选择题。争取2.5周内完成。</li>
+<li><strong>查漏补缺：</strong> 利用剩余时间，快速回顾检查数据结构、计组、操作系统的知识点和习题完成情况。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>每日时间安排建议 (示例)：</strong></p>
+<ul>
+<li><strong>上午 (3.5-4小时):</strong> 数学（理论学习 + 习题）</li>
+<li><strong>下午 (3.5-4小时):</strong> 408专业课（理论学习 + 习题）</li>
+<li><strong>晚上 (1-2小时):</strong> 整理笔记、回顾当天内容、处理遗留问题、做前一天的错题，或者稍微放松调整。</li>
+</ul>
+<p><strong>重要注意事项：</strong></p>
+<ol>
+<li><strong>教材与资料：</strong> 尽快确定并固定使用的教材、辅导讲义（如张宇、李永乐、汤家凤等）和习题集（如660题、1800题、王道单科书等），不要中途频繁更换。</li>
+<li><strong>笔记与总结：</strong> 学习过程中要做好笔记，特别是自己理解困难或易错的地方。每学完一个章节或科目，尝试进行简单的框架性总结。</li>
+<li><strong>习题质量：</strong> 第一轮做基础题是为了巩固知识点，务必理解每道题背后的原理，不要只追求速度和数量。错题要及时订正并反思。</li>
+<li><strong>心态调整：</strong> 考研是长期战役，这个阶段压力大很正常。保持积极心态，允许自己有状态起伏，但要保证整体进度。感到焦虑时可以短暂休息或与人交流。</li>
+<li><strong>作息规律：</strong> 保证充足睡眠（7-8小时），规律饮食，适当进行短暂的放松活动（如散步、听音乐），保持身心健康是高效学习的基础。</li>
+<li><strong>灵活性：</strong> 这个计划是一个框架，具体执行中肯定会遇到与预期不符的情况。比如某章节特别难，可能需要多花半天时间。要学会灵活调整，但保证总体目标不变。</li>
+</ol>
+<p><strong>6月底的目标状态：</strong></p>
+<ul>
+<li>数学三科（高数、线代、概率）基础理论过完一遍，配套的基础习题册（如660题或类似难度）基本完成。</li>
+<li>408四门专业课（数据结构、计组、操作系统、计网）基础理论过完一遍，王道等辅导书的课后选择题基本完成。</li>
+<li>对各科的基本概念、框架和常见题型有初步掌握。</li>
+<li>积累了一定的笔记和错题。</li>
+</ul>
+<p>这个计划强度很大，意味着你接下来的两个多月需要非常专注和自律。请务必根据自己的实际学习效率和习惯进行微调。加油，祝你学习顺利，成功上岸！</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E8%80%83%E7%A0%94/" class="category-chain-item">考研</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E8%80%83%E7%A0%94/" class="print-no-link">#考研</a>
+      
+        <a href="/tags/%E6%95%B0%E5%AD%A6/" class="print-no-link">#数学</a>
+      
+        <a href="/tags/408%E4%B8%93%E4%B8%9A%E8%AF%BE/" class="print-no-link">#408专业课</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>剩余规划</div>
+      <div>https://wwxnb261.github.io/2025/04/25/kaoyan/guihua/剩余规划/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Shiyi Wang</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025年4月25日</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>更新于</div>
+          <div>2025年4月25日</div>
+        </div>
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2025/05/04/H%E7%94%B5%E8%B5%9B/" title="H电赛">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">H电赛</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2025/04/15/kaoyan/408/%E4%BA%8C%E5%8F%89%E6%A0%91%E4%BB%A3%E7%A0%81%E6%8E%8C%E6%8F%A1/" title="二叉树的代码掌握">
+                        <span class="hidden-mobile">二叉树的代码掌握</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/valine/1.5.1/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"pN9tDeARhcoGKf7lsPz5rU6x-gzGzoHsz","appKey":"tXTxV8poDycA25U8Jy8UX9lY","path":"window.location.pathname","placeholder":null,"avatar":"retro","meta":["nick","mail","link"],"requiredFields":[],"pageSize":10,"lang":"zh-CN","highlight":false,"recordIP":false,"serverURLs":"https://pn9tdear.lc-cn-n1-shared.com","emojiCDN":null,"emojiMaps":null,"enableQQ":false},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          var imgSelector = '#valine .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

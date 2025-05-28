@@ -1,0 +1,257 @@
+/* --- 考研时间线专属 CSS (my-timeline-enhanced.css) --- */
+
+:root {
+  /* Define your Fluid theme colors here, or use defaults */
+  --fluid-theme-color: #49b1f5; /* Main theme accent color */
+  --fluid-card-bg: #ffffff; /* Card background */
+  --fluid-body-bg: #f8f9fa; /* Page background, for contrast */
+  --fluid-line-color: #e9ecef; /* Border/line color */
+  --fluid-text-color: #343a40; /* Primary text color */
+  --fluid-sec-text-color: #6c757d; /* Secondary text color */
+  --fluid-heading-color: #212529; /* Heading color */
+  --fluid-link-hover-color: #007bff; /* Link hover color */
+
+  /* Timeline specific variables */
+  --timeline-offset-left-desktop: 60px; /* Space for line and meta on desktop */
+  --timeline-offset-left-mobile: 30px;  /* Space for line on mobile */
+  --timeline-line-width: 4px;
+  --timeline-dot-size: 16px;
+  --timeline-dot-border-width: 3px;
+}
+
+/* 时间线整体容器 */
+.study-timeline {
+  position: relative;
+  padding-left: var(--timeline-offset-left-desktop);
+  margin: 60px auto; /* More vertical margin, centered if width is constrained */
+  max-width: 800px; /* Optional: constrain width for better readability on wide screens */
+  /* 创建左侧的竖线 */
+  border-left: var(--timeline-line-width) solid var(--fluid-theme-color);
+  /* Subtle gradient for the line (optional) */
+  /* border-image: linear-gradient(to bottom, var(--fluid-theme-color), color-mix(in srgb, var(--fluid-theme-color) 50%, transparent)) 1; */
+  overflow: hidden; /* Contains floats and prevents overflow issues */
+}
+
+/* 单个时间线项目 */
+.timeline-item {
+  position: relative;
+  margin-bottom: 60px;
+  /* Staggered fade-in animation for items */
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInItem 0.6s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+  /* animation-delay needs to be set per item, e.g., via JS or inline style: style="--item-index: 0;" */
+  animation-delay: calc(var(--item-index, 0) * 0.15s);
+}
+
+@keyframes fadeInItem {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 时间线上的圆点 */
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  /* Calculate left position to center the dot on the timeline line */
+  /* (timeline_padding_left + (timeline_line_width / 2)) - (dot_size / 2) */
+  left: calc(-1 * var(--timeline-offset-left-desktop) - (var(--timeline-line-width) / 2) - (var(--timeline-dot-size) / 2) - var(--timeline-dot-border-width));
+  top: 10px; /* Adjust for vertical alignment with title or content */
+  width: var(--timeline-dot-size);
+  height: var(--timeline-dot-size);
+  background-color: var(--fluid-theme-color);
+  border-radius: 50%;
+  border: var(--timeline-dot-border-width) solid var(--fluid-card-bg); /* Creates a "pop" effect */
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--fluid-theme-color) 40%, transparent), /* Softer outer glow */
+              0 2px 5px rgba(0,0,0,0.1); /* Subtle drop shadow for depth */
+  z-index: 10;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-item:hover::before {
+  transform: scale(1.15);
+  box-shadow: 0 0 0 5px color-mix(in srgb, var(--fluid-theme-color) 60%, transparent),
+              0 3px 8px rgba(0,0,0,0.15);
+}
+
+/* 时间戳部分 */
+.timeline-meta {
+  position: absolute;
+  /* Position to the left of the main timeline line */
+  left: calc(-1 * var(--timeline-offset-left-desktop) - 160px); /* 160px is width of meta + padding */
+  top: 5px; /* Align with top of dot or title */
+  width: 140px; /* Fixed width for date block */
+  text-align: right;
+  padding-right: 20px; /* Space between date and the timeline line */
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* Modern font stack */
+}
+
+.timeline-date {
+  display: block;
+  font-weight: 600; /* Semibold */
+  font-size: 1.2em;
+  color: var(--fluid-heading-color);
+  margin-bottom: 4px;
+}
+
+.timeline-day {
+  display: block;
+  font-size: 0.9em;
+  color: var(--fluid-sec-text-color);
+}
+
+/* 内容块部分 */
+.timeline-content {
+  background: var(--fluid-card-bg);
+  padding: 25px 30px;
+  border-radius: 12px; /* Slightly larger radius */
+  border: 1px solid var(--fluid-line-color);
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06); /* Softer, more modern shadow */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.timeline-content:hover {
+  transform: translateY(-5px) scale(1.01); /* Subtle lift and scale */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* 内容块小箭头 (Improved) */
+.timeline-content::before,
+.timeline-content::after { /* Using ::after for border */
+  content: '';
+  position: absolute;
+  top: 20px; /* Align with dot or where you want it visually */
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+.timeline-content::before { /* Arrow fill */
+  left: -10px; /* (Arrow width) */
+  border-width: 10px 10px 10px 0;
+  border-color: transparent var(--fluid-card-bg) transparent transparent;
+  z-index: 1;
+}
+
+.timeline-content::after { /* Arrow border */
+  left: -11px; /* (Arrow width + border width) */
+  border-width: 11px 11px 11px 0; /* 1px larger for border */
+  border-color: transparent var(--fluid-line-color) transparent transparent;
+  z-index: 0; /* Behind the fill */
+}
+
+.timeline-title {
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: 1.6em; /* Larger title */
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.timeline-title a {
+  color: var(--fluid-heading-color);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.timeline-title a:hover {
+  color: var(--fluid-link-hover-color);
+  text-decoration: underline;
+  text-decoration-color: var(--fluid-theme-color);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+.timeline-excerpt {
+  color: var(--fluid-text-color); /* Use primary text for better readability */
+  font-size: 1em;
+  line-height: 1.8; /* More spacious line height */
+  margin-bottom: 15px;
+}
+
+.read-more {
+  display: inline-block; /* Allows padding and better interaction */
+  margin-left: 0; /* Placed on its own line or distinct block usually */
+  margin-top: 10px;
+  padding: 6px 12px;
+  background-color: color-mix(in srgb, var(--fluid-theme-color) 15%, transparent);
+  color: var(--fluid-theme-color);
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9em;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+.read-more:hover {
+  background-color: var(--fluid-theme-color);
+  color: var(--fluid-card-bg); /* Or white, for contrast */
+}
+.read-more::after { /* Optional: add an arrow icon */
+  content: ' →';
+  font-weight: bold;
+}
+
+/* --- 响应式设计：适配手机等小屏幕 --- */
+@media (max-width: 768px) {
+  .study-timeline {
+    padding-left: var(--timeline-offset-left-mobile);
+    margin: 40px auto;
+    border-left-width: 3px; /* Thinner line on mobile */
+  }
+
+  .timeline-item {
+    margin-bottom: 40px;
+  }
+
+  .timeline-item::before {
+    /* Adjust dot position for mobile */
+    left: calc(-1 * var(--timeline-offset-left-mobile) - (3px / 2) - (var(--timeline-dot-size) / 2) - var(--timeline-dot-border-width));
+    top: 5px; /* May need adjustment based on meta position */
+    width: 14px; /* Slightly smaller dot */
+    height: 14px;
+    border-width: 2px;
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--fluid-theme-color) 30%, transparent);
+  }
+
+  .timeline-meta {
+    position: relative; /* Static positioning on mobile */
+    left: auto;
+    top: auto;
+    width: auto;
+    text-align: left;
+    margin-bottom: 10px;
+    padding-right: 0;
+    padding-left: 5px; /* Align with content slightly offset from dot */
+    border-bottom: 1px dashed var(--fluid-line-color);
+    padding-bottom: 8px;
+  }
+  .timeline-date {
+    display: inline;
+    font-size: 1.1em;
+    margin-right: 8px;
+  }
+  .timeline-day {
+    display: inline;
+    font-size: 0.85em;
+  }
+
+  .timeline-content {
+    padding: 20px;
+  }
+
+  /* Hide desktop arrow and its border */
+  .timeline-content::before,
+  .timeline-content::after {
+    display: none;
+  }
+
+  .timeline-title {
+    font-size: 1.3em;
+  }
+  .timeline-excerpt {
+    font-size: 0.95em;
+    line-height: 1.7;
+  }
+}

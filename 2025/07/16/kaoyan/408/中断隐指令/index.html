@@ -19,23 +19,23 @@
   <meta name="author" content="Shiyi Wang">
   <meta name="keywords" content="wwx,record">
   
-    <meta name="description" content="通过小的练习掌握二叉树">
+    <meta name="description" content="中断隐指令">
 <meta property="og:type" content="article">
-<meta property="og:title" content="二叉树的代码掌握">
-<meta property="og:url" content="https://wwxnb261.github.io/2025/04/15/kaoyan/408/%E4%BA%8C%E5%8F%89%E6%A0%91%E4%BB%A3%E7%A0%81%E6%8E%8C%E6%8F%A1/index.html">
+<meta property="og:title" content="中断隐指令">
+<meta property="og:url" content="https://wwxnb261.github.io/2025/07/16/kaoyan/408/%E4%B8%AD%E6%96%AD%E9%9A%90%E6%8C%87%E4%BB%A4/index.html">
 <meta property="og:site_name" content="Shiyi Wang 博客">
-<meta property="og:description" content="通过小的练习掌握二叉树">
+<meta property="og:description" content="中断隐指令">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-04-15T02:00:00.000Z">
-<meta property="article:modified_time" content="2025-07-15T16:50:50.344Z">
+<meta property="article:published_time" content="2025-07-15T16:50:15.000Z">
+<meta property="article:modified_time" content="2025-07-15T16:51:11.480Z">
 <meta property="article:author" content="Shiyi Wang">
 <meta property="article:tag" content="408复习">
-<meta property="article:tag" content="数据结构">
+<meta property="article:tag" content="计组">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>二叉树的代码掌握 - Shiyi Wang 博客</title>
+  <title>中断隐指令 - Shiyi Wang 博客</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -242,7 +242,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="二叉树的代码掌握"></span>
+            <span id="subtitle" data-typed-text="中断隐指令"></span>
           
         </div>
 
@@ -253,8 +253,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-04-15 10:00" pubdate>
-          2025年4月15日 上午
+        <time datetime="2025-07-16 00:50" pubdate>
+          2025年7月16日 凌晨
         </time>
       </span>
     
@@ -265,7 +265,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.7k 字
+          1.1k 字
         
       </span>
     
@@ -276,7 +276,7 @@
         
         
         
-          23 分钟
+          10 分钟
         
       </span>
     
@@ -322,7 +322,7 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">二叉树的代码掌握</h1>
+            <h1 id="seo-header">中断隐指令</h1>
             
             
               <p id="updated-time" class="note note-info" style="">
@@ -336,244 +336,66 @@
             
             
               <div class="note note-info post-excerpt">
-                通过小的练习掌握二叉树
+                中断隐指令
               </div>
             
             
             
               <div class="markdown-body">
                 
-                <p>为了帮助通过编码实践掌握考研中二叉树的所有知识点，设计了一个分阶段的学习计划，包含核心知识点梳理和配套的编程练习题。</p>
-<p><strong>核心原则：</strong></p>
-<ol>
-<li><strong>理解概念为先：</strong> 先彻底理解每个知识点的定义、性质和应用场景。</li>
-<li><strong>编码实践为重：</strong> 通过编写代码将理论转化为实际能力，加深理解并锻炼实现技巧。</li>
-<li><strong>循序渐进：</strong> 从基础到复杂，逐步深入。</li>
-<li><strong>举一反三：</strong> 掌握核心操作后，能灵活应用于各种变种问题。</li>
-<li><strong>重视效率：</strong> 关注算法的时间和空间复杂度，这是考研的重要考点。</li>
-</ol>
-<p><strong>推荐编程语言：</strong> C/C++ 或 Java（考研主流语言），Python 也可以用于快速学习和验证思路。以下题目描述不限语言，但你需要用你选择的语言实现。</p>
+                <p>你问的这个问题非常棒，直接命中了计算机体系结构和操作系统里的一个核心细节。</p>
+<p>简单直接的回答是：<strong>中断隐指令的“关中断”操作，发生在CPU响应中断、进入中断服务程序（ISR）之前的瞬间，是由硬件自动完成的。</strong></p>
+<p>它不是在中断服务程序的第一条指令，而是在CPU开始执行中断服务程序<strong>之前</strong>，作为整个中断响应周期（即“隐指令”）的一个关键步骤。</p>
 <hr>
-<h3 id="第一阶段：二叉树基础与遍历">第一阶段：二叉树基础与遍历</h3>
-<p><strong>知识点梳理：</strong></p>
+<p>为了让你彻底明白，我们来拆解一下CPU从收到中断信号到开始执行中断服务程序的全过程。这个由硬件自动完成的连续操作，就是所谓的**“中断隐指令”**。</p>
+<h3 id="中断隐指令的详细步骤">中断隐指令的详细步骤</h3>
+<p>假设CPU正在执行程序A，突然一个外部设备发来了中断请求。CPU在执行完当前的一条指令后，会开始执行如下一系列<strong>硬件自动操作</strong>：</p>
 <ol>
-<li><strong>二叉树定义：</strong> 节点、根节点、子节点、父节点、兄弟节点、叶子节点、度（入度/出度）、路径、层、深度、高度。</li>
-<li><strong>二叉树性质：</strong>
+<li>
+<p><strong>识别中断源</strong>: CPU确认收到了中断信号，并确定是哪个设备发出的（如果支持多中断源）。</p>
+</li>
+<li>
+<p><strong>保护现场 (Save Context)</strong>: 这是最关键的一步，为了能从中断处理中正确返回。</p>
 <ul>
-<li>第 i 层最多有 2^(i-1) 个节点 (i≥1)。</li>
-<li>深度为 k 的二叉树最多有 2^k - 1 个节点 (k≥1)。</li>
-<li>对于任何非空二叉树 T，若 n0 是叶节点数，n2 是度为 2 的节点数，则 n0 = n2 + 1。</li>
+<li><strong>压入程序计数器 (PC)</strong>: 硬件自动将当前PC（即下一条将被执行的指令地址）的值推入堆栈。这样CPU就知道中断结束后应该回到哪里继续执行。</li>
+<li><strong>压入程序状态字 (PSW)</strong>: 硬件自动将当前的PSW（包含各种标志位，如零标志、进位标志，以及最重要的<strong>中断允许标志位 IF</strong>）推入堆栈。</li>
 </ul>
 </li>
-<li><strong>特殊二叉树：</strong>
+<li>
+<p><strong>关中断 (Disable Interrupts)</strong>: <strong>这就是你问的关键点所在</strong>。在完成现场保护后，<strong>硬件会自动将CPU内部的程序状态字（PSW）中的中断允许标志位（Interrupt Flag, IF）清零</strong>。</p>
 <ul>
-<li><strong>满二叉树：</strong> 定义、性质（节点数、叶子数）。</li>
-<li><strong>完全二叉树：</strong> 定义（按层序编号与满二叉树一致）、性质（深度、节点关系）。</li>
+<li><strong>位置</strong>: 在旧的PSW被压入堆栈之后，在加载新的PC和PSW之前。</li>
+<li><strong>目的</strong>: 这样做是为了防止在进入新的中断服务程序时，CPU马上又被另一个新的中断所打断。这可以确保当前的中断服务程序至少有一个“原子”的、不受干扰的启动阶段，来完成一些初始的、更关键的现场保护操作（比如保存通用寄存器）。</li>
 </ul>
 </li>
-<li><strong>二叉树存储结构：</strong>
+<li>
+<p><strong>加载中断服务程序的入口地址</strong>:</p>
 <ul>
-<li><strong>链式存储：</strong> 节点结构（data, lchild, rchild），画图表示。</li>
-<li><strong>顺序存储：</strong> 仅适用于完全二叉树，下标关系（父找子，子找父）。</li>
+<li>硬件根据中断类型码，在<strong>中断向量表 (Interrupt Vector Table)</strong> 中查找对应的中断服务程序（ISR）的入口地址。</li>
+<li>将这个入口地址加载到程序计数器（PC）中。</li>
 </ul>
 </li>
-<li><strong>二叉树遍历（重点与难点）：</strong>
+<li>
+<p><strong>开始执行中断服务程序</strong>:</p>
 <ul>
-<li><strong>前序遍历 (Pre-order):</strong> 根 -&gt; 左 -&gt; 右 (递归与非递归/迭代实现)。</li>
-<li><strong>中序遍历 (In-order):</strong> 左 -&gt; 根 -&gt; 右 (递归与非递归/迭代实现)。</li>
-<li><strong>后序遍历 (Post-order):</strong> 左 -&gt; 右 -&gt; 根 (递归与非递归/迭代实现)。</li>
-<li><strong>层序遍历 (Level-order):</strong> 使用队列实现。</li>
+<li>现在，PC已经指向了中断服务程序的第一条指令，CPU正式开始执行中断处理。</li>
 </ul>
 </li>
 </ol>
-<p><strong>编码练习题：</strong></p>
+<h3 id="为什么必须先“关中断”？">为什么必须先“关中断”？</h3>
+<p>想象一个场景：如果没有自动关中断。</p>
 <ol>
-<li><strong>【基础】定义二叉树节点：</strong> 设计并实现一个二叉树节点结构（或类）。<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs scss"><span class="hljs-comment">// 示例 (C++)</span><br>struct TreeNode &#123;<br>    int val;<br>    TreeNode *<span class="hljs-attribute">left</span>;<br>    TreeNode *<span class="hljs-attribute">right</span>;<br>    <span class="hljs-built_in">TreeNode</span>(int x) : <span class="hljs-built_in">val</span>(x), <span class="hljs-built_in">left</span>(nullptr), <span class="hljs-built_in">right</span>(nullptr) &#123;&#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
-</li>
-<li><strong>【遍历-递归】实现递归遍历：</strong> 编写函数，分别实现二叉树的前序、中序、后序递归遍历。
-<ul>
-<li><strong>输入：</strong> 二叉树的根节点。</li>
-<li><strong>输出：</strong> 按相应顺序打印节点值（或返回节点值列表）。</li>
-</ul>
-</li>
-<li><strong>【遍历-迭代】实现迭代遍历：</strong> 编写函数，分别实现二叉树的前序、中序、后序迭代遍历（通常使用栈）。
-<ul>
-<li><strong>输入：</strong> 二叉树的根节点。</li>
-<li><strong>输出：</strong> 按相应顺序打印节点值（或返回节点值列表）。</li>
-</ul>
-</li>
-<li><strong>【遍历-层序】实现层序遍历：</strong> 编写函数，实现二叉树的层序遍历（使用队列）。
-<ul>
-<li><strong>输入：</strong> 二叉树的根节点。</li>
-<li><strong>输出：</strong> 按层序打印节点值（或返回节点值列表，甚至按层分组的列表）。</li>
-</ul>
-</li>
-<li><strong>【基础操作】计算二叉树属性：</strong>
-<ul>
-<li>编写函数计算二叉树的高度（或深度）。</li>
-<li>编写函数计算二叉树的节点总数。</li>
-<li>编写函数计算二叉树的叶子节点数。</li>
-<li>编写函数计算二叉树度为 1 的节点数。</li>
-<li>编写函数计算二叉树度为 2 的节点数。</li>
-<li>编写函数计算二叉树第 k 层的节点数。</li>
-</ul>
-</li>
-<li><strong>【构造】根据遍历序列构造二叉树：</strong>
-<ul>
-<li>给定前序遍历和中序遍历序列，构造二叉树。</li>
-<li>给定后序遍历和中序遍历序列，构造二叉树。</li>
-<li><strong>思考：</strong> 为什么不能仅根据前序和后序遍历序列构造唯一的二叉树？</li>
-</ul>
-</li>
+<li>CPU响应了中断A，把PC和PSW压栈。</li>
+<li>在准备跳转到中断A的服务程序时，一个优先级更高的中断B来了。</li>
+<li>CPU会立刻丢下中断A，转而去响应中断B，再次把PC和PSW压栈。<br>
+这会造成处理流程的混乱，尤其是在多级中断系统中，可能会导致堆栈状态不可控或关键的中断信息丢失。</li>
 </ol>
-<hr>
-<h3 id="第二阶段：特殊二叉树与应用">第二阶段：特殊二叉树与应用</h3>
-<p><strong>知识点梳理：</strong></p>
+<p>因此，<strong>先关中断，再执行服务程序</strong>，是一种保护机制，确保当前中断处理流程的完整性和原子性。</p>
+<h3 id="何时再“开中断”？">何时再“开中断”？</h3>
+<p>既然硬件自动关了中断，那什么时候再打开呢？</p>
 <ol>
-<li><strong>二叉搜索树 (BST, Binary Search Tree / Binary Sort Tree)：</strong>
-<ul>
-<li><strong>定义：</strong> 左子树所有节点 &lt; 根节点 &lt; 右子树所有节点，递归定义。</li>
-<li><strong>操作：</strong> 查找、插入、删除（删除是难点，考虑三种情况）。</li>
-<li><strong>性质：</strong> 中序遍历结果是一个递增序列。</li>
-<li><strong>应用：</strong> 查找、排序。</li>
-<li><strong>局限：</strong> 可能退化成链表，导致效率降低。</li>
-</ul>
-</li>
-<li><strong>平衡二叉树 (Balanced Binary Tree)：</strong>
-<ul>
-<li><strong>动机：</strong> 解决 BST 可能退化的问题。</li>
-<li><strong>AVL 树：</strong>
-<ul>
-<li>定义：任何节点的左右子树高度差不超过 1。</li>
-<li>平衡因子 (Balance Factor)。</li>
-<li>失衡调整：四种旋转（LL, RR, LR, RL）的原理和实现（插入操作后的调整是重点）。</li>
-</ul>
-</li>
-<li><strong>红黑树 (Red-Black Tree)：</strong>（考研重点在于理解概念、性质，不一定要求手写复杂实现）
-<ul>
-<li>定义：满足 5 条性质的自平衡二叉搜索树。</li>
-<li>性质（了解即可）：节点红或黑、根黑、叶节点（NIL）黑、红节点子节点必黑、根到叶节点黑节点数相同。</li>
-<li>优势：相比 AVL，插入删除操作的平均旋转次数较少。</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><strong>堆 (Heap)：</strong>
-<ul>
-<li><strong>定义：</strong> 完全二叉树，满足父节点值 ≥ (或 ≤) 子节点值（最大堆/最小堆）。</li>
-<li><strong>存储：</strong> 通常用数组（顺序存储）实现。</li>
-<li><strong>操作：</strong> 插入（上浮/sift-up）、删除堆顶（下沉/sift-down/heapify）、建堆（Build Heap）。</li>
-<li><strong>应用：</strong> 堆排序、优先队列。</li>
-</ul>
-</li>
-<li><strong>哈夫曼树 (Huffman Tree / Optimal Binary Tree)：</strong>
-<ul>
-<li><strong>背景：</strong> 数据压缩。</li>
-<li><strong>定义：</strong> 带权路径长度 (WPL) 最小的二叉树。</li>
-<li><strong>构造：</strong> 贪心算法（选择权值最小的两个节点合并，重复此过程）。</li>
-<li><strong>哈夫曼编码：</strong> 前缀编码，无歧义。</li>
-</ul>
-</li>
-<li><strong>线索二叉树 (Threaded Binary Tree)：</strong>
-<ul>
-<li><strong>动机：</strong> 利用空指针域存储前驱/后继信息，方便非递归遍历。</li>
-<li><strong>线索化：</strong> 前序、中序、后序线索化（中序最常用）。</li>
-<li><strong>节点结构：</strong> 增加标志位区分指针是指向孩子还是线索。</li>
-<li><strong>遍历：</strong> 利用线索进行遍历。</li>
-</ul>
-</li>
-</ol>
-<p><strong>编码练习题：</strong></p>
-<ol start="7">
-<li><strong>【BST】实现 BST 操作：</strong>
-<ul>
-<li>编写函数在一个 BST 中查找指定值的节点。</li>
-<li>编写函数向一个 BST 中插入一个新值。</li>
-<li>编写函数从一个 BST 中删除一个指定值的节点（需要仔细处理被删节点有 0, 1, 2 个孩子的情况）。</li>
-<li>编写函数判断一棵给定的二叉树是否为 BST。</li>
-</ul>
-</li>
-<li><strong>【BST应用】查找第 K 小/大元素：</strong> 在 BST 中快速找到第 K 小（或第 K 大）的元素。 (提示：利用中序遍历)</li>
-<li><strong>【平衡树-概念】理解 AVL 旋转：</strong> 手动模拟在 AVL 树中插入元素导致失衡后的四种旋转调整过程（画图）。</li>
-<li><strong>【平衡树-实现】AVL 树插入：</strong> （选做，难度较高）实现 AVL 树的插入操作，包括插入节点和必要的旋转调整。</li>
-<li><strong>【堆】实现堆操作：</strong>
-<ul>
-<li>给定一个数组，实现原地建堆（最大堆或最小堆）。</li>
-<li>实现向堆中插入元素的操作。</li>
-<li>实现删除堆顶元素的操作。</li>
-</ul>
-</li>
-<li><strong>【堆应用】堆排序：</strong> 利用堆实现排序算法。</li>
-<li><strong>【堆应用】Top K 问题：</strong> 从大量数据中找出最大（或最小）的 K 个元素（使用最小堆或最大堆）。</li>
-<li><strong>【哈夫曼树】构造哈夫曼树：</strong>
-<ul>
-<li>给定一组权值（例如字符频率），构造对应的哈夫曼树。</li>
-<li>计算构造出的哈夫曼树的带权路径长度 (WPL)。</li>
-<li>（选做）生成每个字符的哈夫曼编码。</li>
-</ul>
-</li>
-<li><strong>【线索二叉树】中序线索化：</strong>
-<ul>
-<li>编写函数将一个普通二叉树进行中序线索化。</li>
-<li>编写函数在中序线索二叉树中查找指定节点的中序后继。</li>
-</ul>
-</li>
-</ol>
-<hr>
-<h3 id="第三阶段：综合应用与难题">第三阶段：综合应用与难题</h3>
-<p><strong>知识点梳理：</strong></p>
-<ol>
-<li><strong>二叉树的序列化与反序列化：</strong> 如何将二叉树转换为字符串（或其他序列）以便存储或传输，以及如何从序列恢复原来的二叉树结构。通常基于前序或层序遍历。</li>
-<li><strong>最近公共祖先 (LCA, Lowest Common Ancestor)：</strong>
-<ul>
-<li>在普通二叉树中查找两个节点的 LCA。</li>
-<li>在 BST 中查找两个节点的 LCA（利用 BST 性质可以简化）。</li>
-</ul>
-</li>
-<li><strong>二叉树的直径：</strong> 树中任意两个节点之间最长路径的长度。</li>
-<li><strong>判断对称二叉树/镜像二叉树。</strong></li>
-<li><strong>子结构判断：</strong> 判断树 B 是否是树 A 的子结构。</li>
-<li><strong>路径问题：</strong> 查找从根节点到叶子节点的所有路径，查找路径和等于给定值的路径等。</li>
-</ol>
-<p><strong>编码练习题：</strong></p>
-<ol start="16">
-<li><strong>【序列化】序列化与反序列化：</strong> 实现二叉树的序列化和反序列化（例如，按前序遍历序列化，包含空节点标记）。</li>
-<li><strong>【LCA】最近公共祖先：</strong>
-<ul>
-<li>编写函数查找普通二叉树中两个给定节点的最近公共祖先。</li>
-<li>编写函数查找 BST 中两个给定节点的最近公共祖先。</li>
-</ul>
-</li>
-<li><strong>【树属性】计算二叉树的直径：</strong> 编写函数计算二叉树的直径。</li>
-<li><strong>【树判断】对称二叉树：</strong> 编写函数判断一棵二叉树是否是对称的（镜像对称）。</li>
-<li><strong>【树判断】子结构：</strong> 编写函数判断树 B 是否是树 A 的子结构。</li>
-<li><strong>【路径】路径总和：</strong>
-<ul>
-<li>编写函数找出所有从根节点到叶子节点的路径。</li>
-<li>编写函数判断是否存在从根节点到叶子节点的路径，使得路径上节点值之和等于一个给定目标值。</li>
-<li>（进阶）找出所有从根节点到叶子节点的路径中，节点值之和等于目标值的路径。</li>
-</ul>
-</li>
-</ol>
-<hr>
-<h3 id="学习建议：">学习建议：</h3>
-<ol>
-<li><strong>画图！画图！画图！</strong> 理解二叉树操作最有效的方法是画图模拟过程，尤其是递归、删除、旋转等操作。</li>
-<li><strong>先递归，后迭代：</strong> 递归通常更符合树形结构的定义，更容易理解。掌握递归后，再挑战迭代实现，这对理解栈和队列的应用非常有帮助。</li>
-<li><strong>测试用例：</strong> 对你编写的每个函数，都要设计充分的测试用例，包括：
-<ul>
-<li>空树</li>
-<li>只有根节点的树</li>
-<li>左右子树都有的普通树</li>
-<li>退化成链表的树（左斜/右斜）</li>
-<li>完全二叉树</li>
-<li>包含重复值的树（如果允许）</li>
-<li>针对特定操作的边界情况（如删除叶子节点、只有左/右孩子的节点、根节点等）。</li>
-</ul>
-</li>
-<li><strong>理解复杂度：</strong> 分析你写的每个算法的时间复杂度和空间复杂度。考研选择题和算法设计题都会考察。</li>
-<li><strong>参考资料：</strong> 结合经典的考研数据结构教材（如王道、天勤等）和在线资源（如 LeetCode、牛客网上的二叉树题目）进行学习和练习。</li>
-<li><strong>反复练习：</strong> 二叉树的很多操作和技巧需要反复练习才能熟练掌握，尤其是各种遍历的非递归实现、BST 删除、AVL 旋转等。</li>
+<li><strong>在中断服务程序中手动开启</strong>: 如果程序员希望当前的中断服务程序可以被更高优先级的中断打断（即实现“中断嵌套”），他会在程序的适当位置（通常是在保存完所有需要保护的寄存器之后）执行一条“开中断”指令（如<code>STI</code>或<code>EI</code>）。</li>
+<li><strong>在中断返回时自动开启</strong>:当中断服务程序执行完毕，最后会调用一条<strong>中断返回指令</strong>（如<code>IRET</code>或<code>RETI</code>）。这条指令除了将之前保存的PC值弹回PC寄存器外，还会将之前保存的**旧的程序状态字（PSW）**弹回PSW寄存器。因为旧的PSW中的中断允许位（IF）是1（即开中断状态），所以当中断返回后，CPU就自动回到了允许响应中断的状态。</li>
 </ol>
 
                 
@@ -610,7 +432,7 @@
       
         <a href="/tags/408%E5%A4%8D%E4%B9%A0/" class="print-no-link">#408复习</a>
       
-        <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="print-no-link">#数据结构</a>
+        <a href="/tags/%E8%AE%A1%E7%BB%84/" class="print-no-link">#计组</a>
       
     </div>
   
@@ -622,8 +444,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>二叉树的代码掌握</div>
-      <div>https://wwxnb261.github.io/2025/04/15/kaoyan/408/二叉树代码掌握/</div>
+      <div>中断隐指令</div>
+      <div>https://wwxnb261.github.io/2025/07/16/kaoyan/408/中断隐指令/</div>
     </div>
     <div class="license-meta">
       
@@ -635,7 +457,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2025年4月15日</div>
+          <div>2025年7月16日</div>
         </div>
       
       
@@ -672,18 +494,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/04/25/kaoyan/guihua/%E5%89%A9%E4%BD%99%E8%A7%84%E5%88%92/" title="剩余规划">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">剩余规划</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/04/10/kaoyan/408/%E4%B8%AD%E5%BA%8F%E7%BA%BF%E7%B4%A2%E5%8C%96/" title="中序线索化">
-                        <span class="hidden-mobile">中序线索化</span>
+                      <a href="/2025/06/03/2025-06-03-%E5%82%BB%E9%80%BC%E5%82%BB%E9%80%BC%E5%82%BB%E9%80%BC-%E6%B2%A1%E4%B8%AA%E5%BF%97%E6%B0%94-%E7%9C%9F%E4%B8%8D%E8%A6%81%E8%84%B8/" title="考研征途 | 2025-06-03 · 傻逼傻逼傻逼，没个志气，真不要脸">
+                        <span class="hidden-mobile">考研征途 | 2025-06-03 · 傻逼傻逼傻逼，没个志气，真不要脸</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

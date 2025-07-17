@@ -4,11 +4,38 @@
   
   
   <entry>
-    <title>用户态如何切换到内核态以及访管指令的执行过程</title>
-    <link href="/2025/07/17/kaoyan/408/%E7%94%A8%E6%88%B7%E6%80%81%E5%A6%82%E4%BD%95%E5%88%87%E6%8D%A2%E5%88%B0%E5%86%85%E6%A0%B8%E6%80%81%E4%BB%A5%E5%8F%8A%E8%AE%BF%E7%AE%A1%E6%8C%87%E4%BB%A4%E7%9A%84%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B/"/>
-    <url>/2025/07/17/kaoyan/408/%E7%94%A8%E6%88%B7%E6%80%81%E5%A6%82%E4%BD%95%E5%88%87%E6%8D%A2%E5%88%B0%E5%86%85%E6%A0%B8%E6%80%81%E4%BB%A5%E5%8F%8A%E8%AE%BF%E7%AE%A1%E6%8C%87%E4%BB%A4%E7%9A%84%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B/</url>
+    <title>作业和进程的辨析</title>
+    <link href="/2025/07/17/kaoyan/408/%E4%BD%9C%E4%B8%9A%E5%92%8C%E8%BF%9B%E7%A8%8B%E7%9A%84%E8%BE%A8%E6%9E%90/"/>
+    <url>/2025/07/17/kaoyan/408/%E4%BD%9C%E4%B8%9A%E5%92%8C%E8%BF%9B%E7%A8%8B%E7%9A%84%E8%BE%A8%E6%9E%90/</url>
     
-    <content type="html"><![CDATA[<h2 id="问题-使用访管指令后像系统请求服务系统会切换到内核态吗-否则普通用户态怎么切换到内核态">问题:使用访管指令后像系统请求服务系统会切换到内核态吗?否则普通用户态怎么切换到内核态?</h2><p>该问题点出了操作系统中一个最核心、最基础的概念。</p><h2 id="解答">解答:</h2><p><strong>使用访管指令是用户程序从用户态切换到内核态最主要、最标准的方式。</strong></p><p>下面我将详细解释这个过程，并回答您的第二个问题。</p><hr><h3 id="“访管指令”与内核态切换过程">“访管指令”与内核态切换过程</h3><p>“访管指令”是“访问管理程序指令”的简称，它有很多更通俗的叫法，比如 <strong>“陷阱指令 (Trap Instruction)”</strong> 或者更广为人知的 <strong>“系统调用 (System Call)”</strong>。</p><p>在CPU指令集中，这是一条特殊的、非同寻常的指令。当用户程序执行到它时，会像触发了一个“陷阱”一样，使CPU的控制权从用户程序转移到操作系统内核。</p><p><strong>详细的切换步骤如下：</strong></p><ol><li><p><strong>用户态准备</strong>: 用户程序需要请求操作系统服务（例如，读取文件、创建网络连接等）。它会先把请求服务的**“编号”<strong>（比如“读取文件”是5号服务）和所需的</strong>参数**（比如文件名、读取长度等）放到指定的CPU寄存器或内存堆栈中。</p></li><li><p><strong>执行访管指令</strong>: 用户程序执行这条特殊的指令，例如在x86架构中是 <code>INT 0x80</code> (老式) 或 <code>SYSCALL</code> (新式)，在ARM架构中是 <code>SVC</code>。</p></li><li><p><strong>硬件强制切换</strong>: <strong>这是最关键的一步，由CPU硬件自动完成</strong>。</p><ul><li>CPU识别出这是一条访管指令。</li><li>CPU的特权级别<strong>立即从用户态（例如 Ring 3）切换到内核态（Ring 0）</strong>。</li><li>硬件会自动保存当前用户程序的执行位置（如程序计数器PC）和一些状态信息，以便将来能返回到正确的地方继续执行。</li><li>硬件根据指令或预设的地址，跳转到操作系统内核中一个预先定义好的、专门处理所有系统调用的入口程序。</li></ul></li><li><p><strong>内核态执行</strong>:</p><ul><li>此时CPU已经在内核态运行。操作系统内核接管控制权。</li><li>它会读取用户程序放在寄存器里的服务“编号”，然后在一个“服务列表”（系统调用表）中找到对应的服务函数（例如，真正的文件读取函数）。</li><li>内核执行这个服务函数，此时它可以访问所有硬件资源，执行特权指令，完成用户程序的请求。</li></ul></li><li><p><strong>从内核态返回用户态</strong>:</p><ul><li>内核服务执行完毕后，会执行另一条特殊的**“中断返回 (IRET)”**指令。</li><li>CPU硬件再次响应，将之前保存的用户程序状态恢复，并<strong>将特权级别从内核态切换回用户态</strong>。</li><li>用户程序从刚才执行访管指令的下一条指令开始，继续执行，就好像只是调用了一个普通的函数一样。</li></ul></li></ol><hr><h3 id="普通用户态怎么切换到内核态？">普通用户态怎么切换到内核态？</h3><p>第二个问题问得很好。除了上面讲的“系统调用”这种<strong>主动的、自愿的</strong>切换方式外，还有两种<strong>被动的、非自愿的</strong>切换方式。</p><p>总结来说，从用户态到内核态的切换路径一共有三种：</p><ol><li><p><strong>系统调用 (System Call)</strong></p><ul><li><strong>触发者</strong>: 用户程序代码。</li><li><strong>性质</strong>: 主动、自愿的。</li><li><strong>目的</strong>: 请求操作系统提供服务（如I/O操作、进程管理等）。这是用户程序获得内核服务的<strong>唯一合法途径</strong>。</li><li><strong>比喻</strong>: 你去银行柜台，主动向银行职员（内核）提出取款请求。</li></ul></li><li><p><strong>中断 (Interrupt)</strong></p><ul><li><strong>触发者</strong>: 外部硬件设备。</li><li><strong>性质</strong>: 被动、异步的（与程序的执行无关）。</li><li><strong>目的</strong>: 硬件设备需要CPU关注并处理紧急事件。例如，你按下键盘、网卡收到一个数据包、硬盘读完了数据，都会产生中断。</li><li><strong>过程</strong>: CPU在执行完当前指令后，检测到中断信号，会立刻<strong>被动地切换到内核态</strong>，去执行对应的中断处理程序。</li><li><strong>比喻</strong>: 你在银行填表，突然火警铃（中断）响了，你被迫停下手中的事，听从保安（内核）的指挥。</li></ul></li><li><p><strong>异常 (Exception)</strong></p><ul><li><strong>触发者</strong>: 用户程序执行时自身产生的错误或意外。</li><li><strong>性质</strong>: 被动、同步的（由当前指令直接导致）。</li><li><strong>目的</strong>: 处理程序自身无法解决的错误。例如，除以零、访问了非法的内存地址（页缺失）、执行了CPU不认识的指令。</li><li><strong>过程</strong>: CPU在执行某条指令时发现错误，会立刻<strong>被动地切换到内核态</strong>，去执行对应的异常处理程序（通常是杀死这个出错的程序）。</li><li><strong>比喻</strong>: 你在银行填表，结果笔没水了（异常），你只能举手向大堂经理（内核）求助。</li></ul></li></ol><p><strong>总结一下：</strong></p><table><thead><tr><th style="text-align:left">切换方式</th><th style="text-align:left">触发源</th><th style="text-align:left">主动/被动</th><th style="text-align:left">目的</th></tr></thead><tbody><tr><td style="text-align:left"><strong>系统调用</strong></td><td style="text-align:left">应用程序执行访管指令</td><td style="text-align:left"><strong>主动</strong></td><td style="text-align:left">请求内核服务</td></tr><tr><td style="text-align:left"><strong>中断</strong></td><td style="text-align:left">外部硬件设备</td><td style="text-align:left"><strong>被动</strong></td><td style="text-align:left">处理硬件事件</td></tr><tr><td style="text-align:left"><strong>异常</strong></td><td style="text-align:left">当前执行的指令出错</td><td style="text-align:left"><strong>被动</strong></td><td style="text-align:left">处理程序错误</td></tr></tbody></table><p>这三种方式是保护操作系统内核安全、实现现代操作系统功能的基石。用户程序不能随意进入内核态，只能通过这三条严格控制的“门”才能进入。</p>]]></content>
+    <content type="html"><![CDATA[<h2 id="作业（Job）和进程（Process）最核心的区别就是“静态”与“动态”，而这个本质区别也导致了作业调度和进程调度的角色、目标和工作方式完全不同。"><strong>作业（Job）和进程（Process）最核心的区别就是“静态”与“动态”</strong>，而这个本质区别也导致了作业调度和进程调度的角色、目标和工作方式完全不同。</h2><h3 id="1-作业-Job-与-进程-Process-的区别">1. 作业 (Job) 与 进程 (Process) 的区别</h3><h4 id="作业-Job-静态概念"><strong>作业 (Job) - 静态概念</strong></h4><ul><li><strong>定义</strong>：用户提交给操作系统去完成的<strong>一个完整的任务单元</strong>。它是一个包含了程序、所需数据以及操作指令的集合。</li><li><strong>状态</strong>：<strong>静态的 (Static)</strong>。作业本身并不会运行，它以文件的形式安静地存放在硬盘、SSD等辅助存储器上。它好比一辆汽车的“设计蓝图”。</li><li><strong>生命周期</strong>：从用户向系统**提交（Submit）**任务开始，到这个任务的所有处理全部完成为止。</li></ul><h4 id="进程-Process-动态概念"><strong>进程 (Process) - 动态概念</strong></h4><ul><li><strong>定义</strong>：一个<strong>正在执行中的程序实例 (Instance)</strong>。它是作业被加载到内存中，获得了生命力，准备开始运行的实体。</li><li><strong>状态</strong>：<strong>动态的 (Dynamic)</strong>。进程在其生命周期中会经历创建 (Create)、就绪 (Ready)、运行 (Running)、阻塞 (Waiting)、终止 (Terminated) 等一系列不断变化的状态。它好比根据设计蓝图制造出来，正在马路上飞驰的“汽车”。</li><li><strong>资源</strong>：它是操作系统进行资源分配和调度的基本单位，会从操作系统那里获得CPU时间、内存空间、文件等资源。</li></ul><table><thead><tr><th style="text-align:left">对比项</th><th style="text-align:left"><strong>作业 (Job)</strong></th><th style="text-align:left"><strong>进程 (Process)</strong></th></tr></thead><tbody><tr><td style="text-align:left"><strong>核心概念</strong></td><td style="text-align:left">任务单元，是程序和数据的集合体</td><td style="text-align:left">正在执行的程序实例</td></tr><tr><td style="text-align:left"><strong>状态</strong></td><td style="text-align:left"><strong>静态的 (Static)</strong></td><td style="text-align:left"><strong>动态的 (Dynamic)</strong></td></tr><tr><td style="text-align:left"><strong>存放位置</strong></td><td style="text-align:left">辅助存储器 (外存/硬盘)</td><td style="text-align:left">主存储器 (内存)</td></tr><tr><td style="text-align:left"><strong>形象比喻</strong></td><td style="text-align:left">汽车的设计蓝图</td><td style="text-align:left">正在马路上行驶的汽车</td></tr></tbody></table><hr><h3 id="2-作业调度-与-进程调度-的区别">2. 作业调度 与 进程调度 的区别</h3><p>基于上述概念差异，管理它们俩的调度程序在功能、目标和频率上也有着天壤之别。</p><h4 id="作业调度-Job-Scheduling"><strong>作业调度 (Job Scheduling)</strong></h4><ul><li><strong>别名</strong>：<strong>长程调度 (Long-term Scheduling)</strong> 或 <strong>高级调度</strong>。</li><li><strong>核心角色</strong>：从外存（硬盘）上的大量处于“后备状态”的作业中，<strong>挑选一个或多个作业，为它们分配内存等资源，并创建进程</strong>。它的工作是决定“让谁进场当选手”。</li><li><strong>调度目标</strong>：主要目标是控制进入系统的进程数量，平衡系统负载。例如，它会尽量挑选CPU消耗型和I/O消耗型作业的搭配，以提高整个系统的吞吐量和效率。</li><li><strong>执行频率</strong>：<strong>低</strong>。只有在系统中有作业完成或有新作业提交时才可能执行，频率可能是数秒甚至数分钟一次。</li></ul><h4 id="进程调度-Process-Scheduling"><strong>进程调度 (Process Scheduling)</strong></h4><ul><li><strong>别名</strong>：<strong>短程调度 (Short-term Scheduling)</strong> 或 <strong>CPU调度</strong>。</li><li><strong>核心角色</strong>：从内存里已经处于“就绪状态”的众多进程中，<strong>挑选一个进程，并为它分配CPU</strong>，让它投入运行。它的工作是决定“现在该轮到哪个选手上场比赛”。</li><li><strong>调度目标</strong>：主要目标是高效地利用CPU，并为用户提供尽可能短的等待时间和响应时间。</li><li><strong>执行频率</strong>：<strong>非常高</strong>。在分时操作系统中，进程调度可能每隔几十毫秒就会发生一次，是操作系统中最频繁的操作之一。</li></ul><table><thead><tr><th style="text-align:left">对比项</th><th style="text-align:left"><strong>作业调度 (Job Scheduling)</strong></th><th style="text-align:left"><strong>进程调度 (Process Scheduling)</strong></th></tr></thead><tbody><tr><td style="text-align:left"><strong>别名</strong></td><td style="text-align:left">长程调度 / 高级调度</td><td style="text-align:left">短程调度 / CPU调度</td></tr><tr><td style="text-align:left"><strong>调度对象</strong></td><td style="text-align:left">外存中的<strong>作业 (Job)</strong></td><td style="text-align:left">内存中的<strong>进程 (Process)</strong></td></tr><tr><td style="text-align:left"><strong>核心决策</strong></td><td style="text-align:left">决定哪个<strong>作业</strong>能进入内存变为进程</td><td style="text-align:left">决定哪个<strong>进程</strong>能获得CPU开始运行</td></tr><tr><td style="text-align:left"><strong>执行频率</strong></td><td style="text-align:left"><strong>低</strong></td><td style="text-align:left"><strong>非常高</strong></td></tr><tr><td style="text-align:left"><strong>关注点</strong></td><td style="text-align:left">宏观，平衡系统资源，提高吞吐量</td><td style="text-align:left">微观，CPU利用率，降低等待/响应时间</td></tr><tr><td style="text-align:left"><strong>形象比喻</strong></td><td style="text-align:left">从海选名单中选拔国家队选手</td><td style="text-align:left">在比赛中决定换谁上场</td></tr></tbody></table><h3 id="总结">总结</h3><ul><li><strong>作业</strong>是存放在硬盘上的<strong>静态</strong>任务包，<strong>作业调度</strong>从<strong>宏观、长期</strong>的角度决定让哪些作业进入内存。</li><li>一旦作业进入内存就变成了<strong>进程</strong>，成为一个<strong>动态</strong>的执行实体，而<strong>进程调度</strong>则从<strong>微观、短期</strong>的角度决定此时此刻让哪个进程使用CPU。</li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>考研</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>408复习</tag>
+      
+      <tag>计组</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>内中断的详细解析</title>
+    <link href="/2025/07/17/kaoyan/408/%E5%86%85%E4%B8%AD%E6%96%AD%E7%9A%84%E8%AF%A6%E7%BB%86%E8%A7%A3%E6%9E%90/"/>
+    <url>/2025/07/17/kaoyan/408/%E5%86%85%E4%B8%AD%E6%96%AD%E7%9A%84%E8%AF%A6%E7%BB%86%E8%A7%A3%E6%9E%90/</url>
+    
+    <content type="html"><![CDATA[]]></content>
     
     
     <categories>
@@ -23,6 +50,33 @@
       <tag>408复习</tag>
       
       <tag>专业课</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>用户态如何切换到内核态以及访管指令的执行过程</title>
+    <link href="/2025/07/17/kaoyan/408/%E7%94%A8%E6%88%B7%E6%80%81%E5%A6%82%E4%BD%95%E5%88%87%E6%8D%A2%E5%88%B0%E5%86%85%E6%A0%B8%E6%80%81%E4%BB%A5%E5%8F%8A%E8%AE%BF%E7%AE%A1%E6%8C%87%E4%BB%A4%E7%9A%84%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B/"/>
+    <url>/2025/07/17/kaoyan/408/%E7%94%A8%E6%88%B7%E6%80%81%E5%A6%82%E4%BD%95%E5%88%87%E6%8D%A2%E5%88%B0%E5%86%85%E6%A0%B8%E6%80%81%E4%BB%A5%E5%8F%8A%E8%AE%BF%E7%AE%A1%E6%8C%87%E4%BB%A4%E7%9A%84%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B/</url>
+    
+    <content type="html"><![CDATA[<h2 id="问题">问题:</h2><p><strong>使用访管指令后像系统请求服务系统会切换到内核态吗?否则普通用户态怎么切换到内核态?</strong><br>该问题点出了操作系统中一个最核心、最基础的概念。</p><h2 id="解答">解答:</h2><p><strong>使用访管指令是用户程序从用户态切换到内核态最主要、最标准的方式。</strong></p><hr><h3 id="“访管指令”与内核态切换过程">“访管指令”与内核态切换过程</h3><p>“访管指令”是“访问管理程序指令”的简称，它有很多更通俗的叫法，比如 <strong>“陷阱指令 (Trap Instruction)”</strong> 或者更广为人知的 <strong>“系统调用 (System Call)”</strong>。</p><p>在CPU指令集中，这是一条特殊的、非同寻常的指令。当用户程序执行到它时，会像触发了一个“陷阱”一样，使CPU的控制权从用户程序转移到操作系统内核。</p><p><strong>详细的切换步骤如下：</strong></p><ol><li><p><strong>用户态准备</strong>: 用户程序需要请求操作系统服务（例如，读取文件、创建网络连接等）。它会先把请求服务的**“编号”<strong>（比如“读取文件”是5号服务）和所需的</strong>参数**（比如文件名、读取长度等）放到指定的CPU寄存器或内存堆栈中。</p></li><li><p><strong>执行访管指令</strong>: 用户程序执行这条特殊的指令，例如在x86架构中是 <code>INT 0x80</code> (老式) 或 <code>SYSCALL</code> (新式)，在ARM架构中是 <code>SVC</code>。</p></li><li><p><strong>硬件强制切换</strong>: <strong>这是最关键的一步，由CPU硬件自动完成</strong>。</p><ul><li>CPU识别出这是一条访管指令。</li><li>CPU的特权级别<strong>立即从用户态（例如 Ring 3）切换到内核态（Ring 0）</strong>。</li><li>硬件会自动保存当前用户程序的执行位置（如程序计数器PC）和一些状态信息，以便将来能返回到正确的地方继续执行。</li><li>硬件根据指令或预设的地址，跳转到操作系统内核中一个预先定义好的、专门处理所有系统调用的入口程序。</li></ul></li><li><p><strong>内核态执行</strong>:</p><ul><li>此时CPU已经在内核态运行。操作系统内核接管控制权。</li><li>它会读取用户程序放在寄存器里的服务“编号”，然后在一个“服务列表”（系统调用表）中找到对应的服务函数（例如，真正的文件读取函数）。</li><li>内核执行这个服务函数，此时它可以访问所有硬件资源，执行特权指令，完成用户程序的请求。</li></ul></li><li><p><strong>从内核态返回用户态</strong>:</p><ul><li>内核服务执行完毕后，会执行另一条特殊的**“中断返回 (IRET)”**指令。</li><li>CPU硬件再次响应，将之前保存的用户程序状态恢复，并<strong>将特权级别从内核态切换回用户态</strong>。</li><li>用户程序从刚才执行访管指令的下一条指令开始，继续执行，就好像只是调用了一个普通的函数一样。</li></ul></li></ol><hr><h3 id="普通用户态怎么切换到内核态？">普通用户态怎么切换到内核态？</h3><p>第二个问题问得很好。除了上面讲的“系统调用”这种<strong>主动的、自愿的</strong>切换方式外，还有两种<strong>被动的、非自愿的</strong>切换方式。</p><p>总结来说，从用户态到内核态的切换路径一共有三种：</p><ol><li><p><strong>系统调用 (System Call)</strong></p><ul><li><strong>触发者</strong>: 用户程序代码。</li><li><strong>性质</strong>: 主动、自愿的。</li><li><strong>目的</strong>: 请求操作系统提供服务（如I/O操作、进程管理等）。这是用户程序获得内核服务的<strong>唯一合法途径</strong>。</li><li><strong>比喻</strong>: 你去银行柜台，主动向银行职员（内核）提出取款请求。</li></ul></li><li><p><strong>中断 (Interrupt)</strong></p><ul><li><strong>触发者</strong>: 外部硬件设备。</li><li><strong>性质</strong>: 被动、异步的（与程序的执行无关）。</li><li><strong>目的</strong>: 硬件设备需要CPU关注并处理紧急事件。例如，你按下键盘、网卡收到一个数据包、硬盘读完了数据，都会产生中断。</li><li><strong>过程</strong>: CPU在执行完当前指令后，检测到中断信号，会立刻<strong>被动地切换到内核态</strong>，去执行对应的中断处理程序。</li><li><strong>比喻</strong>: 你在银行填表，突然火警铃（中断）响了，你被迫停下手中的事，听从保安（内核）的指挥。</li></ul></li><li><p><strong>异常 (Exception)</strong></p><ul><li><strong>触发者</strong>: 用户程序执行时自身产生的错误或意外。</li><li><strong>性质</strong>: 被动、同步的（由当前指令直接导致）。</li><li><strong>目的</strong>: 处理程序自身无法解决的错误。例如，除以零、访问了非法的内存地址（页缺失）、执行了CPU不认识的指令。</li><li><strong>过程</strong>: CPU在执行某条指令时发现错误，会立刻<strong>被动地切换到内核态</strong>，去执行对应的异常处理程序（通常是杀死这个出错的程序）。</li><li><strong>比喻</strong>: 你在银行填表，结果笔没水了（异常），你只能举手向大堂经理（内核）求助。</li></ul></li></ol><p><strong>总结一下：</strong></p><table><thead><tr><th style="text-align:left">切换方式</th><th style="text-align:left">触发源</th><th style="text-align:left">主动/被动</th><th style="text-align:left">目的</th></tr></thead><tbody><tr><td style="text-align:left"><strong>系统调用</strong></td><td style="text-align:left">应用程序执行访管指令</td><td style="text-align:left"><strong>主动</strong></td><td style="text-align:left">请求内核服务</td></tr><tr><td style="text-align:left"><strong>中断</strong></td><td style="text-align:left">外部硬件设备</td><td style="text-align:left"><strong>被动</strong></td><td style="text-align:left">处理硬件事件</td></tr><tr><td style="text-align:left"><strong>异常</strong></td><td style="text-align:left">当前执行的指令出错</td><td style="text-align:left"><strong>被动</strong></td><td style="text-align:left">处理程序错误</td></tr></tbody></table><p>这三种方式是保护操作系统内核安全、实现现代操作系统功能的基石。用户程序不能随意进入内核态，只能通过这三条严格控制的“门”才能进入。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>考研</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>408复习</tag>
+      
+      <tag>计组</tag>
       
     </tags>
     

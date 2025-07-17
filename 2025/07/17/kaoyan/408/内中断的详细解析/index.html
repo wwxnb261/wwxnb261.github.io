@@ -19,23 +19,23 @@
   <meta name="author" content="Shiyi Wang">
   <meta name="keywords" content="wwx,record">
   
-    <meta name="description" content="用户态如何切换到内核态以及访管指令的执行过程">
+    <meta name="description" content="内中断的详细解析">
 <meta property="og:type" content="article">
-<meta property="og:title" content="用户态如何切换到内核态以及访管指令的执行过程">
-<meta property="og:url" content="https://wwxnb261.github.io/2025/07/17/kaoyan/408/%E7%94%A8%E6%88%B7%E6%80%81%E5%A6%82%E4%BD%95%E5%88%87%E6%8D%A2%E5%88%B0%E5%86%85%E6%A0%B8%E6%80%81%E4%BB%A5%E5%8F%8A%E8%AE%BF%E7%AE%A1%E6%8C%87%E4%BB%A4%E7%9A%84%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B/index.html">
+<meta property="og:title" content="内中断的详细解析">
+<meta property="og:url" content="https://wwxnb261.github.io/2025/07/17/kaoyan/408/%E5%86%85%E4%B8%AD%E6%96%AD%E7%9A%84%E8%AF%A6%E7%BB%86%E8%A7%A3%E6%9E%90/index.html">
 <meta property="og:site_name" content="Shiyi Wang 博客">
-<meta property="og:description" content="用户态如何切换到内核态以及访管指令的执行过程">
+<meta property="og:description" content="内中断的详细解析">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-07-17T02:19:12.000Z">
-<meta property="article:modified_time" content="2025-07-17T02:23:54.110Z">
+<meta property="article:published_time" content="2025-07-17T02:51:15.000Z">
+<meta property="article:modified_time" content="2025-07-17T02:51:15.852Z">
 <meta property="article:author" content="Shiyi Wang">
 <meta property="article:tag" content="408复习">
-<meta property="article:tag" content="计组">
+<meta property="article:tag" content="专业课">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>用户态如何切换到内核态以及访管指令的执行过程 - Shiyi Wang 博客</title>
+  <title>内中断的详细解析 - Shiyi Wang 博客</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -242,7 +242,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="用户态如何切换到内核态以及访管指令的执行过程"></span>
+            <span id="subtitle" data-typed-text="内中断的详细解析"></span>
           
         </div>
 
@@ -253,7 +253,7 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-07-17 10:19" pubdate>
+        <time datetime="2025-07-17 10:51" pubdate>
           2025年7月17日 上午
         </time>
       </span>
@@ -265,7 +265,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.3k 字
+          0 字
         
       </span>
     
@@ -276,7 +276,7 @@
         
         
         
-          12 分钟
+          1 分钟
         
       </span>
     
@@ -322,7 +322,7 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">用户态如何切换到内核态以及访管指令的执行过程</h1>
+            <h1 id="seo-header">内中断的详细解析</h1>
             
             
               <p id="updated-time" class="note note-info" style="">
@@ -336,124 +336,14 @@
             
             
               <div class="note note-info post-excerpt">
-                用户态如何切换到内核态以及访管指令的执行过程
+                内中断的详细解析
               </div>
             
             
             
               <div class="markdown-body">
                 
-                <h2 id="问题">问题:</h2>
-<p><strong>使用访管指令后像系统请求服务系统会切换到内核态吗?否则普通用户态怎么切换到内核态?</strong><br>
-该问题点出了操作系统中一个最核心、最基础的概念。</p>
-<h2 id="解答">解答:</h2>
-<p><strong>使用访管指令是用户程序从用户态切换到内核态最主要、最标准的方式。</strong></p>
-<hr>
-<h3 id="“访管指令”与内核态切换过程">“访管指令”与内核态切换过程</h3>
-<p>“访管指令”是“访问管理程序指令”的简称，它有很多更通俗的叫法，比如 <strong>“陷阱指令 (Trap Instruction)”</strong> 或者更广为人知的 <strong>“系统调用 (System Call)”</strong>。</p>
-<p>在CPU指令集中，这是一条特殊的、非同寻常的指令。当用户程序执行到它时，会像触发了一个“陷阱”一样，使CPU的控制权从用户程序转移到操作系统内核。</p>
-<p><strong>详细的切换步骤如下：</strong></p>
-<ol>
-<li>
-<p><strong>用户态准备</strong>: 用户程序需要请求操作系统服务（例如，读取文件、创建网络连接等）。它会先把请求服务的**“编号”<strong>（比如“读取文件”是5号服务）和所需的</strong>参数**（比如文件名、读取长度等）放到指定的CPU寄存器或内存堆栈中。</p>
-</li>
-<li>
-<p><strong>执行访管指令</strong>: 用户程序执行这条特殊的指令，例如在x86架构中是 <code>INT 0x80</code> (老式) 或 <code>SYSCALL</code> (新式)，在ARM架构中是 <code>SVC</code>。</p>
-</li>
-<li>
-<p><strong>硬件强制切换</strong>: <strong>这是最关键的一步，由CPU硬件自动完成</strong>。</p>
-<ul>
-<li>CPU识别出这是一条访管指令。</li>
-<li>CPU的特权级别<strong>立即从用户态（例如 Ring 3）切换到内核态（Ring 0）</strong>。</li>
-<li>硬件会自动保存当前用户程序的执行位置（如程序计数器PC）和一些状态信息，以便将来能返回到正确的地方继续执行。</li>
-<li>硬件根据指令或预设的地址，跳转到操作系统内核中一个预先定义好的、专门处理所有系统调用的入口程序。</li>
-</ul>
-</li>
-<li>
-<p><strong>内核态执行</strong>:</p>
-<ul>
-<li>此时CPU已经在内核态运行。操作系统内核接管控制权。</li>
-<li>它会读取用户程序放在寄存器里的服务“编号”，然后在一个“服务列表”（系统调用表）中找到对应的服务函数（例如，真正的文件读取函数）。</li>
-<li>内核执行这个服务函数，此时它可以访问所有硬件资源，执行特权指令，完成用户程序的请求。</li>
-</ul>
-</li>
-<li>
-<p><strong>从内核态返回用户态</strong>:</p>
-<ul>
-<li>内核服务执行完毕后，会执行另一条特殊的**“中断返回 (IRET)”**指令。</li>
-<li>CPU硬件再次响应，将之前保存的用户程序状态恢复，并<strong>将特权级别从内核态切换回用户态</strong>。</li>
-<li>用户程序从刚才执行访管指令的下一条指令开始，继续执行，就好像只是调用了一个普通的函数一样。</li>
-</ul>
-</li>
-</ol>
-<hr>
-<h3 id="普通用户态怎么切换到内核态？">普通用户态怎么切换到内核态？</h3>
-<p>第二个问题问得很好。除了上面讲的“系统调用”这种<strong>主动的、自愿的</strong>切换方式外，还有两种<strong>被动的、非自愿的</strong>切换方式。</p>
-<p>总结来说，从用户态到内核态的切换路径一共有三种：</p>
-<ol>
-<li>
-<p><strong>系统调用 (System Call)</strong></p>
-<ul>
-<li><strong>触发者</strong>: 用户程序代码。</li>
-<li><strong>性质</strong>: 主动、自愿的。</li>
-<li><strong>目的</strong>: 请求操作系统提供服务（如I/O操作、进程管理等）。这是用户程序获得内核服务的<strong>唯一合法途径</strong>。</li>
-<li><strong>比喻</strong>: 你去银行柜台，主动向银行职员（内核）提出取款请求。</li>
-</ul>
-</li>
-<li>
-<p><strong>中断 (Interrupt)</strong></p>
-<ul>
-<li><strong>触发者</strong>: 外部硬件设备。</li>
-<li><strong>性质</strong>: 被动、异步的（与程序的执行无关）。</li>
-<li><strong>目的</strong>: 硬件设备需要CPU关注并处理紧急事件。例如，你按下键盘、网卡收到一个数据包、硬盘读完了数据，都会产生中断。</li>
-<li><strong>过程</strong>: CPU在执行完当前指令后，检测到中断信号，会立刻<strong>被动地切换到内核态</strong>，去执行对应的中断处理程序。</li>
-<li><strong>比喻</strong>: 你在银行填表，突然火警铃（中断）响了，你被迫停下手中的事，听从保安（内核）的指挥。</li>
-</ul>
-</li>
-<li>
-<p><strong>异常 (Exception)</strong></p>
-<ul>
-<li><strong>触发者</strong>: 用户程序执行时自身产生的错误或意外。</li>
-<li><strong>性质</strong>: 被动、同步的（由当前指令直接导致）。</li>
-<li><strong>目的</strong>: 处理程序自身无法解决的错误。例如，除以零、访问了非法的内存地址（页缺失）、执行了CPU不认识的指令。</li>
-<li><strong>过程</strong>: CPU在执行某条指令时发现错误，会立刻<strong>被动地切换到内核态</strong>，去执行对应的异常处理程序（通常是杀死这个出错的程序）。</li>
-<li><strong>比喻</strong>: 你在银行填表，结果笔没水了（异常），你只能举手向大堂经理（内核）求助。</li>
-</ul>
-</li>
-</ol>
-<p><strong>总结一下：</strong></p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">切换方式</th>
-<th style="text-align:left">触发源</th>
-<th style="text-align:left">主动/被动</th>
-<th style="text-align:left">目的</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"><strong>系统调用</strong></td>
-<td style="text-align:left">应用程序执行访管指令</td>
-<td style="text-align:left"><strong>主动</strong></td>
-<td style="text-align:left">请求内核服务</td>
-</tr>
-<tr>
-<td style="text-align:left"><strong>中断</strong></td>
-<td style="text-align:left">外部硬件设备</td>
-<td style="text-align:left"><strong>被动</strong></td>
-<td style="text-align:left">处理硬件事件</td>
-</tr>
-<tr>
-<td style="text-align:left"><strong>异常</strong></td>
-<td style="text-align:left">当前执行的指令出错</td>
-<td style="text-align:left"><strong>被动</strong></td>
-<td style="text-align:left">处理程序错误</td>
-</tr>
-</tbody>
-</table>
-<p>这三种方式是保护操作系统内核安全、实现现代操作系统功能的基石。用户程序不能随意进入内核态，只能通过这三条严格控制的“门”才能进入。</p>
-
+                
                 
               </div>
             
@@ -488,7 +378,7 @@
       
         <a href="/tags/408%E5%A4%8D%E4%B9%A0/" class="print-no-link">#408复习</a>
       
-        <a href="/tags/%E8%AE%A1%E7%BB%84/" class="print-no-link">#计组</a>
+        <a href="/tags/%E4%B8%93%E4%B8%9A%E8%AF%BE/" class="print-no-link">#专业课</a>
       
     </div>
   
@@ -500,8 +390,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>用户态如何切换到内核态以及访管指令的执行过程</div>
-      <div>https://wwxnb261.github.io/2025/07/17/kaoyan/408/用户态如何切换到内核态以及访管指令的执行过程/</div>
+      <div>内中断的详细解析</div>
+      <div>https://wwxnb261.github.io/2025/07/17/kaoyan/408/内中断的详细解析/</div>
     </div>
     <div class="license-meta">
       
@@ -550,9 +440,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/07/17/kaoyan/408/%E5%86%85%E4%B8%AD%E6%96%AD%E7%9A%84%E8%AF%A6%E7%BB%86%E8%A7%A3%E6%9E%90/" title="内中断的详细解析">
+                      <a href="/2025/07/17/kaoyan/408/%E4%BD%9C%E4%B8%9A%E5%92%8C%E8%BF%9B%E7%A8%8B%E7%9A%84%E8%BE%A8%E6%9E%90/" title="作业和进程的辨析">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">内中断的详细解析</span>
+                        <span class="hidden-mobile">作业和进程的辨析</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -560,8 +450,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/07/16/%E8%AE%A1%E5%88%92/" title="考研征途 | 2025-05-28 · 攻坚克难，稳步前行！">
-                        <span class="hidden-mobile">考研征途 | 2025-05-28 · 攻坚克难，稳步前行！</span>
+                      <a href="/2025/07/17/kaoyan/408/%E7%94%A8%E6%88%B7%E6%80%81%E5%A6%82%E4%BD%95%E5%88%87%E6%8D%A2%E5%88%B0%E5%86%85%E6%A0%B8%E6%80%81%E4%BB%A5%E5%8F%8A%E8%AE%BF%E7%AE%A1%E6%8C%87%E4%BB%A4%E7%9A%84%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B/" title="用户态如何切换到内核态以及访管指令的执行过程">
+                        <span class="hidden-mobile">用户态如何切换到内核态以及访管指令的执行过程</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

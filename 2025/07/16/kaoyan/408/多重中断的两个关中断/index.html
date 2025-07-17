@@ -19,15 +19,15 @@
   <meta name="author" content="Shiyi Wang">
   <meta name="keywords" content="wwx,record">
   
-    <meta name="description" content="中断隐指令的关中断在哪里">
+    <meta name="description" content="辨析多重中断中的两个&quot;开中断&quot;和&quot;关中断&quot;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="中断隐指令">
-<meta property="og:url" content="https://wwxnb261.github.io/2025/07/16/kaoyan/408/%E4%B8%AD%E6%96%AD%E9%9A%90%E6%8C%87%E4%BB%A4/index.html">
+<meta property="og:title" content="多重中断的两个关中断">
+<meta property="og:url" content="https://wwxnb261.github.io/2025/07/16/kaoyan/408/%E5%A4%9A%E9%87%8D%E4%B8%AD%E6%96%AD%E7%9A%84%E4%B8%A4%E4%B8%AA%E5%85%B3%E4%B8%AD%E6%96%AD/index.html">
 <meta property="og:site_name" content="Shiyi Wang 博客">
-<meta property="og:description" content="中断隐指令的关中断在哪里">
+<meta property="og:description" content="辨析多重中断中的两个&quot;开中断&quot;和&quot;关中断&quot;">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-07-15T16:50:15.000Z">
-<meta property="article:modified_time" content="2025-07-15T16:52:18.968Z">
+<meta property="article:published_time" content="2025-07-16T10:43:59.000Z">
+<meta property="article:modified_time" content="2025-07-16T10:51:50.162Z">
 <meta property="article:author" content="Shiyi Wang">
 <meta property="article:tag" content="408复习">
 <meta property="article:tag" content="计组">
@@ -35,7 +35,7 @@
   
   
   
-  <title>中断隐指令 - Shiyi Wang 博客</title>
+  <title>多重中断的两个关中断 - Shiyi Wang 博客</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -242,7 +242,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="中断隐指令"></span>
+            <span id="subtitle" data-typed-text="多重中断的两个关中断"></span>
           
         </div>
 
@@ -253,8 +253,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-07-16 00:50" pubdate>
-          2025年7月16日 凌晨
+        <time datetime="2025-07-16 18:43" pubdate>
+          2025年7月16日 晚上
         </time>
       </span>
     
@@ -265,7 +265,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.1k 字
+          1.2k 字
         
       </span>
     
@@ -276,7 +276,7 @@
         
         
         
-          9 分钟
+          10 分钟
         
       </span>
     
@@ -322,13 +322,13 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">中断隐指令</h1>
+            <h1 id="seo-header">多重中断的两个关中断</h1>
             
             
               <p id="updated-time" class="note note-info" style="">
                 
                   
-                    本文最后更新于 2025年7月16日 凌晨
+                    本文最后更新于 2025年7月16日 晚上
                   
                 
               </p>
@@ -336,66 +336,93 @@
             
             
               <div class="note note-info post-excerpt">
-                中断隐指令的关中断在哪里
+                辨析多重中断中的两个"开中断"和"关中断"
               </div>
             
             
             
               <div class="markdown-body">
                 
-                <p>简单直接的回答是：<strong>中断隐指令的“关中断”操作，发生在CPU响应中断、进入中断服务程序（ISR）之前的瞬间，是由硬件自动完成的。</strong></p>
-<p>它不是在中断服务程序的第一条指令，而是在CPU开始执行中断服务程序<strong>之前</strong>，作为整个中断响应周期（即“隐指令”）的一个关键步骤。</p>
+                <p>系统地总结一下在多重中断（也称为中断嵌套）机制中涉及到的两种“关中断”操作。这两种操作发生在不同的阶段，由不同的主体（硬件或软件）执行，目的也略有不同，但它们共同确保了中断处理的有序和可控。</p>
 <hr>
-<p>为了让你彻底明白，我们来拆解一下CPU从收到中断信号到开始执行中断服务程序的全过程。这个由硬件自动完成的连续操作，就是所谓的**“中断隐指令”**。</p>
-<h3 id="中断隐指令的详细步骤">中断隐指令的详细步骤</h3>
-<p>假设CPU正在执行程序A，突然一个外部设备发来了中断请求。CPU在执行完当前的一条指令后，会开始执行如下一系列<strong>硬件自动操作</strong>：</p>
-<ol>
-<li>
-<p><strong>识别中断源</strong>: CPU确认收到了中断信号，并确定是哪个设备发出的（如果支持多中断源）。</p>
-</li>
-<li>
-<p><strong>保护现场 (Save Context)</strong>: 这是最关键的一步，为了能从中断处理中正确返回。</p>
+<h3 id="多重中断中的两种“关中断”机制总结">多重中断中的两种“关中断”机制总结</h3>
+<p>在支持中断嵌套的系统中，为了既能响应新的中断请求，又能保证当前处理流程不被打乱，存在两种关键的“关-开中断”配对操作。</p>
+<h4 id="1-硬件自动关中断-中断响应周期的隐指令">1. 硬件自动关中断 (中断响应周期的隐指令)</h4>
+<p>这是第一种，也是最基础的一种“关中断”，它发生在CPU响应任何一个中断请求的初始阶段。</p>
 <ul>
-<li><strong>压入程序计数器 (PC)</strong>: 硬件自动将当前PC（即下一条将被执行的指令地址）的值推入堆栈。这样CPU就知道中断结束后应该回到哪里继续执行。</li>
-<li><strong>压入程序状态字 (PSW)</strong>: 硬件自动将当前的PSW（包含各种标志位，如零标志、进位标志，以及最重要的<strong>中断允许标志位 IF</strong>）推入堆栈。</li>
+<li><strong>执行者</strong>: <strong>CPU硬件</strong>。这个操作是“中断隐指令”的一部分，对程序员是透明的，自动完成。</li>
+<li><strong>发生时机</strong>: 在CPU执行完当前指令、检测到中断信号后，<strong>在跳转到中断服务程序（ISR）之前</strong>。</li>
+<li><strong>具体操作</strong>: 硬件将CPU内部的<strong>程序状态字（PSW）中的中断允许标志位（IF）自动清零</strong>。</li>
+<li><strong>核心目的</strong>: <strong>保护当前中断处理的“原子性”</strong>。
+<ul>
+<li><strong>防止连锁反应</strong>: 确保CPU在进入一个中断服务程序时，不会立即被另一个新的中断（无论优先级高低）再次打断。</li>
+<li><strong>保护现场的完整性</strong>: 为即将执行的中断服务程序提供一个安全、不受干扰的“启动区”，让程序有时间先完成最关键的现场保护操作（例如，将CPU的通用寄存器内容压入堆栈）。如果没有这个机制，在保存寄存器的过程中又来一个中断，现场就会变得混乱。</li>
 </ul>
 </li>
-<li>
-<p><strong>关中断 (Disable Interrupts)</strong>: <strong>这就是你问的关键点所在</strong>。在完成现场保护后，<strong>硬件会自动将CPU内部的程序状态字（PSW）中的中断允许标志位（Interrupt Flag, IF）清零</strong>。</p>
+</ul>
+<h4 id="2-软件手动关-开中断-中断服务程序内部">2. 软件手动关/开中断 (中断服务程序内部)</h4>
+<p>这是第二种“关中断”，它发生在中断服务程序内部，由程序员根据需求来决定是否执行以及何时执行。</p>
 <ul>
-<li><strong>位置</strong>: 在旧的PSW被压入堆栈之后，在加载新的PC和PSW之前。</li>
-<li><strong>目的</strong>: 这样做是为了防止在进入新的中断服务程序时，CPU马上又被另一个新的中断所打断。这可以确保当前的中断服务程序至少有一个“原子”的、不受干扰的启动阶段，来完成一些初始的、更关键的现场保护操作（比如保存通用寄存器）。</li>
+<li><strong>执行者</strong>: <strong>软件（程序员编写的代码）</strong>。通过执行特定的CPU指令（如x86架构的 <code>CLI</code> 关中断 和 <code>STI</code> 开中断）来完成。</li>
+<li><strong>发生时机</strong>: <strong>在中断服务程序（ISR）的内部</strong>。</li>
+<li><strong>具体操作</strong>:
+<ul>
+<li><strong>开中断</strong>: 在ISR的<strong>前半部分</strong>，当所有关键的现场信息（如通用寄存器）都已经被安全地保存到堆栈后，程序员会执行一条“开中断”指令（<code>STI</code>）。</li>
+<li><strong>关中断</strong>: 在ISR的<strong>后半部分</strong>，在准备恢复现场（即将寄存器内容从堆栈中弹出）之前，程序员可能会执行一条“关中断”指令（<code>CLI</code>）。</li>
 </ul>
 </li>
-<li>
-<p><strong>加载中断服务程序的入口地址</strong>:</p>
+<li><strong>核心目的</strong>: <strong>实现可控的“中断嵌套”</strong>。
 <ul>
-<li>硬件根据中断类型码，在<strong>中断向量表 (Interrupt Vector Table)</strong> 中查找对应的中断服务程序（ISR）的入口地址。</li>
-<li>将这个入口地址加载到程序计数器（PC）中。</li>
+<li><strong>允许更高优先级的中断</strong>: 执行“开中断”指令后，CPU就可以响应比当前正在处理的中断<strong>优先级更高</strong>的新中断请求了。这使得系统能够及时处理更紧急的事件，提高了实时性。</li>
+<li><strong>保护现场的恢复过程</strong>: 在恢复现场前执行“关中断”，是为了防止在弹栈恢复寄存器的过程中被新的中断打断，从而保证现场能够准确无误地恢复到中断前的状态。</li>
 </ul>
 </li>
-<li>
-<p><strong>开始执行中断服务程序</strong>:</p>
-<ul>
-<li>现在，PC已经指向了中断服务程序的第一条指令，CPU正式开始执行中断处理。</li>
 </ul>
-</li>
-</ol>
-<h3 id="为什么必须先“关中断”？">为什么必须先“关中断”？</h3>
-<p>想象一个场景：如果没有自动关中断。</p>
-<ol>
-<li>CPU响应了中断A，把PC和PSW压栈。</li>
-<li>在准备跳转到中断A的服务程序时，一个优先级更高的中断B来了。</li>
-<li>CPU会立刻丢下中断A，转而去响应中断B，再次把PC和PSW压栈。<br>
-这会造成处理流程的混乱，尤其是在多级中断系统中，可能会导致堆栈状态不可控或关键的中断信息丢失。</li>
-</ol>
-<p>因此，<strong>先关中断，再执行服务程序</strong>，是一种保护机制，确保当前中断处理流程的完整性和原子性。</p>
-<h3 id="何时再“开中断”？">何时再“开中断”？</h3>
-<p>既然硬件自动关了中断，那什么时候再打开呢？</p>
-<ol>
-<li><strong>在中断服务程序中手动开启</strong>: 如果程序员希望当前的中断服务程序可以被更高优先级的中断打断（即实现“中断嵌套”），他会在程序的适当位置（通常是在保存完所有需要保护的寄存器之后）执行一条“开中断”指令（如<code>STI</code>或<code>EI</code>）。</li>
-<li><strong>在中断返回时自动开启</strong>:当中断服务程序执行完毕，最后会调用一条<strong>中断返回指令</strong>（如<code>IRET</code>或<code>RETI</code>）。这条指令除了将之前保存的PC值弹回PC寄存器外，还会将之前保存的**旧的程序状态字（PSW）**弹回PSW寄存器。因为旧的PSW中的中断允许位（IF）是1（即开中断状态），所以当中断返回后，CPU就自动回到了允许响应中断的状态。</li>
-</ol>
+<hr>
+<h3 id="总结对比表格">总结对比表格</h3>
+<p>为了更清晰地对比，我将这两种“关中断”整理成一个表格：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">特性</th>
+<th style="text-align:left">1. 硬件自动关中断</th>
+<th style="text-align:left">2. 软件手动关/开中断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>执行者</strong></td>
+<td style="text-align:left">CPU 硬件</td>
+<td style="text-align:left">软件（程序代码）</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>发生位置</strong></td>
+<td style="text-align:left">中断响应周期（进入ISR之前）</td>
+<td style="text-align:left">中断服务程序（ISR）内部</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>操作对象</strong></td>
+<td style="text-align:left">CPU内部的中断允许标志位 (IF)</td>
+<td style="text-align:left">CPU内部的中断允许标志位 (IF)</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>主要目的</strong></td>
+<td style="text-align:left"><strong>保护当前中断处理的原子性</strong>，防止启动时被打断。</td>
+<td style="text-align:left"><strong>实现可控的中断嵌套</strong>，允许响应更高优先级的中断。</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>是否必须</strong></td>
+<td style="text-align:left"><strong>是</strong>，所有中断响应都必须有这一步。</td>
+<td style="text-align:left"><strong>否</strong>，取决于系统是否需要支持中断嵌套。</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>配对的开中断</strong></td>
+<td style="text-align:left">由<strong>中断返回指令 (IRET)</strong> 自动恢复旧的PSW实现。</td>
+<td style="text-align:left">由程序员在代码中用<strong>开中断指令 (STI)</strong> 实现。</td>
+</tr>
+</tbody>
+</table>
+<p>简单来说，<strong>硬件的自动关中断是“入门锁”</strong>，保证了每个中断服务员进门时不会被撞倒；而<strong>软件的手动开/关中断是“办公室门锁”</strong>，服务员进门安顿好后，可以自己决定是否打开办公室的门，让更重要的人（更高优先级的中断）可以进来。单重中断中也具有的关中断为:硬件自动关中断</p>
 
                 
               </div>
@@ -443,8 +470,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>中断隐指令</div>
-      <div>https://wwxnb261.github.io/2025/07/16/kaoyan/408/中断隐指令/</div>
+      <div>多重中断的两个关中断</div>
+      <div>https://wwxnb261.github.io/2025/07/16/kaoyan/408/多重中断的两个关中断/</div>
     </div>
     <div class="license-meta">
       
@@ -493,9 +520,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/07/16/kaoyan/408/%E5%A4%9A%E9%87%8D%E4%B8%AD%E6%96%AD%E7%9A%84%E4%B8%A4%E4%B8%AA%E5%85%B3%E4%B8%AD%E6%96%AD/" title="多重中断的两个关中断">
+                      <a href="/2025/07/16/%E8%AE%A1%E5%88%92/" title="考研征途 | 2025-05-28 · 攻坚克难，稳步前行！">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">多重中断的两个关中断</span>
+                        <span class="hidden-mobile">考研征途 | 2025-05-28 · 攻坚克难，稳步前行！</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -503,8 +530,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/06/03/2025-06-03-%E5%82%BB%E9%80%BC%E5%82%BB%E9%80%BC%E5%82%BB%E9%80%BC-%E6%B2%A1%E4%B8%AA%E5%BF%97%E6%B0%94-%E7%9C%9F%E4%B8%8D%E8%A6%81%E8%84%B8/" title="考研征途 | 2025-06-03 · 傻逼傻逼傻逼，没个志气，真不要脸">
-                        <span class="hidden-mobile">考研征途 | 2025-06-03 · 傻逼傻逼傻逼，没个志气，真不要脸</span>
+                      <a href="/2025/07/16/kaoyan/408/%E4%B8%AD%E6%96%AD%E9%9A%90%E6%8C%87%E4%BB%A4/" title="中断隐指令">
+                        <span class="hidden-mobile">中断隐指令</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

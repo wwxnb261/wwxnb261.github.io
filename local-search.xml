@@ -35,7 +35,7 @@
     <link href="/2025/07/21/kaoyan/408/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     <url>/2025/07/21/kaoyan/408/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
     
-    <content type="html"><![CDATA[<h1>第一章1.5.4时延例题</h1><p><strong>题目:</strong><br><img src="./408image/image.png" alt="考研真题"><br><strong>解析:</strong><br><img src="./408image/image-1.png" alt="alt text"></p><p>**错误原因:**我选了A,错误原因为第一我不知道什么叫不考虑分组拆装时间,和传播延迟的情况,也就是说一个分组实际上是1000B的大小,但是其中分组头的20B不计入时间.然后就是</p>]]></content>
+    <content type="html"><![CDATA[<h1>第一章1.5.4时延例题</h1><p><strong>题目:</strong><br><img src="./408image/image.png" alt="考研真题"><br><strong>解析:</strong><br><img src="./408image/image-1.png" alt="解析"></p><p><strong>错误原因:</strong> 我选了A,错误原因为第一我不知道什么叫不考虑分组拆装时间,和传播延迟的情况,也就是说一个分组实际上是1000B的大小,但是其中分组头的20B不计入时间.然后就是</p>]]></content>
     
     
     <categories>
@@ -485,9 +485,9 @@
       
       <tag>考研计划</tag>
       
-      <tag>专业课计划</tag>
-      
       <tag>数学计划</tag>
+      
+      <tag>专业课计划</tag>
       
     </tags>
     
@@ -595,9 +595,9 @@
       
       <tag>考研计划</tag>
       
-      <tag>专业课计划</tag>
-      
       <tag>数学计划</tag>
+      
+      <tag>专业课计划</tag>
       
     </tags>
     
@@ -840,9 +840,9 @@
       
       <tag>考研计划</tag>
       
-      <tag>专业课计划</tag>
-      
       <tag>数学计划</tag>
+      
+      <tag>专业课计划</tag>
       
     </tags>
     
